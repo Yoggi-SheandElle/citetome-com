@@ -508,7 +508,9 @@
         }
 
         var action = f.getAttribute('action') || '';
-        var looksWired = action && action.indexOf('placeholder') === -1 && action.indexOf('xgoqkplq') === -1;
+        // Form is considered "wired" if it points at a real Formspree form id (lowercase 8-char slug).
+        // Anything else (literal "placeholder", missing action) falls back to mailto.
+        var looksWired = /^https:\/\/formspree\.io\/f\/[a-z0-9]{6,}$/i.test(action);
 
         if(!looksWired){
           showMailtoFallback(buildMailto(), 'Sending you via email.');

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal . Privacy . Imprint - Citetome</title>
+  <meta name="description" content="Imprint, privacy policy, cookie policy, terms of service and governance pact for Citetome - the AEO and GEO control plane.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://citetome.com/legal/">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bone:#FAF6EE; --paper:#F3EEE2; --tea:#E6DDC8; --ink:#0F0E0C;
+      --ink-soft:#2A2722; --ink-mid:#56524A; --stone:#8A8377;
+      --gold:#B8915E; --oxblood:#6F2D1D; --rule:#DED4BD;
+      --serif:'EB Garamond', Georgia, serif;
+      --sans:'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --mono:'JetBrains Mono', Consolas, monospace;
+      --container:840px;
+      --gutter:clamp(20px, 4vw, 56px);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:80px}
+    body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px}
+    a:hover{color:var(--oxblood);text-decoration-color:var(--oxblood)}
+    .container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+    nav{position:sticky;top:0;background:rgba(250,246,238,0.92);backdrop-filter:saturate(180%) blur(14px);z-index:50;border-bottom:1px solid var(--rule)}
+    nav .container{padding-top:16px;padding-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
+    .brand-mark{width:28px;height:28px}
+    .brand-word{font-family:var(--serif);font-style:italic;font-weight:500;font-size:24px;letter-spacing:-0.015em;color:var(--ink);text-decoration:none}
+    .nav-back{font-family:var(--mono);font-size:12px;color:var(--ink-mid);text-decoration:none}
+    .nav-back:hover{color:var(--ink)}
+    main{padding:56px 0 96px}
+    h1{font-size:clamp(36px,5vw,56px);letter-spacing:-0.03em;font-weight:600;margin:0 0 8px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:16px}
+    .eyebrow::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%}
+    .updated{color:var(--ink-mid);font-size:14px;margin-bottom:48px}
+    h2{font-size:28px;letter-spacing:-0.02em;font-weight:600;margin:48px 0 12px;border-top:1px solid var(--rule);padding-top:32px}
+    h2:first-of-type{border-top:0;padding-top:0}
+    h3{font-size:18px;font-weight:600;margin:24px 0 8px}
+    p{color:var(--ink-soft);margin:0 0 14px;max-width:68ch}
+    ul{color:var(--ink-soft);padding-left:22px;margin:0 0 14px}
+    li{margin-bottom:6px}
+    .table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+    .table th,.table td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+    .table th{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-mid);background:var(--paper)}
+    .toc{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:24px 28px;margin:24px 0 48px}
+    .toc h3{margin:0 0 12px;font-size:13px;font-family:var(--mono);letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-mid);font-weight:500}
+    .toc ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px;font-size:14px}
+    .toc a{text-decoration:none;color:var(--ink-soft)}
+    .toc a:hover{color:var(--oxblood)}
+    .toc .num{font-family:var(--mono);font-size:11px;color:var(--ink-mid);margin-right:10px}
+    footer{background:var(--ink);color:var(--tea);padding:48px 0 32px;margin-top:96px}
+    footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:12px}
+    footer a{color:var(--tea)}
+    .small{font-size:13px;color:var(--ink-mid)}
+    code{font-family:var(--mono);font-size:13px;background:var(--paper);padding:1px 6px;border-radius:4px}
+    @media (max-width:600px){.toc ol{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="brand" aria-label="Citetome home">
+      <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M9 22 L9 9 L24 9" stroke="#0F0E0C" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+        <path d="M55 42 L55 55 L40 55" stroke="#0F0E0C" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+        <circle cx="32" cy="32" r="3" fill="#B8915E"/>
+      </svg>
+      <span class="brand-word">citetome</span>
+    </a>
+    <a href="/" class="nav-back">&larr; Back to home</a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="eyebrow">Legal</div>
+    <h1>Imprint, privacy &amp; terms.</h1>
+    <p class="updated">Last updated: 21 May 2026 . Version 1.0</p>
+
+    <div class="toc">
+      <h3>Contents</h3>
+      <ol>
+        <li><span class="num">01</span><a href="#imprint">Imprint &amp; operator</a></li>
+        <li><span class="num">02</span><a href="#privacy">Privacy policy</a></li>
+        <li><span class="num">03</span><a href="#cookies">Cookies &amp; tracking</a></li>
+        <li><span class="num">04</span><a href="#terms">Terms of service</a></li>
+        <li><span class="num">05</span><a href="#pact">Governance pact</a></li>
+        <li><span class="num">06</span><a href="#ip">Intellectual property</a></li>
+        <li><span class="num">07</span><a href="#dpa">Data processing</a></li>
+        <li><span class="num">08</span><a href="#contact">Contact &amp; complaints</a></li>
+      </ol>
+    </div>
+
+    <h2 id="imprint">01 . Imprint &amp; operator</h2>
+    <p>Citetome is a trade name operated by Yossra Benzad, an independent service provider based in Denmark. This site does not represent a registered limited company. A Danish ApS (Citetome ApS) is in formation; this notice will be updated with the company registration number (CVR) once incorporation completes.</p>
+    <table class="table">
+      <tr><th>Operator</th><td>Yossra Benzad (sole trader), trading as Citetome</td></tr>
+      <tr><th>Registered for</th><td>Information society services, software-as-a-service</td></tr>
+      <tr><th>Place of business</th><td>Copenhagen, Denmark</td></tr>
+      <tr><th>Contact email</th><td><a href="mailto:hello@citetome.com">hello@citetome.com</a></td></tr>
+      <tr><th>VAT</th><td>Below DKK 50,000 threshold; VAT exemption under Danish momsloven &sect; 48 applies until registration becomes mandatory.</td></tr>
+      <tr><th>Hosting</th><td>Marketing site: GitHub Pages (San Francisco, US, served via global CDN). API service: Fly.io (London region, lhr), with EU data residency for all customer-identifiable records.</td></tr>
+      <tr><th>Status</th><td>Live in production at <a href="https://api.citetome.com" target="_blank" rel="noopener">api.citetome.com</a></td></tr>
+    </table>
+
+    <h2 id="privacy">02 . Privacy policy</h2>
+    <p>Citetome processes personal data only to the extent necessary to deliver the service. We operate under the EU General Data Protection Regulation (Regulation 2016/679, "GDPR") and the Danish Act on Data Protection (Databeskyttelsesloven, 2018).</p>
+
+    <h3>2.1 What we collect</h3>
+    <ul>
+      <li><strong>Contact form / email:</strong> name, email address, message content. Lawful basis: GDPR Art. 6(1)(b), pre-contractual measures at your request.</li>
+      <li><strong>Audit requests:</strong> domain name, contact email, optional company name. Lawful basis: GDPR Art. 6(1)(b).</li>
+      <li><strong>Dashboard authentication:</strong> API key (stored in browser session memory only, never transmitted to third parties).</li>
+      <li><strong>Server logs:</strong> IP address, user-agent, timestamps, URL paths. Retained 30 days for security and abuse prevention. Lawful basis: GDPR Art. 6(1)(f), legitimate interest.</li>
+    </ul>
+
+    <h3>2.2 What we do not collect</h3>
+    <ul>
+      <li>No advertising cookies, no analytics cookies, no third-party trackers.</li>
+      <li>No fingerprinting, no session replay, no behavioural profiling.</li>
+      <li>No data is sold or shared with marketing partners.</li>
+    </ul>
+
+    <h3>2.3 Retention</h3>
+    <p>Contact emails: retained for the duration of the working relationship plus the statutory accounting period (5 years under Danish Bogf&oslash;ringsloven). Server logs: 30 days. Audit outputs and append-only audit-log entries are retained for the duration of the customer contract and 12 months thereafter, then anonymised. Article 17 erasure requests are honoured within 30 days unless overridden by a legal obligation.</p>
+
+    <h3>2.4 Your rights (GDPR Art. 15-22)</h3>
+    <p>You have the right to access, rectify, erase, restrict, port, and object to processing of your personal data. To exercise these rights, email <a href="mailto:hello@citetome.com">hello@citetome.com</a>. We respond within 30 days as required by Art. 12(3).</p>
+
+    <h3>2.5 International transfers</h3>
+    <p>Customer-facing data is held within the EU/EEA (Fly.io London region; data residency confirmed by provider). The marketing site is delivered via GitHub Pages, which may route traffic through US edge nodes; only publicly accessible HTML is served from these nodes, no personal data is processed there. Where any onward transfer to a non-EEA country occurs, it is covered by the European Commission's Standard Contractual Clauses (2021/914).</p>
+
+    <h2 id="cookies">03 . Cookies &amp; tracking</h2>
+    <p>This site uses no analytics, no advertising, and no third-party tracking cookies. The only client-side storage we use is:</p>
+    <ul>
+      <li><code>sessionStorage</code> for the dashboard authentication key (your API key), cleared automatically when you close the tab.</li>
+      <li><code>localStorage</code> for remembering whether you have dismissed the cookie notice (strictly necessary under the ePrivacy Directive, no consent required).</li>
+    </ul>
+    <p>No consent banner is required for strictly necessary storage. If we add analytics in future, an explicit opt-in banner will be deployed before deployment, in accordance with the Danish Cookiebekendtg&oslash;relsen and EDPB guidelines 03/2022.</p>
+
+    <h2 id="terms">04 . Terms of service</h2>
+    <p>By using citetome.com or the api.citetome.com service, you agree to the following terms. These terms are governed by Danish law. Disputes are resolved by the courts of Copenhagen, Denmark, with the consumer's right of forum under Brussels Ia Regulation Art. 18 preserved where applicable.</p>
+
+    <h3>4.1 Service description</h3>
+    <p>Citetome provides Answer-Engine Optimisation (AEO) and Generative-Engine Optimisation (GEO) auditing and governance for websites. The service produces audit reports, generates remediation proposals, and maintains an append-only audit log of approved changes.</p>
+
+    <h3>4.2 Acceptable use</h3>
+    <ul>
+      <li>You may submit only domains you own or are authorised to optimise.</li>
+      <li>You may not use the service for spam, cloaking, manipulating search rankings through deceptive content, or any practice prohibited by Google Search Essentials or the policies of major AI search providers.</li>
+      <li>You may not reverse-engineer or scrape the dashboard or API beyond rate limits.</li>
+    </ul>
+
+    <h3>4.3 Pricing &amp; payment</h3>
+    <p>Pricing is set per the published price list at <a href="/pricing/">citetome.com/pricing</a>. Audits are billed on completion; managed plans are billed monthly in advance. All prices are exclusive of VAT where applicable. Payment terms: 14 days net from invoice issue. Late payment interest is charged at the Danish national bank reference rate plus 8 percentage points per Renteloven &sect; 5.</p>
+
+    <h3>4.4 Cancellation &amp; refunds</h3>
+    <p>Managed plans can be cancelled at the end of any monthly billing cycle with no notice period. One-off audits are refundable in full until the audit run has started, and not refundable thereafter, except where required by mandatory consumer protection law.</p>
+
+    <h3>4.5 Service level &amp; limitation of liability</h3>
+    <p>The service is provided on a commercially reasonable best-effort basis. We do not guarantee specific rankings, citation rates, or visibility outcomes in AI search engines, as these are governed by third-party algorithms outside our control. Liability for direct damages is capped at the fees paid by the customer in the 12 months preceding the claim. Liability for indirect, consequential, or lost-profit damages is excluded to the extent permitted by Danish law. Nothing in these terms limits liability for gross negligence, wilful misconduct, or personal injury.</p>
+
+    <h2 id="pact">05 . Governance pact</h2>
+    <p>Every site enrolled in a managed plan signs the Citetome Governance Pact. The pact specifies:</p>
+    <ul>
+      <li>That every change is proposed before it is applied, with a diff preview.</li>
+      <li>That the site owner retains a one-click reversal right for 30 days after any approved change.</li>
+      <li>That every action (proposal, approval, rejection, reversal) is written to an append-only audit log addressable from <code>api.citetome.com/governance</code>.</li>
+      <li>That tombstone-style deletion is supported, in line with GDPR Art. 17 and the EU AI Act transparency obligations applicable from August 2026.</li>
+    </ul>
+
+    <h2 id="ip">06 . Intellectual property</h2>
+    <p>All source code, design, copy, documentation, brand assets and logos on citetome.com and api.citetome.com are protected under Danish copyright law (Ophavsretsloven) and the Berne Convention. Copyright arises automatically upon creation; no registration is required. All rights reserved. The "Citetome" word mark and the bracket-and-dot logo are unregistered trade marks of the operator. A Community trade-mark filing is planned alongside the Citetome ApS incorporation.</p>
+    <p>You retain ownership of the content of your own website. By using the service, you grant Citetome a limited, non-exclusive licence to read, index, and propose changes to that content for the purpose of delivering the audit and governance service.</p>
+
+    <h2 id="dpa">07 . Data processing addendum</h2>
+    <p>Where Citetome processes personal data on behalf of a customer (acting as data processor under GDPR Art. 28), a separate Data Processing Addendum (DPA) is signed. The DPA mirrors the European Commission's Standard Contractual Clauses and covers: processing instructions, sub-processors, security measures, breach notification within 72 hours, audit rights, and post-termination return or deletion of data. Customers can request the DPA template at <a href="mailto:hello@citetome.com">hello@citetome.com</a>.</p>
+
+    <h3>7.1 Sub-processors</h3>
+    <table class="table">
+      <tr><th>Sub-processor</th><th>Purpose</th><th>Location</th></tr>
+      <tr><td>Fly.io Inc.</td><td>Application hosting (api.citetome.com)</td><td>London, UK (lhr region)</td></tr>
+      <tr><td>GitHub Inc.</td><td>Marketing site hosting (citetome.com)</td><td>United States, with EU edge delivery</td></tr>
+      <tr><td>UptimeRobot</td><td>Uptime monitoring</td><td>Sweden / Germany edge</td></tr>
+    </table>
+
+    <h2 id="contact">08 . Contact &amp; complaints</h2>
+    <p>For privacy, contract, or technical enquiries, email <a href="mailto:hello@citetome.com">hello@citetome.com</a>. We respond within 5 working days for general enquiries and within 30 days for GDPR rights requests.</p>
+    <p>If you are not satisfied with our handling of a personal-data complaint, you have the right to lodge a complaint with the Danish supervisory authority:</p>
+    <p class="small">Datatilsynet, Carl Jacobsens Vej 35, 2500 Valby, Denmark. Web: <a href="https://www.datatilsynet.dk" target="_blank" rel="noopener">datatilsynet.dk</a>. Phone: +45 33 19 32 00.</p>
+
+    <p class="small" style="margin-top:48px;color:var(--stone)">This page is provided in good faith and is updated when our processing or structure changes. Translated versions, where they exist, are provided for convenience; the English version is authoritative. No part of this notice constitutes legal advice.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>&copy; 2026 Citetome . Operated from Copenhagen, Denmark</div>
+    <div><a href="/">Home</a> . <a href="/pricing/">Pricing</a> . <a href="mailto:hello@citetome.com">hello@citetome.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

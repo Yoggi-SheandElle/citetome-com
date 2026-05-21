@@ -1,0 +1,24 @@
+# Citetome
+
+> The AEO and GEO control plane for multilingual SMBs. Citetome audits and governs how a brand is found, cited, and trusted by AI search engines (ChatGPT, Perplexity, Claude, Gemini, Google AI Overviews), with a signed governance pact and an append-only audit log.
+
+Operated by Yossra Benzad, Copenhagen, Denmark. Live product: https://api.citetome.com (Fly.io London region).
+
+## Docs
+
+- [Homepage](https://citetome.com/): product overview, features, FAQ
+- [Pricing](https://citetome.com/pricing/): audit and managed plan tiers in EUR
+- [Audit](https://citetome.com/audit/): request a one-off audit
+- [Legal](https://citetome.com/legal/): imprint, privacy, terms, governance pact, DPA
+
+## Live endpoints
+
+- [Customer dashboard](https://api.citetome.com/customer): per-tenant view
+- [Governance posture](https://api.citetome.com/governance): public governance state
+- [Knowledge graph](https://api.citetome.com/kg/sitemap.xml): public knowledge graph
+- [LLMs registry](https://api.citetome.com/llms.txt): registered sites
+
+## Optional
+
+- [Contact](mailto:hello@citetome.com)
+- [Datatilsynet (DK supervisory authority)](https://www.datatilsynet.dk)

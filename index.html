@@ -17,11 +17,41 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://citetome.com/#org",
+        "name": "Citetome",
+        "url": "https://citetome.com/",
+        "logo": "https://citetome.com/favicon.svg",
+        "email": "hello@citetome.com",
+        "description": "AEO and GEO control plane for multilingual SMBs. Audited, signed, reversible.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Copenhagen",
+          "addressCountry": "DK"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Yossra Benzad"
+        },
+        "sameAs": [
+          "https://api.citetome.com"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://citetome.com/#website",
+        "name": "Citetome",
+        "url": "https://citetome.com/",
+        "publisher": { "@id": "https://citetome.com/#org" },
+        "inLanguage": "en"
+      },
+      {
         "@type": "SoftwareApplication",
         "@id": "https://citetome.com/#app",
         "name": "Citetome",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
+        "provider": { "@id": "https://citetome.com/#org" },
         "offers": [
           {"@type": "Offer", "name": "Audit", "price": "500", "priceCurrency": "EUR"},
           {"@type": "Offer", "name": "Audit Pro", "price": "1500", "priceCurrency": "EUR"},
@@ -1092,9 +1122,18 @@
             <li>DK · UK · MA</li>
           </ul>
         </div>
+        <div class="foot-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="/legal/#imprint">Imprint</a></li>
+            <li><a href="/legal/#privacy">Privacy</a></li>
+            <li><a href="/legal/#terms">Terms</a></li>
+            <li><a href="/legal/#pact">Governance pact</a></li>
+          </ul>
+        </div>
       </div>
       <div class="foot-base">
-        <div>© 2026 Citetome · Made in Copenhagen</div>
+        <div>© 2026 Citetome · Operated by Yossra Benzad, Copenhagen, Denmark</div>
         <div>api.citetome.com · 141 tests · Fly.io lhr</div>
       </div>
     </div>

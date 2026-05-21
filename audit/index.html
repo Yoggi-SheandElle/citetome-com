@@ -222,7 +222,7 @@
         <form class="audit-form" id="audit-form" action="https://formspree.io/f/xeoqgkbz" method="POST" novalidate>
           <span class="eyebrow">01 · Request</span>
           <h2 id="form">Send your domain.</h2>
-          <p class="lead">We accept any production URL. We don't write to your site. We don't share data.</p>
+          <p class="lead">Any production URL works. Submitting opens your email client with your details pre-filled, so the request lands directly with us. We don't write to your site. We don't share data.</p>
 
           <div class="fld">
             <label for="url">Website URL <span style="color:var(--oxblood)">*</span></label>
@@ -271,9 +271,9 @@
           <input type="hidden" name="_subject" value="Citetome - new audit request">
           <input type="hidden" name="source" value="citetome.com/audit/">
 
-          <button class="btn" type="submit">Request audit →</button>
+          <button class="btn" type="submit">Open my email client with this request &rarr;</button>
           <div class="audit-feedback" id="audit-feedback" aria-live="polite"></div>
-          <div class="audit-meta">By submitting you agree to a one-time audit communication. We don't subscribe you to anything. <a href="mailto:hello@citetome.com">Prefer email?</a></div>
+          <div class="audit-meta">By sending this you agree to a one-time audit communication. We do not subscribe you to anything and we do not share your data. <a href="mailto:hello@citetome.com">No mail client? Email us directly.</a></div>
         </form>
 
         <div class="summary">
@@ -339,10 +339,10 @@
       </div>
 
       <div class="timeline">
-        <div class="tstep"><div class="day">Day 0</div><h4>Request received</h4><p>Auto-confirmation email. We run a first-pass deterministic sweep against your URL within the hour.</p></div>
-        <div class="tstep"><div class="day">Day 1-3</div><h4>Manual review</h4><p>Multilingual entity check, citation behaviour probe, peer-comparison if you sent comparables.</p></div>
-        <div class="tstep"><div class="day">Day 4</div><h4>Report drafted</h4><p>HTML + PDF, signed by the auditor, with a ranked 10-fix backlog and impact estimate.</p></div>
-        <div class="tstep"><div class="day">Day 5</div><h4>Walkthrough</h4><p>15-minute call, recorded if you want. No upsell. You decide whether to continue.</p></div>
+        <div class="tstep"><div class="day">Day 0</div><h4>Request received</h4><p>Your form submission lands in our inbox. We reply from <a href="mailto:hello@citetome.com">hello@citetome.com</a> the same working day to confirm scope and schedule the audit.</p></div>
+        <div class="tstep"><div class="day">Day 1-2</div><h4>Deterministic sweep</h4><p>We run the eight-signal audit against your URL on the Citetome engine at <code>api.citetome.com</code>. Output is reproducible: same site, same score.</p></div>
+        <div class="tstep"><div class="day">Day 3-4</div><h4>Manual review + report</h4><p>Multilingual entity check, citation behaviour probe, peer comparison if you sent comparables. Report drafted in HTML + PDF, signed by the auditor, with a ranked 10-fix backlog.</p></div>
+        <div class="tstep"><div class="day">Day 5</div><h4>Walkthrough</h4><p>15-minute call, recorded if you want. No agency pitch, no upsell. You decide whether to continue.</p></div>
       </div>
     </div>
   </section>
@@ -445,28 +445,90 @@
       var f = document.getElementById('audit-form');
       var fb = document.getElementById('audit-feedback');
       if(!f) return;
-      function fallbackMsg(){
-        while(fb.firstChild) fb.removeChild(fb.firstChild);
-        fb.appendChild(document.createTextNode('Could not send. Email '));
-        var a = document.createElement('a');
-        a.href = 'mailto:hello@citetome.com';
-        a.textContent = 'hello@citetome.com';
-        fb.appendChild(a);
-        fb.appendChild(document.createTextNode(' with your URL instead.'));
+
+      function field(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+
+      function buildMailto(){
+        var url       = field('url');
+        var email     = field('email');
+        var name      = field('name');
+        var company   = field('company');
+        var region    = field('region');
+        var languages = field('languages');
+        var notes     = field('notes');
+
+        var lines = [
+          'Hi Citetome,',
+          '',
+          'I would like an audit of: ' + url,
+          '',
+          'About me:',
+          '- Name:      ' + (name      || '(not provided)'),
+          '- Email:     ' + email,
+          '- Company:   ' + (company   || '(not provided)'),
+          '- Region:    ' + (region    || '(not provided)'),
+          '- Languages: ' + (languages || '(not provided)'),
+          '',
+          'Notes:',
+          notes || '(none)',
+          '',
+          'Sent from citetome.com/audit/'
+        ];
+        var subject = 'Citetome audit request: ' + url;
+        return 'mailto:hello@citetome.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
       }
+
+      function clearChildren(node){ while(node.firstChild) node.removeChild(node.firstChild); }
+
+      function showMailtoFallback(href, reason){
+        clearChildren(fb);
+        var p1 = document.createElement('div');
+        p1.appendChild(document.createTextNode(reason + ' Your email client is opening with your details pre-filled. If it does not open automatically, '));
+        var a = document.createElement('a');
+        a.href = href;
+        a.textContent = 'click here';
+        p1.appendChild(a);
+        p1.appendChild(document.createTextNode(' or email '));
+        var m = document.createElement('a');
+        m.href = 'mailto:hello@citetome.com';
+        m.textContent = 'hello@citetome.com';
+        p1.appendChild(m);
+        p1.appendChild(document.createTextNode(' directly.'));
+        fb.appendChild(p1);
+        try { window.location.href = href; } catch(_){}
+      }
+
       f.addEventListener('submit', function(e){
         e.preventDefault();
-        var url = document.getElementById('url').value.trim();
-        var email = document.getElementById('email').value.trim();
-        if(!url || !email){ fb.textContent = 'Please add your URL and email.'; return; }
-        fb.textContent = 'Sending-';
+        var url = field('url');
+        var email = field('email');
+        if(!url || !email){
+          fb.textContent = 'Please add your URL and email so we can run the audit and reply to you.';
+          return;
+        }
+
+        var action = f.getAttribute('action') || '';
+        var looksWired = action && action.indexOf('placeholder') === -1 && action.indexOf('xeoqgkbz') === -1;
+
+        if(!looksWired){
+          showMailtoFallback(buildMailto(), 'Sending you via email.');
+          return;
+        }
+
+        fb.textContent = 'Sending your request to Citetome...';
         var fd = new FormData(f);
-        fetch(f.action, { method:'POST', body: fd, headers:{ 'Accept':'application/json' } })
+        fetch(action, { method:'POST', body: fd, headers:{ 'Accept':'application/json' } })
           .then(function(r){
-            if(r.ok){ fb.textContent = 'Received. We will reply within five working days from hello@citetome.com.'; f.reset(); }
-            else { fallbackMsg(); }
+            if(r.ok){
+              fb.textContent = 'Received. You will get an auto-confirmation from hello@citetome.com within a few minutes, and the full report within five working days.';
+              f.reset();
+            } else {
+              showMailtoFallback(buildMailto(), 'Could not reach our form server.');
+            }
           })
-          .catch(fallbackMsg);
+          .catch(function(){
+            showMailtoFallback(buildMailto(), 'Network error reaching our form server.');
+          });
       });
     })();
   </script>

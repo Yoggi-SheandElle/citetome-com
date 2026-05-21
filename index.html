@@ -190,8 +190,8 @@
       font-size: 26px; letter-spacing: -0.015em; color: var(--ink);
       line-height: 1;
     }
-    .nav-links { display: flex; gap: 22px; align-items: center; font-size: 14px; font-weight: 450; flex-shrink: 0; }
-    @media (max-width: 1080px) { .nav-links { gap: 18px; } .nav-links a[data-section="faq"] { display: none; } }
+    .nav-links { display: flex; gap: 22px; align-items: center; font-size: 14px; font-weight: 450; flex-wrap: wrap; justify-content: flex-end; }
+    @media (max-width: 1080px) { .nav-links { gap: 16px; font-size: 13px; } }
     .nav-links a {
       color: var(--ink-soft); position: relative; padding: 4px 0;
     }
@@ -225,13 +225,17 @@
     .btn-link .arrow { transition: transform 0.2s var(--ease); }
     .btn-link:hover .arrow { transform: translateX(4px); }
 
-    @media (max-width: 800px) {
-      .nav-inner { flex-wrap: wrap; row-gap: 6px; padding: 12px clamp(16px, 3vw, 40px); }
-      .nav-links { order: 3; width: 100%; justify-content: flex-start; gap: 14px; font-size: 13px; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px; }
+    @media (max-width: 880px) {
+      .nav-inner { flex-wrap: wrap; row-gap: 8px; padding: 12px clamp(16px, 3vw, 40px); }
+      .nav-links { order: 3; width: 100%; justify-content: flex-start; gap: 14px; font-size: 13px; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px; flex-wrap: nowrap; }
       .nav-links::-webkit-scrollbar { height: 0; }
-      .nav-links > a { white-space: nowrap; }
-      .nav-links > a.btn { order: -1; padding: 8px 14px; font-size: 13px; }
+      .nav-links > a { white-space: nowrap; flex-shrink: 0; }
+      .nav-links > a.btn { display: none; }
+      .nav-inner > a.brand + .nav-cta-mobile { display: inline-flex; }
     }
+    /* mobile-only Request audit pinned next to brand on the top row */
+    .nav-cta-mobile { display: none; padding: 8px 14px; border-radius: 8px; font-family: var(--sans); font-size: 13px; font-weight: 500; border: 1px solid var(--ink); background: var(--ink); color: var(--bone); text-decoration: none; }
+    .nav-cta-mobile:hover { background: var(--oxblood); border-color: var(--oxblood); color: var(--bone); }
     @media (max-width: 460px) {
       .nav-links { font-size: 12px; gap: 12px; }
       .brand-word { font-size: 22px; }
@@ -639,6 +643,7 @@
         </svg>
         <span class="brand-word">citetome</span>
       </a>
+      <a href="#audit" class="nav-cta-mobile" aria-label="Request audit">Request audit</a>
       <div class="nav-links">
         <a href="#how" data-section="how">How it works</a>
         <a href="#network" data-section="network">Network</a>

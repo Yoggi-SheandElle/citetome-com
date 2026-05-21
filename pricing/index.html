@@ -61,7 +61,10 @@
     .brand-mark{width:28px;height:28px;flex-shrink:0;transition:transform .5s var(--ease)}
     .brand:hover .brand-mark{transform:scale(1.06)}
     .brand-word{font-family:var(--serif);font-style:italic;font-weight:500;font-size:26px;letter-spacing:-.015em;color:var(--ink);line-height:1}
-    .nav-links{display:flex;gap:22px;align-items:center;font-size:14px;font-weight:450;flex-shrink:0}
+    .nav-links{display:flex;gap:22px;align-items:center;font-size:14px;font-weight:450;flex-wrap:wrap;justify-content:flex-end}
+    @media (max-width:1080px){.nav-links{gap:16px;font-size:13px}}
+    .nav-cta-mobile{display:none;padding:8px 14px;border-radius:8px;font-family:var(--sans);font-size:13px;font-weight:500;border:1px solid var(--ink);background:var(--ink);color:var(--bone);text-decoration:none}
+    .nav-cta-mobile:hover{background:var(--oxblood);border-color:var(--oxblood);color:var(--bone)}
     .nav-links a{color:var(--ink-soft);padding:4px 0;position:relative}
     .nav-links a::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1.5px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
     .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
@@ -70,12 +73,13 @@
     .btn:hover{background:var(--oxblood);border-color:var(--oxblood);transform:translateY(-1px)}
     .btn-ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
     .btn-ghost:hover{border-color:var(--ink);background:transparent;color:var(--ink);transform:translateY(-1px)}
-    @media (max-width:800px){
-      .nav-inner{flex-wrap:wrap;row-gap:6px;padding:12px clamp(16px,3vw,40px)}
-      .nav-links{order:3;width:100%;justify-content:flex-start;gap:14px;font-size:13px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+    @media (max-width:880px){
+      .nav-inner{flex-wrap:wrap;row-gap:8px;padding:12px clamp(16px,3vw,40px)}
+      .nav-links{order:3;width:100%;justify-content:flex-start;gap:14px;font-size:13px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;flex-wrap:nowrap}
       .nav-links::-webkit-scrollbar{height:0}
-      .nav-links>a{white-space:nowrap}
-      .nav-links>a.btn{order:-1;padding:8px 14px;font-size:13px}
+      .nav-links>a{white-space:nowrap;flex-shrink:0}
+      .nav-links>a.btn{display:none}
+      .nav-cta-mobile{display:inline-flex}
     }
     @media (max-width:460px){.nav-links{font-size:12px;gap:12px}.brand-word{font-size:22px}}
 
@@ -199,6 +203,7 @@
         </svg>
         <span class="brand-word">citetome</span>
       </a>
+      <a href="/audit/" class="nav-cta-mobile" aria-label="Request audit">Request audit</a>
       <div class="nav-links">
         <a href="/#how">How it works</a>
         <a href="/#network">Network</a>

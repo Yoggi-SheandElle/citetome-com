@@ -9,8 +9,16 @@
   <meta property="og:description" content="Free initial audit. Deterministic. Five working days. No commitment.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://citetome.com/audit/">
+  <meta property="og:site_name" content="Citetome">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Request a Citetome Audit">
+  <meta name="twitter:description" content="Free initial audit. Deterministic. Five working days. No commitment.">
   <meta name="theme-color" content="#FAF6EE">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="author" content="Yossra Benzad">
   <link rel="canonical" href="https://citetome.com/audit/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,7 +68,14 @@
     .nav-links a.active{color:var(--ink)}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:8px;font-family:var(--sans);font-size:14px;font-weight:500;border:1px solid var(--ink);background:var(--ink);color:var(--bone);cursor:pointer;transition:all .2s var(--ease);text-decoration:none}
     .btn:hover{background:var(--oxblood);border-color:var(--oxblood);transform:translateY(-1px)}
-    @media (max-width:800px){.nav-links>a:not(.btn){display:none}}
+    @media (max-width:800px){
+      .nav-inner{flex-wrap:wrap;row-gap:6px;padding:12px clamp(16px,3vw,40px)}
+      .nav-links{order:3;width:100%;justify-content:flex-start;gap:14px;font-size:13px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+      .nav-links::-webkit-scrollbar{height:0}
+      .nav-links>a{white-space:nowrap}
+      .nav-links>a.btn{order:-1;padding:8px 14px;font-size:13px}
+    }
+    @media (max-width:460px){.nav-links{font-size:12px;gap:12px}.brand-word{font-size:22px}}
 
     .ph{padding:clamp(56px,8vw,120px) 0 clamp(40px,5vw,72px);position:relative;overflow:hidden}
     .ph::before{content:'';position:absolute;inset:-10%;background:radial-gradient(900px 500px at 12% -10%,rgba(184,145,94,.16),transparent 55%),radial-gradient(700px 400px at 90% 30%,rgba(111,45,29,.07),transparent 60%);pointer-events:none;z-index:0}
@@ -178,10 +193,10 @@
         <span class="brand-word">citetome</span>
       </a>
       <div class="nav-links">
-        <a href="/#features">Features</a>
         <a href="/#how">How it works</a>
+        <a href="/#network">Network</a>
         <a href="/pricing/">Pricing</a>
-        <a href="/audit/" class="active">Audit</a>
+        <a href="https://api.citetome.com/customer" target="_blank" rel="noopener" title="Live customer dashboard">Console</a>
         <a href="/audit/#form" class="btn">Request audit</a>
       </div>
     </div>
@@ -388,10 +403,11 @@
         <div class="foot-col">
           <h5>Live</h5>
           <ul>
-            <li><a href="https://api.citetome.com/customer?tenant=yossra" target="_blank" rel="noopener">Customer dashboard</a></li>
+            <li><a href="/dashboard/">3D network view</a></li>
             <li><a href="https://api.citetome.com/governance" target="_blank" rel="noopener">Governance posture</a></li>
             <li><a href="https://api.citetome.com/kg/sitemap.xml" target="_blank" rel="noopener">Knowledge graph</a></li>
             <li><a href="https://api.citetome.com/llms.txt" target="_blank" rel="noopener">LLMs registry</a></li>
+            <li><a href="https://api.citetome.com/customer" target="_blank" rel="noopener" title="For existing customers">Customer console</a></li>
           </ul>
         </div>
         <div class="foot-col">
@@ -413,7 +429,7 @@
         </div>
       </div>
       <div class="foot-base">
-        <div>© 2026 Citetome · Operated by Yossra Benzad, Copenhagen, Denmark</div>
+        <div>© 2026 Citetome · Operated by Yossra Benzad, Copenhagen, Denmark · Engineered on <a href="https://loomgraph.fly.dev/" target="_blank" rel="noopener" style="text-decoration:underline;">Loomgraph</a> infrastructure</div>
         <div>api.citetome.com · 141 tests · Fly.io lhr</div>
       </div>
     </div>

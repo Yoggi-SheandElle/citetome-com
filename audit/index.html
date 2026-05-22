@@ -219,10 +219,12 @@
     <div class="container">
       <div class="form-stage">
 
-        <form class="audit-form" id="audit-form" action="https://formspree.io/f/xgoqkplq" method="POST" novalidate>
+        <form class="audit-form" id="audit-form" action="https://api.citetome.com/public/audit-request" method="POST" novalidate>
           <span class="eyebrow">01 · Request</span>
           <h2 id="form">Send your domain.</h2>
           <p class="lead">Any production URL works. Submitting sends your details straight to our inbox. We don't write to your site. We don't share data.</p>
+
+          <div id="plan-banner" style="display:none;margin:0 0 22px;padding:12px 16px;border:1px solid rgba(184,145,94,0.42);border-radius:8px;background:rgba(184,145,94,0.13);font-size:13.5px;line-height:1.55;color:#E6DDC8;"></div>
 
           <div class="fld">
             <label for="url">Website URL <span style="color:var(--oxblood)">*</span></label>
@@ -446,6 +448,31 @@
       var fb = document.getElementById('audit-feedback');
       if(!f) return;
 
+      var ENDPOINT = 'https://api.citetome.com/public/audit-request';
+
+      // Plan context from ?plan= (set by the pricing page CTAs).
+      var PLAN_LABELS = { 'audit':'Audit', 'audit-pro':'Audit Pro', 'starter':'Starter', 'standard':'Standard', 'premium':'Premium' };
+      var planSlug = null;
+      try {
+        var p = new URLSearchParams(window.location.search).get('plan');
+        if(p){
+          p = p.trim().toLowerCase();
+          if(PLAN_LABELS[p]){
+            planSlug = p;
+            var banner = document.getElementById('plan-banner');
+            if(banner){
+              banner.textContent = "You're enquiring about the ";
+              var planStrong = document.createElement('strong');
+              planStrong.textContent = PLAN_LABELS[p];
+              planStrong.style.color = '#FAF6EE';
+              banner.appendChild(planStrong);
+              banner.appendChild(document.createTextNode(" plan. Every Citetome engagement begins with this free initial audit - request it below."));
+              banner.style.display = 'block';
+            }
+          }
+        }
+      } catch(_){}
+
       function field(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
 
       function buildMailto(){
@@ -507,29 +534,37 @@
           return;
         }
 
-        var action = f.getAttribute('action') || '';
-        // Form is considered "wired" if it points at a real Formspree form id (lowercase 8-char slug).
-        // Anything else (literal "placeholder", missing action) falls back to mailto.
-        var looksWired = /^https:\/\/formspree\.io\/f\/[a-z0-9]{6,}$/i.test(action);
+        var payload = {
+          url:       url,
+          email:     email,
+          name:      field('name')      || null,
+          company:   field('company')   || null,
+          region:    field('region')    || null,
+          languages: field('languages') || null,
+          notes:     field('notes')     || null,
+          plan:      planSlug
+        };
 
-        if(!looksWired){
-          showMailtoFallback(buildMailto(), 'Sending you via email.');
-          return;
-        }
-
-        fb.textContent = 'Sending your request to Citetome...';
-        var fd = new FormData(f);
-        fetch(action, { method:'POST', body: fd, headers:{ 'Accept':'application/json' } })
+        fb.textContent = 'Running your audit...';
+        fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type':'application/json', 'Accept':'application/json' },
+          body: JSON.stringify(payload)
+        })
           .then(function(r){
-            if(r.ok){
-              fb.textContent = 'Received. You will get an auto-confirmation from hello@citetome.com within a few minutes, and the full report within five working days.';
+            if(r.status === 201){
+              fb.textContent = 'Received. Your audit is running now - we will review the report and email it to you within five working days.';
               f.reset();
+            } else if(r.status === 429){
+              fb.textContent = 'That is a few requests in a short window. Please wait a couple of minutes and try again.';
+            } else if(r.status === 422){
+              fb.textContent = 'Please check the website URL and email address, then try again.';
             } else {
-              showMailtoFallback(buildMailto(), 'Could not reach our form server.');
+              showMailtoFallback(buildMailto(), 'Could not reach our audit server.');
             }
           })
           .catch(function(){
-            showMailtoFallback(buildMailto(), 'Network error reaching our form server.');
+            showMailtoFallback(buildMailto(), 'Network error reaching our audit server.');
           });
       });
     })();

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Request an Audit - Citetome. AEO &amp; GEO legibility report in 5 working days.</title>
-  <meta name="description" content="Request a free initial Citetome audit. Send us your domain. We send back an HTML + PDF report on how your site reads to ChatGPT, Perplexity, Google AI Overviews and Claude, plus a 15-minute walkthrough call.">
+  <meta name="description" content="Request a free initial Citetome audit. Send us your domain. We send back an HTML + PDF report on how your site reads to ChatGPT, Perplexity, Google AI Overviews and Claude, with an optional 15-minute walkthrough.">
   <meta property="og:title" content="Request a Citetome Audit">
   <meta property="og:description" content="Free initial audit. Deterministic. Five working days. No commitment.">
   <meta property="og:type" content="website">
@@ -18,6 +18,8 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="author" content="Yossra Benzad">
   <link rel="canonical" href="https://citetome.com/audit/">
+  <link rel="alternate" hreflang="en" href="https://citetome.com/audit/">
+  <link rel="alternate" hreflang="x-default" href="https://citetome.com/audit/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
@@ -71,6 +73,19 @@
     .nav-links a.active{color:var(--ink)}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:8px;font-family:var(--sans);font-size:14px;font-weight:500;border:1px solid var(--ink);background:var(--ink);color:var(--bone);cursor:pointer;transition:all .2s var(--ease);text-decoration:none}
     .btn:hover{background:var(--oxblood);border-color:var(--oxblood);transform:translateY(-1px)}
+    /* Specificity fix: .nav-links a wins over .btn for color, leaving the
+       inverted button as dark text on dark background. Force the readable
+       palette here and suppress the underline pseudo on the button. */
+    .nav-links a.btn{color:var(--bone)}
+    .nav-links a.btn:hover{color:var(--bone)}
+    .nav-links a.btn::after{display:none}
+
+    /* Gutter decoration: tiny editorial bracket frame in the side margins on
+       ultra-wide viewports (>=1500px). Picks up the logo bracket motif. */
+    .gutter-decor{position:fixed;top:50%;transform:translateY(-50%);width:60px;height:360px;opacity:0;pointer-events:none;z-index:1;transition:opacity .6s var(--ease)}
+    .gutter-decor.left{left:max(20px,calc((100vw - 1200px) / 2 - 90px))}
+    .gutter-decor.right{right:max(20px,calc((100vw - 1200px) / 2 - 90px))}
+    @media (min-width:1500px){.gutter-decor{opacity:.55}}
     @media (max-width:880px){
       .nav-inner{flex-wrap:wrap;row-gap:8px;padding:12px clamp(16px,3vw,40px)}
       .nav-links{order:3;width:100%;justify-content:flex-start;gap:14px;font-size:13px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;flex-wrap:nowrap}
@@ -169,6 +184,24 @@
     .foot-col li{font-size:13.5px}
     .foot-base{padding-top:24px;border-top:1px solid rgba(232,221,200,.1);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--stone)}
 
+    .preview-box{margin-top:10px;padding:12px 14px;border:1px solid rgba(232,221,200,.18);border-radius:8px;background:rgba(232,221,200,.05);font-family:var(--mono);font-size:12px;color:var(--tea);line-height:1.5}
+    .preview-box .preview-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;font-family:var(--sans);font-size:13px;letter-spacing:.02em}
+    .preview-box .preview-head .preview-score{color:var(--gold);font-weight:600}
+    .preview-box .preview-head .preview-domain{color:var(--bone);font-weight:500;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:60%}
+    .preview-box ul{list-style:none;padding:0;margin:0;display:grid;gap:4px}
+    .preview-box li{display:flex;justify-content:space-between;align-items:center;gap:8px}
+    .preview-box li .pmark{font-weight:700;letter-spacing:.05em}
+    .preview-box li.pass .pmark{color:#9DD7A8}
+    .preview-box li.miss .pmark{color:#E6A07E}
+    .preview-box .preview-note{margin-top:10px;color:var(--stone);font-family:var(--sans);font-size:11.5px;line-height:1.5}
+    .preview-box.preview-loading{color:var(--stone)}
+    .preview-box.preview-error{color:#E6A07E;font-family:var(--sans);font-size:13px}
+
+    .float-cta{position:fixed;right:18px;bottom:18px;z-index:90;background:var(--ink);color:var(--bone);border:1px solid var(--ink);border-radius:999px;padding:12px 22px;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 14px 36px -16px rgba(15,14,12,.55);opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .25s var(--ease),transform .25s var(--ease),background .2s var(--ease)}
+    .float-cta.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .float-cta:hover{background:var(--oxblood);border-color:var(--oxblood);color:var(--bone)}
+    @media (max-width:480px){.float-cta{right:12px;bottom:12px;padding:11px 18px;font-size:13px}}
+
     @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
   </style>
 
@@ -209,9 +242,9 @@
 
   <header class="ph">
     <div class="container">
-      <span class="eyebrow">Free initial audit</span>
+      <span class="eyebrow">Free initial audit · EU AI Act ready</span>
       <h1>See how your site <em>reads to AI.</em></h1>
-      <p class="sub">Drop your URL. We run the deterministic AEO + GEO audit, send the report within five working days, and book a 15-minute walkthrough. No commitment. No agency call. No upsell.</p>
+      <p class="sub">Drop your URL. We run the deterministic AEO + GEO audit and send the signed, audit-logged report within five working days. Optional 15-minute walkthrough if you want one. No commitment. No agency call. No upsell.</p>
     </div>
   </header>
 
@@ -229,6 +262,7 @@
           <div class="fld">
             <label for="url">Website URL <span style="color:var(--oxblood)">*</span></label>
             <input id="url" name="url" type="url" placeholder="https://your-domain.com" required pattern="https?://.+">
+            <div id="preview-box" class="preview-box" hidden aria-live="polite"></div>
           </div>
 
           <div class="fld-row">
@@ -270,7 +304,6 @@
             <textarea id="notes" name="notes" placeholder="Pages, locales, regulatory concerns, competitors-"></textarea>
           </div>
 
-          <input type="hidden" name="_subject" value="Citetome - new audit request">
           <input type="hidden" name="source" value="citetome.com/audit/">
 
           <button class="btn" type="submit">Request audit &rarr;</button>
@@ -301,7 +334,7 @@
             </li>
             <li>
               <span class="ck">✓</span>
-              <span><strong>15-minute walkthrough call</strong><small>No agency pitch. We answer questions, you decide whether to continue.</small></span>
+              <span><strong>Optional 15-minute walkthrough</strong><small>Only if you want one. No agency pitch. We answer questions, you decide whether to continue.</small></span>
             </li>
           </ul>
         </div>
@@ -344,7 +377,7 @@
         <div class="tstep"><div class="day">Day 0</div><h4>Request received</h4><p>Your form submission lands in our inbox. We reply from <a href="mailto:hello@citetome.com">hello@citetome.com</a> the same working day to confirm scope and schedule the audit.</p></div>
         <div class="tstep"><div class="day">Day 1-2</div><h4>Deterministic sweep</h4><p>We run the eight-signal audit against your URL on the Citetome engine at <code>api.citetome.com</code>. Output is reproducible: same site, same score.</p></div>
         <div class="tstep"><div class="day">Day 3-4</div><h4>Manual review + report</h4><p>Multilingual entity check, citation behaviour probe, peer comparison if you sent comparables. Report drafted in HTML + PDF, signed by the auditor, with a ranked 10-fix backlog.</p></div>
-        <div class="tstep"><div class="day">Day 5</div><h4>Walkthrough</h4><p>15-minute call, recorded if you want. No agency pitch, no upsell. You decide whether to continue.</p></div>
+        <div class="tstep"><div class="day">Day 5</div><h4>Walkthrough (optional)</h4><p>If you want one, a 15-minute call - recorded on request. No agency pitch, no upsell. Most clients skip and go straight to the report.</p></div>
       </div>
     </div>
   </section>
@@ -442,6 +475,37 @@
     </div>
   </footer>
 
+  <svg class="gutter-decor left" viewBox="0 0 60 360" fill="none" aria-hidden="true">
+    <path d="M12 28 L26 28 M12 28 L12 42" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+    <line x1="12" y1="62" x2="12" y2="298" stroke="#B8915E" stroke-width="0.8" stroke-dasharray="1.5 4" opacity="0.55"/>
+    <circle cx="12" cy="180" r="3.5" fill="#B8915E"/>
+    <path d="M12 318 L12 332 M12 332 L26 332" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+  </svg>
+  <svg class="gutter-decor right" viewBox="0 0 60 360" fill="none" aria-hidden="true">
+    <path d="M48 28 L34 28 M48 28 L48 42" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+    <line x1="48" y1="62" x2="48" y2="298" stroke="#B8915E" stroke-width="0.8" stroke-dasharray="1.5 4" opacity="0.55"/>
+    <circle cx="48" cy="180" r="3.5" fill="#B8915E"/>
+    <path d="M48 318 L48 332 M48 332 L34 332" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+  </svg>
+
+  <a href="#form" class="float-cta" id="float-cta">Jump to form &rarr;</a>
+
+  <script>
+    (function(){
+      var fc = document.getElementById('float-cta');
+      var form = document.getElementById('audit-form');
+      if(fc && form){
+        var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function(entries){
+          entries.forEach(function(en){
+            // Show the sticky CTA whenever the form is NOT on screen.
+            fc.classList.toggle('show', !en.isIntersecting);
+          });
+        }, { threshold: 0.05 }) : null;
+        if(io){ io.observe(form); }
+      }
+    })();
+  </script>
+
   <script>
     (function(){
       var f = document.getElementById('audit-form');
@@ -449,6 +513,7 @@
       if(!f) return;
 
       var ENDPOINT = 'https://api.citetome.com/public/audit-request';
+      var FETCH_TIMEOUT_MS = 45000;
 
       // Plan context from ?plan= (set by the pricing page CTAs).
       var PLAN_LABELS = { 'audit':'Audit', 'audit-pro':'Audit Pro', 'starter':'Starter', 'standard':'Standard', 'premium':'Premium' };
@@ -472,6 +537,126 @@
           }
         }
       } catch(_){}
+
+      // Live preview: fire a fast preflight when the user finishes typing the URL.
+      var PREVIEW_ENDPOINT = 'https://api.citetome.com/public/preview';
+      var previewBox = document.getElementById('preview-box');
+      var urlInput = document.getElementById('url');
+      var previewLastValue = '';
+      var previewInflight = null;
+
+      function previewRender(state){
+        if(!previewBox) return;
+        previewBox.hidden = false;
+        previewBox.className = 'preview-box' + (state.cls ? ' ' + state.cls : '');
+        previewBox.textContent = '';
+        if(state.text){
+          previewBox.textContent = state.text;
+          return;
+        }
+        var head = document.createElement('div');
+        head.className = 'preview-head';
+        var dom = document.createElement('span');
+        dom.className = 'preview-domain';
+        dom.textContent = state.domain;
+        var score = document.createElement('span');
+        score.className = 'preview-score';
+        score.textContent = state.passed + ' / ' + state.total + ' passed';
+        head.appendChild(dom);
+        head.appendChild(score);
+        previewBox.appendChild(head);
+        var ul = document.createElement('ul');
+        state.checks.forEach(function(c){
+          var li = document.createElement('li');
+          li.className = c.pass ? 'pass' : 'miss';
+          var name = document.createElement('span');
+          name.textContent = c.name;
+          var mark = document.createElement('span');
+          mark.className = 'pmark';
+          mark.textContent = c.pass ? 'OK' : 'MISS';
+          li.appendChild(name);
+          li.appendChild(mark);
+          ul.appendChild(li);
+        });
+        previewBox.appendChild(ul);
+        var note = document.createElement('div');
+        note.className = 'preview-note';
+        note.textContent = state.note || 'Surface signals only. Submit the form for the full audit.';
+        previewBox.appendChild(note);
+      }
+
+      function runPreview(){
+        if(!urlInput || !previewBox) return;
+        var raw = urlInput.value.trim();
+        if(raw === previewLastValue) return;
+        if(!/^https?:\/\/.+\..+/.test(raw)){
+          previewBox.hidden = true;
+          previewLastValue = '';
+          return;
+        }
+        previewLastValue = raw;
+        previewRender({ cls: 'preview-loading', text: 'Running surface preview...' });
+        if(previewInflight){ try { previewInflight.abort(); } catch(_){} }
+        var controller = (typeof AbortController === 'function') ? new AbortController() : null;
+        previewInflight = controller;
+        var fetchOpts = {
+          method: 'POST',
+          headers: { 'Content-Type':'application/json', 'Accept':'application/json' },
+          body: JSON.stringify({ url: raw })
+        };
+        if(controller){ fetchOpts.signal = controller.signal; }
+        var timeoutId = setTimeout(function(){ if(controller){ try { controller.abort(); } catch(_){} } }, 12000);
+
+        fetch(PREVIEW_ENDPOINT, fetchOpts)
+          .then(function(r){
+            clearTimeout(timeoutId);
+            if(r.status === 200){
+              return r.json().then(function(data){
+                if(!data.reachable){
+                  previewRender({ cls: 'preview-error', text: 'Could not reach ' + data.domain + ' from our edge. Submit anyway and we will retry.' });
+                  return;
+                }
+                previewRender({
+                  domain: data.domain,
+                  passed: data.passed,
+                  total: data.total,
+                  checks: data.checks,
+                  note: data.note,
+                });
+              });
+            } else if(r.status === 429){
+              previewRender({ cls: 'preview-error', text: 'Slow down a touch - preview rate-limited. The full audit still works fine.' });
+            } else if(r.status === 422){
+              previewRender({ cls: 'preview-error', text: 'That URL did not parse. Please check it and try again.' });
+            } else {
+              previewBox.hidden = true;
+            }
+          })
+          .catch(function(err){
+            clearTimeout(timeoutId);
+            if(err && err.name === 'AbortError'){
+              previewBox.hidden = true;
+              return;
+            }
+            previewBox.hidden = true;
+          });
+      }
+
+      if(urlInput){
+        urlInput.addEventListener('blur', runPreview);
+        urlInput.addEventListener('change', runPreview);
+      }
+
+      // Preserve ?plan= on in-page nav CTAs so users who arrived with a plan
+      // selection do not lose it by clicking the top "Request audit" links.
+      if(planSlug){
+        var navCtas = document.querySelectorAll('a[href="/audit/#form"], a[href="/audit/"]');
+        for(var i = 0; i < navCtas.length; i++){
+          var href = navCtas[i].getAttribute('href');
+          var hash = href.indexOf('#') >= 0 ? href.substring(href.indexOf('#')) : '';
+          navCtas[i].setAttribute('href', '/audit/?plan=' + encodeURIComponent(planSlug) + hash);
+        }
+      }
 
       function field(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
 
@@ -525,8 +710,32 @@
         try { window.location.href = href; } catch(_){}
       }
 
+      var submitBtn = f.querySelector('button[type="submit"]');
+      var submitOriginalText = submitBtn ? submitBtn.textContent : '';
+
+      function setSubmitting(submitting){
+        if(!submitBtn) return;
+        submitBtn.disabled = submitting;
+        submitBtn.style.opacity = submitting ? '0.6' : '';
+        submitBtn.style.cursor = submitting ? 'wait' : '';
+        submitBtn.textContent = submitting ? 'Running...' : submitOriginalText;
+      }
+
+      function trackConversion(eventName, detail){
+        try {
+          if(typeof window.gtag === 'function'){
+            window.gtag('event', eventName, detail || {});
+          }
+          if(typeof window.plausible === 'function'){
+            window.plausible(eventName, { props: detail || {} });
+          }
+        } catch(_){}
+      }
+
       f.addEventListener('submit', function(e){
         e.preventDefault();
+        if(submitBtn && submitBtn.disabled) return;
+
         var url = field('url');
         var email = field('email');
         if(!url || !email){
@@ -545,26 +754,59 @@
           plan:      planSlug
         };
 
+        setSubmitting(true);
         fb.textContent = 'Running your audit...';
-        fetch(ENDPOINT, {
+
+        var controller = null, timeoutId = null;
+        var fetchOpts = {
           method: 'POST',
           headers: { 'Content-Type':'application/json', 'Accept':'application/json' },
           body: JSON.stringify(payload)
-        })
+        };
+        if(typeof AbortController === 'function'){
+          controller = new AbortController();
+          fetchOpts.signal = controller.signal;
+          timeoutId = setTimeout(function(){ try { controller.abort(); } catch(_){} }, FETCH_TIMEOUT_MS);
+        }
+
+        fetch(ENDPOINT, fetchOpts)
           .then(function(r){
+            if(timeoutId) clearTimeout(timeoutId);
             if(r.status === 201){
-              fb.textContent = 'Received. Your audit is running now - we will review the report and email it to you within five working days.';
-              f.reset();
+              return r.json().then(function(data){
+                var ref = (data && data.request_id) ? ' Reference #' + data.request_id + '.' : '';
+                fb.textContent = 'Received.' + ref + ' Your audit is running now - we will review the report and email it to you within five working days.';
+                trackConversion('audit_request_submitted', { plan: planSlug || 'none', request_id: data && data.request_id });
+                f.reset();
+              }).catch(function(){
+                fb.textContent = 'Received. Your audit is running now - we will review the report and email it to you within five working days.';
+                trackConversion('audit_request_submitted', { plan: planSlug || 'none' });
+                f.reset();
+              });
+            } else if(r.status === 409){
+              fb.textContent = 'We already have an audit request for this domain and email in the last few minutes. Check your inbox for the confirmation, or wait a bit before trying again.';
+              trackConversion('audit_request_duplicate', { plan: planSlug || 'none' });
             } else if(r.status === 429){
               fb.textContent = 'That is a few requests in a short window. Please wait a couple of minutes and try again.';
+              trackConversion('audit_request_rate_limited', { plan: planSlug || 'none' });
             } else if(r.status === 422){
               fb.textContent = 'Please check the website URL and email address, then try again.';
+              trackConversion('audit_request_validation_error', { plan: planSlug || 'none' });
             } else {
-              showMailtoFallback(buildMailto(), 'Could not reach our audit server.');
+              if(window.console) console.error('Citetome audit submit: backend returned', r.status);
+              showMailtoFallback(buildMailto(), 'Could not reach our audit server (HTTP ' + r.status + ').');
+              trackConversion('audit_request_server_error', { plan: planSlug || 'none', status: r.status });
             }
           })
-          .catch(function(){
-            showMailtoFallback(buildMailto(), 'Network error reaching our audit server.');
+          .catch(function(err){
+            if(timeoutId) clearTimeout(timeoutId);
+            var aborted = err && err.name === 'AbortError';
+            if(window.console) console.error('Citetome audit submit:', aborted ? 'timeout after ' + FETCH_TIMEOUT_MS + 'ms' : err);
+            showMailtoFallback(buildMailto(), aborted ? 'Our audit server took too long to respond.' : 'Network error reaching our audit server.');
+            trackConversion(aborted ? 'audit_request_timeout' : 'audit_request_network_error', { plan: planSlug || 'none' });
+          })
+          .then(function(){
+            setSubmitting(false);
           });
       });
     })();

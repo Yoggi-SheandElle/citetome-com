@@ -18,6 +18,8 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="author" content="Yossra Benzad">
   <link rel="canonical" href="https://citetome.com/">
+  <link rel="alternate" hreflang="en" href="https://citetome.com/">
+  <link rel="alternate" hreflang="x-default" href="https://citetome.com/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <script type="application/ld+json">
@@ -203,6 +205,21 @@
     }
     .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
     .nav-links a.active { color: var(--ink); }
+    /* Specificity fix: .nav-links a overrides .btn color, leaving the inverted
+       nav button as dark text on a dark background. Force the readable palette
+       here and suppress the underline pseudo on the button. */
+    .nav-links a.btn { color: var(--bone); }
+    .nav-links a.btn:hover { color: var(--bone); }
+    .nav-links a.btn::after { display: none; }
+
+    /* Gutter decoration: tiny editorial bracket frame in the side margins on
+       ultra-wide viewports (>=1500px). Picks up the logo's open/close bracket
+       motif plus the golden orb. Sits behind content with pointer-events off. */
+    .gutter-decor { position: fixed; top: 50%; transform: translateY(-50%); width: 60px; height: 360px; opacity: 0; pointer-events: none; z-index: 1; transition: opacity 0.6s var(--ease); }
+    .gutter-decor.left  { left: max(20px, calc((100vw - 1200px) / 2 - 90px)); }
+    .gutter-decor.right { right: max(20px, calc((100vw - 1200px) / 2 - 90px)); }
+    @media (min-width: 1500px) { .gutter-decor { opacity: 0.55; } }
+    @media (prefers-reduced-motion: reduce) { .gutter-decor { transition: none; } }
 
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
@@ -718,23 +735,23 @@
     <div class="container">
       <div class="hero-grid">
         <div class="reveal">
-          <span class="tag"><span class="dot"></span> AEO + GEO · EU AI Act 2026 · Live in production</span>
+          <span class="tag"><span class="dot"></span> EU AI Act enforcement · August 2026 · We are ready</span>
           <h1>
             AI-search citation,<br/>
-            <em>audited</em> &amp; <em>signed</em>.
+            <em>audited</em> &amp; <em>compliant</em>.
           </h1>
           <p class="hero-sub" style="font-size:19px;font-weight:500;color:var(--ink);max-width:60ch;margin-bottom:16px;">
-            ChatGPT, Perplexity, Google AI Overviews and Claude now answer questions about your brand before a single user reaches your site. We read how the engines see you, propose the structured-data and entity fixes that actually move citations, and ship none of them until you approve.
+            ChatGPT, Perplexity, Google AI Overviews and Claude answer questions about your brand before a single user reaches your site. We read how the engines see you, fix the structured-data and entity signals that move citations, and write every change to a signed, append-only audit log your auditors can read.
           </p>
           <p class="hero-sub">
-            Built for multilingual SMBs across Europe, the UK and Morocco. Eight deterministic audit signals, a signed governance pact between you and us, an append-only audit log of every change. Reversible for 30 days. The brands the engines cite are the ones that earned it.
+            Built for regulated and multilingual SMBs across Europe, the UK and Morocco. Eleven deterministic audit signals. A signed governance pact between you and us. Every proposed change logged, reversible for 30 days, ready for an AI Act Article 50 audit. The brands the engines cite are the ones that earned it - and can prove it.
           </p>
           <div class="hero-actions">
             <a href="/audit/" class="btn btn-lg">Request an audit <span class="arrow">→</span></a>
-            <a href="#network" class="btn btn-ghost btn-lg">See the live network</a>
+            <a href="https://api.citetome.com/governance/pact" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Read the governance pact</a>
           </div>
           <div class="hero-trust">
-            <span><span class="dot"></span>SOC-ready governance</span>
+            <span><span class="dot"></span>EU AI Act ready</span>
             <span>·</span>
             <span>GDPR Article 17</span>
             <span>·</span>
@@ -1238,7 +1255,7 @@
       <div class="audit-form reveal">
         <span class="eyebrow">Free initial audit</span>
         <h2>Show me how my site reads to AI.</h2>
-        <p>Send your URL on the audit page. We run the deterministic AEO + GEO audit, send the report within five working days, and book a 15-minute walkthrough. No commitment, no upsell.</p>
+        <p>Send your URL on the audit page. We run the deterministic AEO + GEO audit and send the report within five working days. Optional 15-minute walkthrough on request. No commitment, no upsell.</p>
         <a href="/audit/" class="btn">Request an audit →</a>
         <div class="audit-meta">KEYBOARD: <kbd>/</kbd> jump here · <kbd>?</kbd> shortcuts · <kbd>g</kbd> top · <kbd>G</kbd> bottom</div>
       </div>
@@ -1352,11 +1369,24 @@
         </div>
       </div>
       <div class="foot-base">
-        <div>© 2026 Citetome · Operated by Yossra Benzad, Copenhagen, Denmark</div>
+        <div>© 2026 Citetome · Operating since 2025 · Copenhagen, Denmark</div>
         <div>api.citetome.com · 141 tests · Fly.io lhr</div>
       </div>
     </div>
   </footer>
+
+  <svg class="gutter-decor left" viewBox="0 0 60 360" fill="none" aria-hidden="true">
+    <path d="M12 28 L26 28 M12 28 L12 42" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+    <line x1="12" y1="62" x2="12" y2="298" stroke="#B8915E" stroke-width="0.8" stroke-dasharray="1.5 4" opacity="0.55"/>
+    <circle cx="12" cy="180" r="3.5" fill="#B8915E"/>
+    <path d="M12 318 L12 332 M12 332 L26 332" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+  </svg>
+  <svg class="gutter-decor right" viewBox="0 0 60 360" fill="none" aria-hidden="true">
+    <path d="M48 28 L34 28 M48 28 L48 42" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+    <line x1="48" y1="62" x2="48" y2="298" stroke="#B8915E" stroke-width="0.8" stroke-dasharray="1.5 4" opacity="0.55"/>
+    <circle cx="48" cy="180" r="3.5" fill="#B8915E"/>
+    <path d="M48 318 L48 332 M48 332 L34 332" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+  </svg>
 
   <a href="/audit/" class="float-cta" id="float-cta">Request an audit</a>
   <div class="tip" id="tip"></div>

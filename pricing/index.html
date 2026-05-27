@@ -18,6 +18,8 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="author" content="Yossra Benzad">
   <link rel="canonical" href="https://citetome.com/pricing/">
+  <link rel="alternate" hreflang="en" href="https://citetome.com/pricing/">
+  <link rel="alternate" hreflang="x-default" href="https://citetome.com/pricing/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
@@ -70,6 +72,19 @@
     .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
     .nav-links a.active{color:var(--ink)}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:8px;font-family:var(--sans);font-size:14px;font-weight:500;border:1px solid var(--ink);background:var(--ink);color:var(--bone);cursor:pointer;transition:all .2s var(--ease);text-decoration:none}
+    /* Specificity fix: .nav-links a wins over .btn for color, leaving the
+       inverted button as dark text on dark background. Force the readable
+       palette here and suppress the underline pseudo on the button. */
+    .nav-links a.btn{color:var(--bone)}
+    .nav-links a.btn:hover{color:var(--bone)}
+    .nav-links a.btn::after{display:none}
+
+    /* Gutter decoration: tiny editorial bracket frame in the side margins on
+       ultra-wide viewports (>=1500px). Picks up the logo bracket motif. */
+    .gutter-decor{position:fixed;top:50%;transform:translateY(-50%);width:60px;height:360px;opacity:0;pointer-events:none;z-index:1;transition:opacity .6s var(--ease)}
+    .gutter-decor.left{left:max(20px,calc((100vw - 1200px) / 2 - 90px))}
+    .gutter-decor.right{right:max(20px,calc((100vw - 1200px) / 2 - 90px))}
+    @media (min-width:1500px){.gutter-decor{opacity:.55}}
     .btn:hover{background:var(--oxblood);border-color:var(--oxblood);transform:translateY(-1px)}
     .btn-ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
     .btn-ghost:hover{border-color:var(--ink);background:transparent;color:var(--ink);transform:translateY(-1px)}
@@ -224,9 +239,9 @@
 
   <div class="trust">
     <div class="trust-inner">
-      <span><span class="dot"></span>EU, UK &amp; MA</span>
+      <span><span class="dot"></span>EU AI Act ready</span>
       <span><span class="dot"></span>Fixed scope</span>
-      <span><span class="dot"></span>Signed governance pact</span>
+      <span><a href="https://api.citetome.com/governance/pact" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px dotted currentColor;"><span class="dot"></span>Read the governance pact</a></span>
       <span><span class="dot"></span>Append-only audit log</span>
     </div>
   </div>
@@ -397,7 +412,7 @@
     <div class="container">
       <h2>Start with an audit.</h2>
       <p>Five working days. One report. Zero commitment to a plan.</p>
-      <a href="/audit/" class="btn">Request audit →</a>
+      <a href="/audit/?plan=audit" class="btn">Request audit →</a>
     </div>
   </section>
 
@@ -458,6 +473,19 @@
       </div>
     </div>
   </footer>
+
+  <svg class="gutter-decor left" viewBox="0 0 60 360" fill="none" aria-hidden="true">
+    <path d="M12 28 L26 28 M12 28 L12 42" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+    <line x1="12" y1="62" x2="12" y2="298" stroke="#B8915E" stroke-width="0.8" stroke-dasharray="1.5 4" opacity="0.55"/>
+    <circle cx="12" cy="180" r="3.5" fill="#B8915E"/>
+    <path d="M12 318 L12 332 M12 332 L26 332" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+  </svg>
+  <svg class="gutter-decor right" viewBox="0 0 60 360" fill="none" aria-hidden="true">
+    <path d="M48 28 L34 28 M48 28 L48 42" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+    <line x1="48" y1="62" x2="48" y2="298" stroke="#B8915E" stroke-width="0.8" stroke-dasharray="1.5 4" opacity="0.55"/>
+    <circle cx="48" cy="180" r="3.5" fill="#B8915E"/>
+    <path d="M48 318 L48 332 M48 332 L34 332" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+  </svg>
 
 </body>
 </html>

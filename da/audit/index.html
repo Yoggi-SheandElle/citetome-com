@@ -148,7 +148,7 @@
     .checklist li strong{color:var(--ink);font-weight:500}
     .checklist li small{display:block;color:var(--ink-mid);margin-top:2px;font-size:13px}
 
-    .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden}
+    .pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden}
     @media (max-width:880px){.pillars{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:520px){.pillars{grid-template-columns:1fr}}
     .pillar{background:var(--bone);padding:28px 24px;transition:background .25s var(--ease)}
@@ -340,6 +340,10 @@
             </li>
             <li>
               <span class="ck">✓</span>
+              <span><strong>Agent-parathedsscore</strong><small>Om en AI-agent kan finde dit site og handle med det: robots.txt-holdning til GPTBot, ClaudeBot og PerplexityBot, llms.txt, JSON-LD med commerce-dybde (priser, lagerstatus, åbningstider), maskinlæsbare feeds og transaktionssignaler. Scoret som sin egen sektion i rapporten.</small></span>
+            </li>
+            <li>
+              <span class="ck">✓</span>
               <span><strong>Menneskegennemgået auditrapport</strong><small>Gennemgået og annoteret af en menneskelig strateg. Klar til dine stakeholders. Side om side med peer-sites, hvis du giver os sammenlignelige.</small></span>
             </li>
             <li>
@@ -361,7 +365,7 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">03 · Dækning</span>
-        <h2>Fire søjler, auditeret og gennemgået.</h2>
+        <h2>Fem søjler, auditeret og gennemgået.</h2>
         <p>HTML- og schema-checkene er versionslåste og reproducerbare - det samme site auditeret to gange giver samme score dér. Performance- og citeringssignaler bevæger sig med det levende web, så en menneskelig strateg gennemgår hvert resultat, før det når dig. Ingen mavefornemmelser, ingen AI-resumé-håndbevægelser.</p>
       </div>
       <div class="pillars">
@@ -385,11 +389,16 @@
           <h3>Citeringsadfærd</h3>
           <p>Hvordan fire store answer engines viser (eller ikke viser) dit brand. Snippets, attribution, friskhedssignaler.</p>
         </div>
+        <div class="pillar">
+          <div class="ix">05</div>
+          <h3>Agent-parathed</h3>
+          <p>Om en AI-agent kan finde, forstå og handle på dit site. Robots-holdning til AI-bots, llms.txt, JSON-LD med commerce-dybde, maskinlæsbare feeds, transaktionssignaler.</p>
+        </div>
       </div>
 
       <div class="timeline">
         <div class="tstep"><div class="day">Dag 0</div><h4>Bestilling modtaget</h4><p>Din formular lander i vores indbakke. Vi svarer fra <a href="mailto:hello@citetome.com">hello@citetome.com</a> samme arbejdsdag for at bekræfte omfanget og planlægge auditet.</p></div>
-        <div class="tstep"><div class="day">Dag 1-2</div><h4>Automatiseret sweep</h4><p>Vi kører de automatiserede check - HTML, schema, PageSpeed, CrUX, AI-citering - mod din URL på Citetome-motoren på <code>api.citetome.com</code>. HTML- og schema-scoringen er reproducerbar: samme site, samme score.</p></div>
+        <div class="tstep"><div class="day">Dag 1-2</div><h4>Automatiseret sweep</h4><p>Vi kører de automatiserede check - HTML, schema, PageSpeed, CrUX, AI-citering, agent-parathed - mod din URL på Citetome-motoren på <code>api.citetome.com</code>. HTML- og schema-scoringen er reproducerbar: samme site, samme score.</p></div>
         <div class="tstep"><div class="day">Dag 3-4</div><h4>Manuel gennemgang + rapport</h4><p>Flersproget entitetscheck, probe af citeringsadfærd og peer-sammenligning, hvis du har sendt sammenlignelige sites. Rapporten skrives, gennemgås og annoteres af en menneskelig strateg, underskrives af auditøren og leveres med en prioriteret backlog på 10 rettelser.</p></div>
         <div class="tstep"><div class="day">Dag 5</div><h4>Gennemgang (valgfri)</h4><p>Hvis du vil have en: et 15-minutters møde - optaget på forespørgsel. Intet bureaupitch, intet mersalg. De fleste kunder springer over og går direkte til rapporten.</p></div>
       </div>
@@ -484,7 +493,7 @@
       </div>
       <div class="foot-base">
         <div>© 2026 Citetome · Drevet af Yossra Benzad, København, Danmark</div>
-        <div>api.citetome.com · 141 tests · Fly.io lhr</div>
+        <div>api.citetome.com · 197 tests · Fly.io lhr</div>
       </div>
     </div>
   </footer>

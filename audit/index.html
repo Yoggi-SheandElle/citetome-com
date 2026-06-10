@@ -148,7 +148,7 @@
     .checklist li strong{color:var(--ink);font-weight:500}
     .checklist li small{display:block;color:var(--ink-mid);margin-top:2px;font-size:13px}
 
-    .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden}
+    .pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden}
     @media (max-width:880px){.pillars{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:520px){.pillars{grid-template-columns:1fr}}
     .pillar{background:var(--bone);padding:28px 24px;transition:background .25s var(--ease)}
@@ -340,6 +340,10 @@
             </li>
             <li>
               <span class="ck">✓</span>
+              <span><strong>Agent-readiness score</strong><small>Whether an AI agent can discover and transact with your site: robots.txt posture toward GPTBot, ClaudeBot and PerplexityBot, llms.txt, JSON-LD commerce depth (prices, availability, opening hours), machine-readable feeds and transaction signals. Scored as its own section in the report.</small></span>
+            </li>
+            <li>
+              <span class="ck">✓</span>
               <span><strong>Human-reviewed audit report</strong><small>Reviewed and annotated by a human strategist. Stakeholder-ready. Side-by-side with peer sites if you give us comparables.</small></span>
             </li>
             <li>
@@ -361,7 +365,7 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">03 · Coverage</span>
-        <h2>Four pillars, audited and reviewed.</h2>
+        <h2>Five pillars, audited and reviewed.</h2>
         <p>The HTML and schema checks are version-pinned and reproducible - the same site audited twice produces the same scoring there. Performance and citation signals move with the live web, so a human strategist reviews every result before it reaches you. No vibes, no AI-summary handwave.</p>
       </div>
       <div class="pillars">
@@ -385,11 +389,16 @@
           <h3>Citation behaviour</h3>
           <p>How four major answer engines surface (or fail to surface) your brand. Snippets, attribution, freshness signals.</p>
         </div>
+        <div class="pillar">
+          <div class="ix">05</div>
+          <h3>Agent readiness</h3>
+          <p>Whether an AI agent could find, understand and act on your site. Robots posture toward AI bots, llms.txt, commerce-depth JSON-LD, machine-readable feeds, transaction signals.</p>
+        </div>
       </div>
 
       <div class="timeline">
         <div class="tstep"><div class="day">Day 0</div><h4>Request received</h4><p>Your form submission lands in our inbox. We reply from <a href="mailto:hello@citetome.com">hello@citetome.com</a> the same working day to confirm scope and schedule the audit.</p></div>
-        <div class="tstep"><div class="day">Day 1-2</div><h4>Automated sweep</h4><p>We run the automated checks - HTML, schema, PageSpeed, CrUX, AI citation - against your URL on the Citetome engine at <code>api.citetome.com</code>. The HTML and schema scoring is reproducible: same site, same score.</p></div>
+        <div class="tstep"><div class="day">Day 1-2</div><h4>Automated sweep</h4><p>We run the automated checks - HTML, schema, PageSpeed, CrUX, AI citation, agent readiness - against your URL on the Citetome engine at <code>api.citetome.com</code>. The HTML and schema scoring is reproducible: same site, same score.</p></div>
         <div class="tstep"><div class="day">Day 3-4</div><h4>Manual review + report</h4><p>Multilingual entity check, citation behaviour probe, peer comparison if you sent comparables. Report drafted, reviewed and annotated by a human strategist, signed by the auditor, with a ranked 10-fix backlog.</p></div>
         <div class="tstep"><div class="day">Day 5</div><h4>Walkthrough (optional)</h4><p>If you want one, a 15-minute call - recorded on request. No agency pitch, no upsell. Most clients skip and go straight to the report.</p></div>
       </div>
@@ -484,7 +493,7 @@
       </div>
       <div class="foot-base">
         <div>© 2026 Citetome · Operated by Yossra Benzad, Copenhagen, Denmark</div>
-        <div>api.citetome.com · 141 tests · Fly.io lhr</div>
+        <div>api.citetome.com · 197 tests · Fly.io lhr</div>
       </div>
     </div>
   </footer>

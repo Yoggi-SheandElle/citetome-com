@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priser - Citetome. AEO- &amp; GEO-audits og forvaltede planer til fast pris.</title>
+  <meta name="description" content="Citetome-priser. Engangsaudits fra EUR 500, forvaltet AEO/GEO-synlighed fra EUR 200/måned. Fast omfang, ingen forbrugsoverraskelser, intet bureau-retainer.">
+  <meta property="og:title" content="Citetome-priser">
+  <meta property="og:description" content="Engangsaudits + månedlige forvaltede planer. Fast omfang.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://citetome.com/da/pricing/">
+  <meta property="og:site_name" content="Citetome">
+  <meta property="og:locale" content="da_DK">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Citetome-priser">
+  <meta name="twitter:description" content="Engangsaudits + månedlige forvaltede planer. Fast omfang.">
+  <meta name="theme-color" content="#FAF6EE">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="author" content="Yossra Benzad">
+  <link rel="canonical" href="https://citetome.com/da/pricing/">
+  <link rel="alternate" hreflang="en" href="https://citetome.com/pricing/">
+  <link rel="alternate" hreflang="da" href="https://citetome.com/da/pricing/">
+  <link rel="alternate" hreflang="fr" href="https://citetome.com/fr/pricing/">
+  <link rel="alternate" hreflang="x-default" href="https://citetome.com/pricing/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bone:#FAF6EE; --paper:#F3EEE2; --tea:#E6DDC8;
+      --ink:#0F0E0C; --ink-soft:#2A2722; --ink-mid:#56524A; --stone:#8A8377;
+      --gold:#B8915E; --gold-dim:#8E6F44; --oxblood:#6F2D1D;
+      --rule:#DED4BD; --rule-soft:#EBE3CE; --green:#2F5D43;
+      --serif:'EB Garamond',Georgia,serif;
+      --sans:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;
+      --mono:'JetBrains Mono','SF Mono',Consolas,monospace;
+      --container:1200px;
+      --gutter:clamp(20px,4vw,56px);
+      --ease:cubic-bezier(0.22,1,0.36,1);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:80px}
+    body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    img,svg{display:block;max-width:100%}
+    a{color:var(--ink);text-decoration:none;transition:color .18s var(--ease)}
+    a:hover{color:var(--oxblood)}
+    .container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+    h1,h2,h3{font-family:var(--sans);font-weight:600;letter-spacing:-.025em;margin:0;color:var(--ink);line-height:1.05}
+    h1{font-size:clamp(40px,5.5vw,68px);letter-spacing:-.035em}
+    h1 em{font-family:var(--serif);font-style:italic;font-weight:500}
+    h2{font-size:clamp(28px,3.2vw,40px);letter-spacing:-.028em}
+    h3{font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3}
+    p{margin:0 0 1.1em;max-width:64ch;color:var(--ink-soft)}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mid)}
+    .eyebrow::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%}
+
+    /* nav */
+    .nav{position:sticky;top:0;background:rgba(250,246,238,.86);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);z-index:50;border-bottom:1px solid var(--rule-soft)}
+    .nav-inner{max-width:var(--container);margin:0 auto;padding:16px clamp(16px,3vw,40px);display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
+    .brand-mark{width:28px;height:28px;flex-shrink:0;transition:transform .5s var(--ease)}
+    .brand:hover .brand-mark{transform:scale(1.06)}
+    .brand-word{font-family:var(--serif);font-style:italic;font-weight:500;font-size:26px;letter-spacing:-.015em;color:var(--ink);line-height:1}
+    .nav-links{display:flex;gap:22px;align-items:center;font-size:14px;font-weight:450;flex-wrap:wrap;justify-content:flex-end}
+    @media (max-width:1080px){.nav-links{gap:16px;font-size:13px}}
+    .nav-cta-mobile{display:none;padding:8px 14px;border-radius:8px;font-family:var(--sans);font-size:13px;font-weight:500;border:1px solid var(--ink);background:var(--ink);color:var(--bone);text-decoration:none}
+    .nav-cta-mobile:hover{background:var(--oxblood);border-color:var(--oxblood);color:var(--bone)}
+    .nav-links a{color:var(--ink-soft);padding:4px 0;position:relative}
+    .nav-links a::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1.5px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+    .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+    .nav-links a.active{color:var(--ink)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:8px;font-family:var(--sans);font-size:14px;font-weight:500;border:1px solid var(--ink);background:var(--ink);color:var(--bone);cursor:pointer;transition:all .2s var(--ease);text-decoration:none}
+    /* Specificity fix: .nav-links a wins over .btn for color, leaving the
+       inverted button as dark text on dark background. Force the readable
+       palette here and suppress the underline pseudo on the button. */
+    .nav-links a.btn{color:var(--bone)}
+    .nav-links a.btn:hover{color:var(--bone)}
+    .nav-links a.btn::after{display:none}
+
+    /* Gutter decoration: tiny editorial bracket frame in the side margins on
+       ultra-wide viewports (>=1500px). Picks up the logo bracket motif. */
+    .gutter-decor{position:fixed;top:50%;transform:translateY(-50%);width:60px;height:360px;opacity:0;pointer-events:none;z-index:1;transition:opacity .6s var(--ease)}
+    .gutter-decor.left{left:max(20px,calc((100vw - 1200px) / 2 - 90px))}
+    .gutter-decor.right{right:max(20px,calc((100vw - 1200px) / 2 - 90px))}
+    @media (min-width:1500px){.gutter-decor{opacity:.55}}
+    .btn:hover{background:var(--oxblood);border-color:var(--oxblood);transform:translateY(-1px)}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+    .btn-ghost:hover{border-color:var(--ink);background:transparent;color:var(--ink);transform:translateY(-1px)}
+    @media (max-width:880px){
+      .nav-inner{flex-wrap:wrap;row-gap:8px;padding:12px clamp(16px,3vw,40px)}
+      .nav-links{order:3;width:100%;justify-content:flex-start;gap:14px;font-size:13px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;flex-wrap:nowrap}
+      .nav-links::-webkit-scrollbar{height:0}
+      .nav-links>a{white-space:nowrap;flex-shrink:0}
+      .nav-links>a.btn{display:none}
+      .nav-cta-mobile{display:inline-flex}
+    }
+    @media (max-width:460px){.nav-links{font-size:12px;gap:12px}.brand-word{font-size:22px}}
+
+    /* hero */
+    .ph{padding:clamp(56px,8vw,120px) 0 clamp(40px,5vw,72px);position:relative;overflow:hidden}
+    .ph::before{content:'';position:absolute;inset:-10%;background:radial-gradient(900px 500px at 12% -10%,rgba(184,145,94,.16),transparent 55%),radial-gradient(700px 400px at 90% 30%,rgba(111,45,29,.07),transparent 60%);pointer-events:none;z-index:0}
+    .ph .container{position:relative;z-index:1;max-width:880px}
+    .ph h1{margin-top:24px}
+    .ph h1 em{color:var(--ink)}
+    .ph .sub{font-size:clamp(17px,1.6vw,19px);line-height:1.55;color:var(--ink-mid);margin:26px 0 0;max-width:54ch}
+
+    /* trust strip */
+    .trust{padding:24px 0;border-top:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);background:var(--paper)}
+    .trust-inner{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mid)}
+    .trust-inner .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--green);margin-right:7px}
+
+    section{padding:clamp(60px,7vw,96px) 0}
+    section.tinted{background:var(--paper)}
+    .section-head{max-width:760px;margin-bottom:clamp(36px,4vw,56px)}
+    .section-head h2{margin-top:14px}
+    .section-head p{margin-top:16px;font-size:17px;color:var(--ink-mid);max-width:56ch}
+
+    /* pricing grid */
+    .price-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:var(--rule)}
+    .price-card{background:var(--bone);padding:26px 22px;display:flex;flex-direction:column;gap:12px;transition:background .25s var(--ease);position:relative}
+    .price-card:hover{background:#FFF}
+    .price-card .name{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink)}
+    .price-card .price{font-size:32px;font-weight:600;color:var(--ink);letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+    .price-card .price small{font-size:13px;color:var(--ink-mid);font-weight:500;margin-left:2px}
+    .price-card .desc{font-size:13px;line-height:1.5;color:var(--ink-mid);margin-bottom:14px;flex:1}
+    .price-card .feat{display:grid;gap:8px;margin:0 0 18px;padding:0;list-style:none;font-size:13px;color:var(--ink-soft)}
+    .price-card .feat li{display:flex;gap:6px;align-items:start}
+    .price-card .feat li::before{content:'✓';color:var(--green);font-weight:600;flex-shrink:0}
+    .price-card .cta{margin-top:auto}
+    .price-card .cta a{display:inline-block;width:100%;padding:10px 14px;border-radius:6px;border:1px solid var(--rule);background:transparent;font-size:13px;font-weight:500;text-align:center;transition:all .2s var(--ease)}
+    .price-card .cta a:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+    .price-card.featured{background:var(--ink);color:var(--bone)}
+    .price-card.featured .name,.price-card.featured .price,.price-card.featured .feat{color:var(--bone)}
+    .price-card.featured .desc{color:var(--tea)}
+    .price-card.featured .feat li::before{color:var(--gold)}
+    .price-card.featured .cta a{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+    .price-card.featured .cta a:hover{background:var(--bone);border-color:var(--bone);color:var(--ink)}
+    .price-card .badge{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:9px;padding:3px 7px;border-radius:4px;background:var(--gold);color:var(--ink);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+    @media (max-width:1080px){.price-grid{grid-template-columns:repeat(2,1fr)}.price-card{padding:28px 24px}}
+    @media (max-width:560px){.price-grid{grid-template-columns:1fr}}
+
+    /* compare table */
+    .compare{border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:var(--bone)}
+    .compare table{width:100%;border-collapse:collapse;font-size:13.5px}
+    .compare th,.compare td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+    .compare thead th{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mid);background:var(--paper);border-bottom:1px solid var(--rule)}
+    .compare tbody th{font-weight:500;color:var(--ink);width:38%}
+    .compare td{color:var(--ink-soft);font-variant-numeric:tabular-nums}
+    .compare td.y{color:var(--green);font-weight:500}
+    .compare td.n{color:var(--stone)}
+    .compare tr:last-child th,.compare tr:last-child td{border-bottom:0}
+    @media (max-width:720px){.compare{overflow-x:auto}.compare table{min-width:560px}}
+
+    /* note callouts */
+    .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden;margin-top:48px}
+    @media (max-width:760px){.notes{grid-template-columns:1fr}}
+    .note{background:var(--bone);padding:28px 24px}
+    .note .ix{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:.06em;margin-bottom:10px}
+    .note h3{font-size:16px;margin-bottom:8px}
+    .note p{font-size:13.5px;line-height:1.55;color:var(--ink-mid);margin:0;max-width:none}
+
+    /* FAQ */
+    .faq{display:grid;gap:0;max-width:820px}
+    .faq details{border-top:1px solid var(--rule);padding:22px 0}
+    .faq details:last-child{border-bottom:1px solid var(--rule)}
+    .faq summary{cursor:pointer;font-family:var(--sans);font-size:17px;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:24px;letter-spacing:-.01em}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:'';width:10px;height:10px;border-right:1.5px solid var(--ink-mid);border-bottom:1.5px solid var(--ink-mid);transform:rotate(45deg);transition:transform .3s var(--ease);flex-shrink:0}
+    .faq details[open] summary::after{transform:rotate(225deg)}
+    .faq p{margin-top:12px;color:var(--ink-mid);max-width:60ch;font-size:15px}
+
+    /* closing */
+    .closing{padding:clamp(72px,8vw,112px) 0;text-align:center;background:var(--ink);color:var(--bone)}
+    .closing h2{color:var(--bone);margin-bottom:18px;max-width:22ch;margin-left:auto;margin-right:auto}
+    .closing p{color:var(--tea);font-size:17px;margin:0 auto 28px;max-width:48ch}
+    .closing .btn{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+    .closing .btn:hover{background:var(--bone);border-color:var(--bone);color:var(--ink)}
+    .closing .btn-ghost{background:transparent;color:var(--bone);border-color:rgba(232,221,200,.3)}
+    .closing .btn-ghost:hover{border-color:var(--bone);background:transparent;color:var(--bone)}
+
+    /* footer */
+    footer{background:var(--ink);color:var(--tea);padding:64px 0 32px;border-top:1px solid rgba(232,221,200,.06)}
+    footer a{color:var(--tea)}
+    footer a:hover{color:var(--gold)}
+    .foot-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:40px;margin-bottom:48px}
+    @media (max-width:720px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
+    .foot-brand .brand-word{color:var(--bone)}
+    .foot-blurb{margin-top:16px;font-size:14px;color:var(--stone);line-height:1.5;max-width:30ch}
+    .foot-col h5{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:0 0 16px}
+    .foot-col ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .foot-col li{font-size:13.5px}
+    .foot-base{padding-top:24px;border-top:1px solid rgba(232,221,200,.1);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--stone)}
+
+    @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+    /* language switcher */
+    .lang-switch{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;padding-left:14px;border-left:1px solid var(--rule)}
+    .lang-switch a{color:var(--ink-mid)}
+    .lang-switch a:hover{color:var(--ink)}
+    .lang-switch a.on{color:var(--ink);box-shadow:0 1.5px 0 var(--gold)}
+    .nav-links .lang-switch a::after{display:none}
+    @media (max-width:880px){.lang-switch{padding-left:10px}}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"PriceSpecification",
+    "name":"Citetome-priser",
+    "url":"https://citetome.com/da/pricing/",
+    "priceCurrency":"EUR"
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/da/" class="brand" aria-label="Citetome forside">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M9 22 L9 9 L24 9" stroke="#0F0E0C" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+          <path d="M55 42 L55 55 L40 55" stroke="#0F0E0C" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+          <circle cx="32" cy="32" r="3" fill="#B8915E"/>
+        </svg>
+        <span class="brand-word">citetome</span>
+      </a>
+      <a href="/da/audit/" class="nav-cta-mobile" aria-label="Bestil audit">Bestil audit</a>
+      <div class="nav-links">
+        <a href="/da/#how">Sådan virker det</a>
+        <a href="/da/#network">Netværk</a>
+        <a href="/da/pricing/" class="active">Priser</a>
+        <a href="https://api.citetome.com/customer" target="_blank" rel="noopener" title="Live kundedashboard">Konsol</a>
+        <span class="lang-switch"><a href="/pricing/" lang="en" hreflang="en">EN</a><a href="/da/pricing/" class="on" aria-current="true">DA</a><a href="/fr/pricing/" lang="fr" hreflang="fr">FR</a></span>
+        <a href="/da/audit/" class="btn">Bestil audit</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="ph">
+    <div class="container">
+      <span class="eyebrow">04 · Priser</span>
+      <h1>Fast pris. <em>Ingen forbrugsoverraskelser.</em></h1>
+      <p class="sub">Engangsaudits fra <strong>EUR 500</strong>, forvaltet AEO- og GEO-synlighed fra <strong>EUR 200/måned</strong>. Priserne er valideret mod EU's SMV-marked af en ekstern rådgiver. Intet bureau-retainer. Ingen snigende pris pr. bruger. Opsig når som helst.</p>
+    </div>
+  </header>
+
+  <div class="trust">
+    <div class="trust-inner">
+      <span><span class="dot"></span>AI-forordningen: transparens by design</span>
+      <span><span class="dot"></span>Fast omfang</span>
+      <span><a href="https://api.citetome.com/governance/pact" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px dotted currentColor;"><span class="dot"></span>Læs governance-pagten</a></span>
+      <span><span class="dot"></span>Append-only revisionslog</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="name">Audit</div>
+          <div class="price">€500</div>
+          <div class="desc">En engangsrapport om læsbarhed.</div>
+          <ul class="feat">
+            <li>11-signals HTML/AEO-audit</li>
+            <li>Auditrapport gennemgået af en strateg</li>
+            <li>Svar inden for 5 arbejdsdage</li>
+            <li>15 minutters gennemgangsmøde</li>
+          </ul>
+          <div class="cta"><a href="/da/audit/?plan=audit">Bestil audit</a></div>
+        </div>
+        <div class="price-card">
+          <div class="name">Audit Pro</div>
+          <div class="price">€1,500</div>
+          <div class="desc">Flersproget + entitetsdybde.</div>
+          <ul class="feat">
+            <li>Alt i Audit</li>
+            <li>Menneskelig flersproget gennemgang (EN/FR/AR/DA)</li>
+            <li>Kort over krydslink-muligheder</li>
+            <li>Entitetskatalog + backlog med 10 rettelser</li>
+          </ul>
+          <div class="cta"><a href="/da/audit/?plan=audit-pro">Bestil Audit Pro</a></div>
+        </div>
+        <div class="price-card">
+          <div class="name">Starter</div>
+          <div class="price">€200<small>/md.</small></div>
+          <div class="desc">Månedlig synlighedsplan.</div>
+          <ul class="feat">
+            <li>Månedligt audit-sweep</li>
+            <li>1 governance-gennemgang</li>
+            <li>Rapport pr. e-mail</li>
+            <li>Medlemskab af registret</li>
+          </ul>
+          <div class="cta"><a href="/da/audit/?plan=starter">Vælg Starter</a></div>
+        </div>
+        <div class="price-card featured">
+          <span class="badge">Mest populær</span>
+          <div class="name">Standard</div>
+          <div class="price">€500<small>/md.</small></div>
+          <div class="desc">Forvaltet plan med hands-on hjælp.</div>
+          <ul class="feat">
+            <li>Alt i Starter</li>
+            <li>Onboarding af entiteter</li>
+            <li>Hands-on CMS-implementering</li>
+            <li>Månedlige krydslink-forslag</li>
+            <li>Prioriteret e-mailsupport</li>
+          </ul>
+          <div class="cta"><a href="/da/audit/?plan=standard">Vælg Standard</a></div>
+        </div>
+        <div class="price-card">
+          <div class="name">Premium</div>
+          <div class="price">€800<small>/md.</small></div>
+          <div class="desc">Hub-koordinering + redigeringer.</div>
+          <ul class="feat">
+            <li>Alt i Standard</li>
+            <li>Menneskegodkendte CMS-redigeringer</li>
+            <li>Flersproget hub-koordinering</li>
+            <li>Kvartalsvist strategimøde</li>
+          </ul>
+          <div class="cta"><a href="/da/audit/?plan=premium">Vælg Premium</a></div>
+        </div>
+      </div>
+
+      <p style="text-align:center;font-size:14px;color:var(--ink-mid);margin:28px auto 4px;max-width:62ch;">Hver plan begynder med det indledende audit. Vælg et niveau, bestil dit audit, og vi afgrænser og fakturerer opgaven på gennemgangsmødet - ingen checkout at klikke på, ingen forpligtelse, før du har rapporten i hånden.</p>
+
+      <!-- CAL_BOOKING: uncomment and set href when Cal.com is live
+      <p style="text-align:center;margin:16px auto 0;">
+        <a href="https://cal.com/CHANGE_ME/intro" target="_blank" rel="noopener" class="btn">Book et 15-minutters introkald &rarr;</a>
+      </p>
+      -->
+
+
+      <div class="notes">
+        <div class="note">
+          <div class="ix">01 · Fakturering</div>
+          <h3>Faktureres i EUR.</h3>
+          <p>SEPA-bankoverførsel eller kort via Stripe. UK-kunder faktureres i EUR med momskorrekt tekst. MA-kunder faktureres i EUR; omregning til MAD er mulig på forespørgsel.</p>
+        </div>
+        <div class="note">
+          <div class="ix">02 · Opsigelse</div>
+          <h3>Måned til måned, ingen binding.</h3>
+          <p>Forvaltede planer løber måned for måned. Opsig inden næste faktureringsperiode. Din governance-log, dit entitetskatalog og din audithistorik kan eksporteres, når du forlader os.</p>
+        </div>
+        <div class="note">
+          <div class="ix">03 · Skræddersyet</div>
+          <h3>Porteføljer med flere sites.</h3>
+          <p>3+ domæner, regulerede brancher eller franchisenetværk: skriv til <a href="mailto:hello@citetome.com" style="color:var(--oxblood)">hello@citetome.com</a> for et porteføljetilbud.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tinted">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Sammenlign</span>
+        <h2>Planerne, side om side.</h2>
+        <p>Alle planer inkluderer den underskrevne governance-pagt og den append-only revisionslog. Forskellene er omfang, kadence og dybde.</p>
+      </div>
+      <div class="compare">
+        <table>
+          <thead>
+            <tr>
+              <th>Funktion</th>
+              <th>Audit</th>
+              <th>Audit Pro</th>
+              <th>Starter</th>
+              <th>Standard</th>
+              <th>Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th>Auditkadence</th><td>Engangs</td><td>Engangs</td><td>Månedlig</td><td>Månedlig</td><td>Månedlig</td></tr>
+            <tr><th>HTML/AEO-signaler (11)</th><td class="y">Ja</td><td class="y">Ja</td><td class="y">Ja</td><td class="y">Ja</td><td class="y">Ja</td></tr>
+            <tr><th>GEO-citeringsrate-audit</th><td class="n">-</td><td class="y">Ja</td><td class="y">Ja</td><td class="y">Ja</td><td class="y">Ja</td></tr>
+            <tr><th>Menneskelig flersproget gennemgang (EN/FR/AR/DA)</th><td class="n">-</td><td class="y">Ja</td><td class="n">-</td><td class="y">Ja</td><td class="y">Ja</td></tr>
+            <tr><th>Kort over krydslink-muligheder</th><td class="n">-</td><td class="y">Ja</td><td class="n">-</td><td class="y">Månedligt</td><td class="y">Månedligt</td></tr>
+            <tr><th>Underskrevet governance-pagt</th><td class="y">Ja</td><td class="y">Ja</td><td class="y">Ja</td><td class="y">Ja</td><td class="y">Ja</td></tr>
+            <tr><th>Append-only revisionslog</th><td class="y">Ja</td><td class="y">Ja</td><td class="y">Ja</td><td class="y">Ja</td><td class="y">Ja</td></tr>
+            <tr><th>Hands-on CMS-implementering af godkendte rettelser</th><td class="n">-</td><td class="n">-</td><td class="n">-</td><td class="y">Ja</td><td class="y">Ja</td></tr>
+            <tr><th>Menneskegodkendte CMS-redigeringer</th><td class="n">-</td><td class="n">-</td><td class="n">-</td><td class="n">-</td><td class="y">Ja</td></tr>
+            <tr><th>Flersproget hub-koordinering</th><td class="n">-</td><td class="n">-</td><td class="n">-</td><td class="n">-</td><td class="y">Ja</td></tr>
+            <tr><th>Supportkanal</th><td>E-mail</td><td>E-mail</td><td>E-mail</td><td>Prioriteret e-mail</td><td>Prioriteret e-mail + møde</td></tr>
+            <tr><th>Strategimøde</th><td>15 min. gennemgang</td><td>30 min. gennemgang</td><td class="n">-</td><td class="n">-</td><td>Kvartalsvist</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Fakturering &amp; omfang.</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Hvordan adskiller Citetome sig fra et SEO-bureau?</summary>
+          <p>Bureauer fakturerer timer. Vi fakturerer resultater mod en fast leveranceliste. Hver plan har en underskrevet governance-pagt - dit omfang er kontrakten, ikke en vag månedlig retainer.</p>
+        </details>
+        <details>
+          <summary>Dækker I både AEO og GEO?</summary>
+          <p>Ja. AEO (Answer Engine Optimization) dækker HTML- og struktureret data-læsbarhed for ChatGPT, Perplexity, Google AI Overviews og Claude. GEO (Generative Engine Optimization) sporer den faktiske citeringsadfærd og entitetsattribution. Audit Pro og alle forvaltede planer inkluderer begge.</p>
+        </details>
+        <details>
+          <summary>Hvad hvis mit site er på fransk, arabisk eller dansk?</summary>
+          <p>Citetome er bygget op omkring kunder i Europa, Storbritannien og Marokko. Flersproget entitetskohærens (hreflang-reciprocitet, sprogvariant-entitets-ID'er) er en del af Audit Pro og fra Standard og opefter. Gennemgangen udføres af en menneskelig strateg, der læser EN, FR, AR og DA - ikke maskinoversættelse. Andre sprog på forespørgsel.</p>
+        </details>
+        <details>
+          <summary>Auto-publicerer I ændringer?</summary>
+          <p>Nej. Arkitektonisk regel. Forslag lander i en godkendelseskø. Et menneske godkender. Din egen infrastruktur henter godkendte ændringer. Vi skriver aldrig til dit CMS uden eksplicit godkendelse.</p>
+        </details>
+        <details>
+          <summary>Hvad sker der med mine data, hvis jeg stopper?</summary>
+          <p>Din governance-log, dit entitetskatalog og din audithistorik kan eksporteres som JSON, når du forlader os. GDPR artikel 17-sletning understøttes på forlangende. Vi beholder kun hashede aktør-ID'er af hensyn til compliance-revisionssporet.</p>
+        </details>
+        <details>
+          <summary>Laver I skræddersyede aftaler?</summary>
+          <p>For 3+ domæner, regulerede brancher (jura, finans, healthtech) eller franchisenetværk: skriv til <a href="mailto:hello@citetome.com">hello@citetome.com</a>. Vi giver tilbud pr. portefølje med et fast omfangsark, ikke pr. time.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="container">
+      <h2>Start med et audit.</h2>
+      <p>Fem arbejdsdage. Én rapport. Nul forpligtelse til en plan.</p>
+      <a href="/da/audit/?plan=audit" class="btn">Bestil audit →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a href="/da/" class="brand" aria-label="Citetome forside">
+            <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <path d="M9 22 L9 9 L24 9" stroke="#E6DDC8" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+              <path d="M55 42 L55 55 L40 55" stroke="#E6DDC8" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+              <circle cx="32" cy="32" r="3" fill="#B8915E"/>
+            </svg>
+            <span class="brand-word">citetome</span>
+          </a>
+          <p class="foot-blurb">AEO- &amp; GEO-kontrolplanet for flersprogede SMV'er. Styret, revisionslogget, multi-region.</p>
+        </div>
+        <div class="foot-col">
+          <h5>Produkt</h5>
+          <ul>
+            <li><a href="/da/#features">Features</a></li>
+            <li><a href="/da/#how">Sådan virker det</a></li>
+            <li><a href="/da/pricing/">Priser</a></li>
+            <li><a href="/da/audit/">Audit</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Live</h5>
+          <ul>
+            <li><a href="/dashboard/">3D-netværksvisning</a></li>
+            <li><a href="https://api.citetome.com/governance" target="_blank" rel="noopener">Governance-status</a></li>
+            <li><a href="https://api.citetome.com/kg/sitemap.xml" target="_blank" rel="noopener">Vidensgraf</a></li>
+            <li><a href="https://api.citetome.com/llms.txt" target="_blank" rel="noopener">LLMs-register</a></li>
+            <li><a href="https://api.citetome.com/customer" target="_blank" rel="noopener" title="For eksisterende kunder">Kundekonsol</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Kontakt</h5>
+          <ul>
+            <li><a href="mailto:hello@citetome.com">hello@citetome.com</a></li>
+            <li>København, DK</li>
+            <li>DK · UK · MA</li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Jura</h5>
+          <ul>
+            <li><a href="/legal/#imprint">Kolofon</a></li>
+            <li><a href="/legal/#privacy">Privatlivspolitik</a></li>
+            <li><a href="/legal/#terms">Vilkår</a></li>
+            <li><a href="/legal/#pact">Governance-pagt</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-base">
+        <div>© 2026 Citetome · Drevet af Yossra Benzad, København, Danmark</div>
+        <div>api.citetome.com · 141 tests · Fly.io lhr</div>
+      </div>
+    </div>
+  </footer>
+
+  <svg class="gutter-decor left" viewBox="0 0 60 360" fill="none" aria-hidden="true">
+    <path d="M12 28 L26 28 M12 28 L12 42" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+    <line x1="12" y1="62" x2="12" y2="298" stroke="#B8915E" stroke-width="0.8" stroke-dasharray="1.5 4" opacity="0.55"/>
+    <circle cx="12" cy="180" r="3.5" fill="#B8915E"/>
+    <path d="M12 318 L12 332 M12 332 L26 332" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+  </svg>
+  <svg class="gutter-decor right" viewBox="0 0 60 360" fill="none" aria-hidden="true">
+    <path d="M48 28 L34 28 M48 28 L48 42" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+    <line x1="48" y1="62" x2="48" y2="298" stroke="#B8915E" stroke-width="0.8" stroke-dasharray="1.5 4" opacity="0.55"/>
+    <circle cx="48" cy="180" r="3.5" fill="#B8915E"/>
+    <path d="M48 318 L48 332 M48 332 L34 332" stroke="#B8915E" stroke-width="1.5" stroke-linecap="square"/>
+  </svg>
+
+</body>
+</html>

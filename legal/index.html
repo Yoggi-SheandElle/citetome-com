@@ -117,7 +117,7 @@
     <h3>2.1 What we collect</h3>
     <ul>
       <li><strong>Contact form / email:</strong> name, email address, message content. Lawful basis: GDPR Art. 6(1)(b), pre-contractual measures at your request.</li>
-      <li><strong>Audit requests:</strong> domain name, contact email, optional company name. Lawful basis: GDPR Art. 6(1)(b).</li>
+      <li><strong>Audit requests:</strong> website URL, contact email, and optionally your name, company, primary market, site languages and free-text notes. Lawful basis: GDPR Art. 6(1)(b), pre-contractual measures at your request.</li>
       <li><strong>Dashboard authentication:</strong> API key (stored in browser session memory only, never transmitted to third parties).</li>
       <li><strong>Server logs:</strong> IP address, user-agent, timestamps, URL paths. Retained 30 days for security and abuse prevention. Lawful basis: GDPR Art. 6(1)(f), legitimate interest.</li>
     </ul>
@@ -129,22 +129,25 @@
       <li>No data is sold or shared with marketing partners.</li>
     </ul>
 
-    <h3>2.3 Retention</h3>
-    <p>Contact emails: retained for the duration of the working relationship plus the statutory accounting period (5 years under Danish Bogf&oslash;ringsloven). Server logs: 30 days. Audit outputs and append-only audit-log entries are retained for the duration of the customer contract and 12 months thereafter, then anonymised. Article 17 erasure requests are honoured within 30 days unless overridden by a legal obligation.</p>
+    <h3>2.3 How we handle email and internal alerts</h3>
+    <p>Outbound email from Citetome is sent through Resend from hello@citetome.com. Inbound email addressed to any @citetome.com address is received by Resend (on Amazon SES infrastructure in the EU, Ireland region) and automatically forwarded to the operator's business mailbox, which is hosted on Google (Gmail). The original sender address is preserved so that replies reach you directly. Correspondence is read and answered only by the operator.</p>
+    <p>When you submit an audit request, an internal notification containing your name, email address, domain and any notes you provided is posted to our private operations channel on Slack so we can respond quickly. Slack and Google act as sub-processors under the safeguards listed in section 7.1. We do not use your contact details for advertising and we do not add you to any mailing list.</p>
 
-    <h3>2.4 Your rights (GDPR Art. 15-22)</h3>
+    <h3>2.4 Retention</h3>
+    <p>Contact and audit-request emails: retained for the duration of the working relationship plus the statutory accounting period (5 years under Danish Bogføringsloven) where they form part of accounting records; otherwise deleted when no longer needed. Raw crawl data from one-off audits is deleted within 30 days of report delivery. Audit outputs and append-only audit-log entries are retained for the duration of the customer contract and up to 12 months thereafter. Forwarded email copies in the operator mailbox follow the same retention as contact emails. Database snapshots used for disaster recovery are rotated on a short cycle; data erased on request disappears from snapshots as they rotate out. Article 17 erasure requests are honoured within 30 days unless overridden by a legal obligation.</p>
+
+    <h3>2.5 Your rights (GDPR Art. 15-22)</h3>
     <p>You have the right to access, rectify, erase, restrict, port, and object to processing of your personal data. To exercise these rights, email <a href="mailto:hello@citetome.com">hello@citetome.com</a>. We respond within 30 days as required by Art. 12(3).</p>
 
-    <h3>2.5 International transfers</h3>
+    <h3>2.6 International transfers</h3>
     <p>Customer-facing data is held within the EU/EEA (Fly.io London region; data residency confirmed by provider). The marketing site is delivered via GitHub Pages, which may route traffic through US edge nodes; only publicly accessible HTML is served from these nodes, no personal data is processed there. Where any onward transfer to a non-EEA country occurs, it is covered by the European Commission's Standard Contractual Clauses (2021/914).</p>
 
     <h2 id="cookies">03 . Cookies &amp; tracking</h2>
-    <p>This site uses no analytics, no advertising, and no third-party tracking cookies. The only client-side storage we use is:</p>
+    <p>This site uses no cookies, no analytics, no advertising and no third-party tracking. The only client-side storage we use is:</p>
     <ul>
-      <li><code>sessionStorage</code> for the dashboard authentication key (your API key), cleared automatically when you close the tab.</li>
-      <li><code>localStorage</code> for remembering whether you have dismissed the cookie notice (strictly necessary under the ePrivacy Directive, no consent required).</li>
+      <li><code>sessionStorage</code> on the customer dashboard, holding your API key for the duration of the tab session (strictly necessary for authentication; cleared when you close the tab).</li>
     </ul>
-    <p>No consent banner is required for strictly necessary storage. If we add analytics in future, an explicit opt-in banner will be deployed before deployment, in accordance with the Danish Cookiebekendtg&oslash;relsen and EDPB guidelines 03/2022.</p>
+    <p>The marketing site loads web fonts from Google Fonts and the dashboard loads visualisation libraries from the jsDelivr CDN; these requests transmit your IP address to the respective provider but set no cookies and no identifiers. No consent banner is required for strictly necessary storage. If we ever add analytics, an explicit opt-in banner will be deployed first, in accordance with the Danish Cookiebekendtgørelsen and EDPB guidelines 03/2022.</p>
 
     <h2 id="terms">04 . Terms of service</h2>
     <p>By using citetome.com or the api.citetome.com service, you agree to the following terms. These terms are governed by Danish law. Disputes are resolved by the courts of Copenhagen, Denmark, with the consumer's right of forum under Brussels Ia Regulation Art. 18 preserved where applicable.</p>
@@ -185,12 +188,20 @@
     <p>Where Citetome processes personal data on behalf of a customer (acting as data processor under GDPR Art. 28), a separate Data Processing Addendum (DPA) is signed. The DPA mirrors the European Commission's Standard Contractual Clauses and covers: processing instructions, sub-processors, security measures, breach notification within 72 hours, audit rights, and post-termination return or deletion of data. Customers can request the DPA template at <a href="mailto:hello@citetome.com">hello@citetome.com</a>.</p>
 
     <h3>7.1 Sub-processors</h3>
+    <p>We use the following providers to run the service. Providers outside the EU/EEA are engaged under the European Commission's Standard Contractual Clauses (2021/914) and, where certified, the EU-US Data Privacy Framework. Transfers to the United Kingdom are covered by the European Commission's UK adequacy decision (renewed 19 December 2025).</p>
     <table class="table">
-      <tr><th>Sub-processor</th><th>Purpose</th><th>Location</th></tr>
-      <tr><td>Fly.io Inc.</td><td>Application hosting (api.citetome.com)</td><td>London, UK (lhr region)</td></tr>
-      <tr><td>GitHub Inc.</td><td>Marketing site hosting (citetome.com)</td><td>United States, with EU edge delivery</td></tr>
-      <tr><td>UptimeRobot</td><td>Uptime monitoring</td><td>Sweden / Germany edge</td></tr>
+      <tr><th>Sub-processor</th><th>Purpose</th><th>Location / transfer basis</th></tr>
+      <tr><td>Fly.io Inc.</td><td>Application and database hosting (api.citetome.com)</td><td>London, UK (lhr region); UK adequacy decision</td></tr>
+      <tr><td>Resend Inc.</td><td>Transactional email: sending from @citetome.com and receiving all inbound email to @citetome.com</td><td>EU region (Ireland); US entity under SCCs</td></tr>
+      <tr><td>Amazon Web Services EMEA SARL (via Resend)</td><td>Underlying email infrastructure (Amazon SES)</td><td>eu-west-1, Ireland (EU)</td></tr>
+      <tr><td>Google LLC (Gmail)</td><td>Operator mailbox: inbound business correspondence is forwarded to and processed in the operator's Google mailbox</td><td>EU/US; EU-US Data Privacy Framework</td></tr>
+      <tr><td>Slack Technologies LLC</td><td>Internal operational alerts (new audit requests, including contact name, email and domain)</td><td>US; EU-US Data Privacy Framework / SCCs</td></tr>
+      <tr><td>GitHub Inc.</td><td>Marketing site hosting (citetome.com)</td><td>United States, with global edge delivery; Data Privacy Framework / SCCs</td></tr>
+      <tr><td>Namecheap Inc.</td><td>Domain registration and DNS for citetome.com</td><td>United States; SCCs</td></tr>
+      <tr><td>UptimeRobot Service Provider Ltd.</td><td>Uptime monitoring of public endpoints</td><td>Malta (EU)</td></tr>
+      <tr><td>Google LLC (Fonts CDN)</td><td>Web font delivery on the marketing site (visitor IP is transmitted on page load)</td><td>US/global edge; Data Privacy Framework</td></tr>
     </table>
+    <p class="small">This list is updated when a provider is added or replaced. Material changes are notified to managed-plan customers before the new provider processes their data.</p>
 
     <h2 id="contact">08 . Contact &amp; complaints</h2>
     <p>For privacy, contract, or technical enquiries, email <a href="mailto:hello@citetome.com">hello@citetome.com</a>. We respond within 5 working days for general enquiries and within 30 days for GDPR rights requests.</p>

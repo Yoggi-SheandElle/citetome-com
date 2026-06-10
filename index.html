@@ -19,6 +19,8 @@
   <meta name="author" content="Yossra Benzad">
   <link rel="canonical" href="https://citetome.com/">
   <link rel="alternate" hreflang="en" href="https://citetome.com/">
+  <link rel="alternate" hreflang="da" href="https://citetome.com/da/">
+  <link rel="alternate" hreflang="fr" href="https://citetome.com/fr/">
   <link rel="alternate" hreflang="x-default" href="https://citetome.com/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
@@ -642,6 +644,13 @@
       .flow-diagram { padding:18px 8px !important; }
       .net-grid { grid-template-columns:1fr !important; }
     }
+    /* language switcher */
+    .lang-switch { display:inline-flex; align-items:center; gap:10px; font-family:var(--mono); font-size:11px; letter-spacing:0.08em; padding-left:14px; border-left:1px solid var(--rule); }
+    .lang-switch a { color:var(--ink-mid); }
+    .lang-switch a:hover { color:var(--ink); }
+    .lang-switch a.on { color:var(--ink); box-shadow:0 1.5px 0 var(--gold); }
+    .nav-links .lang-switch a::after { display:none; }
+    @media (max-width:880px) { .lang-switch { padding-left:10px; } }
   </style>
 </head>
 <body>
@@ -667,6 +676,7 @@
         <a href="#pricing" data-section="pricing">Pricing</a>
         <a href="#faq" data-section="faq">FAQ</a>
         <a href="https://api.citetome.com/customer" target="_blank" rel="noopener" title="Live customer dashboard">Console</a>
+        <span class="lang-switch"><a href="/" class="on" aria-current="true">EN</a><a href="/da/" lang="da" hreflang="da">DA</a><a href="/fr/" lang="fr" hreflang="fr">FR</a></span>
         <a href="/audit/" class="btn">Request audit</a>
       </div>
     </div>
@@ -735,23 +745,23 @@
     <div class="container">
       <div class="hero-grid">
         <div class="reveal">
-          <span class="tag"><span class="dot"></span> EU AI Act enforcement · August 2026 · We are ready</span>
+          <span class="tag"><span class="dot"></span> EU AI Act enforcement · August 2026 · Transparency built in</span>
           <h1>
             AI-search citation,<br/>
-            <em>audited</em> &amp; <em>compliant</em>.
+            <em>audited</em> &amp; <em>governed</em>.
           </h1>
           <p class="hero-sub" style="font-size:19px;font-weight:500;color:var(--ink);max-width:60ch;margin-bottom:16px;">
             ChatGPT, Perplexity, Google AI Overviews and Claude answer questions about your brand before a single user reaches your site. We read how the engines see you, fix the structured-data and entity signals that move citations, and write every change to a signed, append-only audit log your auditors can read.
           </p>
           <p class="hero-sub">
-            Built for regulated and multilingual SMBs across Europe, the UK and Morocco. Eleven deterministic audit signals. A signed governance pact between you and us. Every proposed change logged, reversible for 30 days, ready for an AI Act Article 50 audit. The brands the engines cite are the ones that earned it - and can prove it.
+            Built for regulated and multilingual SMBs across Europe, the UK and Morocco. Five automated audit checks, every result reviewed by a human strategist. A signed governance pact between you and us. Every proposed change logged, reversible for 30 days, built with AI Act Article 50 transparency obligations in mind. The brands the engines cite are the ones that earned it - and can prove it.
           </p>
           <div class="hero-actions">
             <a href="/audit/" class="btn btn-lg">Request an audit <span class="arrow">→</span></a>
             <a href="https://api.citetome.com/governance/pact" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Read the governance pact</a>
           </div>
           <div class="hero-trust">
-            <span><span class="dot"></span>EU AI Act ready</span>
+            <span><span class="dot"></span>AI Act transparency by design</span>
             <span>·</span>
             <span>GDPR Article 17</span>
             <span>·</span>
@@ -779,7 +789,7 @@
               </div>
               <div class="cell">
                 <span class="k">Entities</span>
-                <span class="v" id="pc-entities">69</span>
+                <span class="v" id="pc-entities">-</span>
               </div>
             </div>
             <div class="pc-rows">
@@ -852,15 +862,15 @@
       <div class="section-head reveal">
         <span class="eyebrow">01 · Features</span>
         <h2>The control plane for AI-search visibility.</h2>
-        <p>Six capabilities, one product. Each is deterministic, auditable, and rolls back cleanly. No magic, no auto-publish, no surprises.</p>
+        <p>Six capabilities, one product. Each is auditable, logged, and rolls back cleanly. No magic, no auto-publish, no surprises.</p>
       </div>
       <div class="features">
         <div class="feature reveal">
           <div class="icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           </div>
-          <h3>Eight deterministic audits</h3>
-          <p>HTML/AEO legibility, Schema.org JSON-LD against 969 canonical types, hreflang reciprocity, PageSpeed, CrUX, Search Console, GEO citation rate (ChatGPT, Perplexity, Claude, Gemini), Wayback archival. Fail-closed on missing credentials.</p>
+          <h3>Five automated audit checks</h3>
+          <p>HTML/AEO legibility, Schema.org JSON-LD against 969 canonical types, PageSpeed, CrUX, and AI citation rate (ChatGPT, Perplexity, Claude, Gemini) run on every sweep. Search Console, hreflang depth and historical analysis are part of the human review on paid tiers. Fail-closed on missing credentials.</p>
         </div>
         <div class="feature reveal d1">
           <div class="icon">
@@ -874,21 +884,21 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg>
           </div>
           <h3>Knowledge graph</h3>
-          <p>69 canonical entities. Schema.org JSON-LD per entity URL. Wikidata sameAs anchors. Cross-link engine proposes entity-justified edges between member sites.</p>
+          <p>A growing knowledge graph of canonical entities. Schema.org JSON-LD per entity URL. Wikidata sameAs anchors. Cross-link engine proposes entity-justified edges between member sites.</p>
         </div>
         <div class="feature reveal">
           <div class="icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9-9-4-9-9z"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>
           </div>
           <h3>Multilingual entity consistency</h3>
-          <p>Audit hreflang reciprocity and entity coherence across every language variant - DK, EN, FR, AR. Most auditors don't touch this. We treat it as foundational.</p>
+          <p>Hreflang reciprocity and entity coherence reviewed in EN, FR, AR and DA - by a human strategist who reads all four, not machine translation. Most auditors don't touch this. We treat it as foundational.</p>
         </div>
         <div class="feature reveal d1">
           <div class="icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>GDPR Article 17 erasure</h3>
-          <p>A single endpoint tombstones a site's subject data while preserving the hashed event trail. EU AI Act-aligned by design, August 2026 ready.</p>
+          <p>A single endpoint tombstones a site's subject data while preserving the hashed event trail. Built with EU AI Act transparency obligations in mind - versioned governance, sha256-gated policies, append-only decision log.</p>
         </div>
         <div class="feature reveal d2">
           <div class="icon">
@@ -937,7 +947,7 @@
           <g filter="url(#cardShadow)">
             <rect x="240" y="60" width="180" height="100" rx="10" fill="#F3EEE2" stroke="#DED4BD" stroke-width="1"/>
             <text x="330" y="92" text-anchor="middle" font-size="11" fill="#56524A" letter-spacing="1">02 . AUDIT</text>
-            <text x="330" y="118" text-anchor="middle" font-size="15" font-weight="600" fill="#0F0E0C" font-family="Inter,sans-serif">8 deterministic</text>
+            <text x="330" y="118" text-anchor="middle" font-size="15" font-weight="600" fill="#0F0E0C" font-family="Inter,sans-serif">5 automated checks</text>
             <text x="330" y="138" text-anchor="middle" font-size="11" fill="#56524A">HTML . schema . entity</text>
           </g>
 
@@ -998,8 +1008,8 @@
         <div class="step reveal d2">
           <div class="num">03</div>
           <div>
-            <h3>Audit, deterministically</h3>
-            <p>Eight checks, repeatable. Scores feed a trend, budgets, and alerts. Fail-closed when credentials are missing. No silent zeros.</p>
+            <h3>Audit, then review</h3>
+            <p>Five automated checks per sweep, reviewed by a human before anything ships. Scores feed a trend, budgets, and alerts. Fail-closed when credentials are missing. No silent zeros.</p>
             <code>POST /audits/run · /audits/html · /audits/schema</code>
           </div>
         </div>
@@ -1044,11 +1054,11 @@
       </div>
       <div class="numbers">
         <div class="stat reveal">
-          <div class="big" data-target="8">0</div>
-          <div class="label">Audit types</div>
+          <div class="big" data-target="5">0</div>
+          <div class="label">Automated checks</div>
         </div>
         <div class="stat reveal d1">
-          <div class="big" data-target="69" id="stat-entities">0</div>
+          <div class="big" id="stat-entities">-</div>
           <div class="label">Canonical entities</div>
         </div>
         <div class="stat reveal d2">
@@ -1189,7 +1199,7 @@
           <div class="desc">A one-shot legibility report.</div>
           <ul class="feat">
             <li>11-signal HTML/AEO audit</li>
-            <li>Branded PDF report</li>
+            <li>Strategist-reviewed audit report</li>
             <li>5 working-day turnaround</li>
             <li>15-min walkthrough call</li>
           </ul>
@@ -1201,7 +1211,7 @@
           <div class="desc">Multilingual + entity depth.</div>
           <ul class="feat">
             <li>Everything in Audit</li>
-            <li>Multilingual entity review</li>
+            <li>Human multilingual review (EN/FR/AR/DA)</li>
             <li>Cross-link opportunity map</li>
             <li>Entity catalogue + 10-fix backlog</li>
           </ul>
@@ -1227,9 +1237,9 @@
           <ul class="feat">
             <li>Everything in Starter</li>
             <li>Entity onboarding</li>
-            <li>WP plugin install</li>
+            <li>Hands-on CMS implementation</li>
             <li>Monthly cross-link proposals</li>
-            <li>Slack support</li>
+            <li>Priority email support</li>
           </ul>
           <div class="cta"><a href="/audit/?plan=standard">Start Standard</a></div>
         </div>
@@ -1255,7 +1265,7 @@
       <div class="audit-form reveal">
         <span class="eyebrow">Free initial audit</span>
         <h2>Show me how my site reads to AI.</h2>
-        <p>Send your URL on the audit page. We run the deterministic AEO + GEO audit and send the report within five working days. Optional 15-minute walkthrough on request. No commitment, no upsell.</p>
+        <p>Send your URL on the audit page. We run the automated AEO + GEO checks, review the findings by hand, and send the report within five working days. Optional 15-minute walkthrough on request. No commitment, no upsell.</p>
         <a href="/audit/" class="btn">Request an audit →</a>
         <div class="audit-meta">KEYBOARD: <kbd>/</kbd> jump here · <kbd>?</kbd> shortcuts · <kbd>g</kbd> top · <kbd>G</kbd> bottom</div>
       </div>
@@ -1505,7 +1515,7 @@
             const count = list.length;
             const statEnt = document.getElementById('stat-entities');
             const pcEnt = document.getElementById('pc-entities');
-            if (statEnt) statEnt.dataset.target = String(count);
+            if (statEnt) statEnt.textContent = String(count);
             if (pcEnt) pcEnt.textContent = String(count);
           }
         }

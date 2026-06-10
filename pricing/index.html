@@ -19,6 +19,8 @@
   <meta name="author" content="Yossra Benzad">
   <link rel="canonical" href="https://citetome.com/pricing/">
   <link rel="alternate" hreflang="en" href="https://citetome.com/pricing/">
+  <link rel="alternate" hreflang="da" href="https://citetome.com/da/pricing/">
+  <link rel="alternate" hreflang="fr" href="https://citetome.com/fr/pricing/">
   <link rel="alternate" hreflang="x-default" href="https://citetome.com/pricing/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -194,6 +196,13 @@
     .foot-base{padding-top:24px;border-top:1px solid rgba(232,221,200,.1);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--stone)}
 
     @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+    /* language switcher */
+    .lang-switch{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;padding-left:14px;border-left:1px solid var(--rule)}
+    .lang-switch a{color:var(--ink-mid)}
+    .lang-switch a:hover{color:var(--ink)}
+    .lang-switch a.on{color:var(--ink);box-shadow:0 1.5px 0 var(--gold)}
+    .nav-links .lang-switch a::after{display:none}
+    @media (max-width:880px){.lang-switch{padding-left:10px}}
   </style>
 
   <script type="application/ld+json">
@@ -224,6 +233,7 @@
         <a href="/#network">Network</a>
         <a href="/pricing/" class="active">Pricing</a>
         <a href="https://api.citetome.com/customer" target="_blank" rel="noopener" title="Live customer dashboard">Console</a>
+        <span class="lang-switch"><a href="/pricing/" class="on" aria-current="true">EN</a><a href="/da/pricing/" lang="da" hreflang="da">DA</a><a href="/fr/pricing/" lang="fr" hreflang="fr">FR</a></span>
         <a href="/audit/" class="btn">Request audit</a>
       </div>
     </div>
@@ -239,7 +249,7 @@
 
   <div class="trust">
     <div class="trust-inner">
-      <span><span class="dot"></span>EU AI Act ready</span>
+      <span><span class="dot"></span>AI Act transparency by design</span>
       <span><span class="dot"></span>Fixed scope</span>
       <span><a href="https://api.citetome.com/governance/pact" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px dotted currentColor;"><span class="dot"></span>Read the governance pact</a></span>
       <span><span class="dot"></span>Append-only audit log</span>
@@ -255,7 +265,7 @@
           <div class="desc">A one-shot legibility report.</div>
           <ul class="feat">
             <li>11-signal HTML/AEO audit</li>
-            <li>Branded PDF report</li>
+            <li>Strategist-reviewed audit report</li>
             <li>5 working-day turnaround</li>
             <li>15-min walkthrough call</li>
           </ul>
@@ -267,7 +277,7 @@
           <div class="desc">Multilingual + entity depth.</div>
           <ul class="feat">
             <li>Everything in Audit</li>
-            <li>Multilingual entity review</li>
+            <li>Human multilingual review (EN/FR/AR/DA)</li>
             <li>Cross-link opportunity map</li>
             <li>Entity catalogue + 10-fix backlog</li>
           </ul>
@@ -293,9 +303,9 @@
           <ul class="feat">
             <li>Everything in Starter</li>
             <li>Entity onboarding</li>
-            <li>WP plugin install</li>
+            <li>Hands-on CMS implementation</li>
             <li>Monthly cross-link proposals</li>
-            <li>Slack support</li>
+            <li>Priority email support</li>
           </ul>
           <div class="cta"><a href="/audit/?plan=standard">Start Standard</a></div>
         </div>
@@ -314,6 +324,13 @@
       </div>
 
       <p style="text-align:center;font-size:14px;color:var(--ink-mid);margin:28px auto 4px;max-width:62ch;">Every plan begins with the initial audit. Choose a tier, request your audit, and we scope and invoice the engagement on the walkthrough call - no checkout to click, no commitment until you have the report in hand.</p>
+
+      <!-- CAL_BOOKING: uncomment and set href when Cal.com is live
+      <p style="text-align:center;margin:16px auto 0;">
+        <a href="https://cal.com/CHANGE_ME/intro" target="_blank" rel="noopener" class="btn">Book a 15-minute intro call &rarr;</a>
+      </p>
+      -->
+
 
       <div class="notes">
         <div class="note">
@@ -358,14 +375,14 @@
             <tr><th>Audit cadence</th><td>One-shot</td><td>One-shot</td><td>Monthly</td><td>Monthly</td><td>Monthly</td></tr>
             <tr><th>HTML/AEO signals (11)</th><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td></tr>
             <tr><th>GEO citation-rate audit</th><td class="n">-</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td></tr>
-            <tr><th>Multilingual entity review</th><td class="n">-</td><td class="y">Yes</td><td class="n">-</td><td class="y">Yes</td><td class="y">Yes</td></tr>
+            <tr><th>Human multilingual review (EN/FR/AR/DA)</th><td class="n">-</td><td class="y">Yes</td><td class="n">-</td><td class="y">Yes</td><td class="y">Yes</td></tr>
             <tr><th>Cross-link opportunity map</th><td class="n">-</td><td class="y">Yes</td><td class="n">-</td><td class="y">Monthly</td><td class="y">Monthly</td></tr>
             <tr><th>Signed governance pact</th><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td></tr>
             <tr><th>Append-only audit log</th><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td></tr>
-            <tr><th>WordPress plugin install</th><td class="n">-</td><td class="n">-</td><td class="n">-</td><td class="y">Yes</td><td class="y">Yes</td></tr>
+            <tr><th>Hands-on CMS implementation of approved fixes</th><td class="n">-</td><td class="n">-</td><td class="n">-</td><td class="y">Yes</td><td class="y">Yes</td></tr>
             <tr><th>Human-approved CMS edits</th><td class="n">-</td><td class="n">-</td><td class="n">-</td><td class="n">-</td><td class="y">Yes</td></tr>
             <tr><th>Multilingual hub coordination</th><td class="n">-</td><td class="n">-</td><td class="n">-</td><td class="n">-</td><td class="y">Yes</td></tr>
-            <tr><th>Support channel</th><td>Email</td><td>Email</td><td>Email</td><td>Slack</td><td>Slack + call</td></tr>
+            <tr><th>Support channel</th><td>Email</td><td>Email</td><td>Email</td><td>Priority email</td><td>Priority email + call</td></tr>
             <tr><th>Strategy call</th><td>15-min walkthrough</td><td>30-min walkthrough</td><td class="n">-</td><td class="n">-</td><td>Quarterly</td></tr>
           </tbody>
         </table>
@@ -390,7 +407,7 @@
         </details>
         <details>
           <summary>What if my site is in French, Arabic or Danish?</summary>
-          <p>Citetome was built around customers across Europe, the UK and Morocco. Multilingual entity coherence (hreflang reciprocity, language-variant entity IDs) is part of Audit Pro and Standard upwards. We currently audit in DK, EN, FR and AR; other languages on request.</p>
+          <p>Citetome was built around customers across Europe, the UK and Morocco. Multilingual entity coherence (hreflang reciprocity, language-variant entity IDs) is part of Audit Pro and Standard upwards. The review is performed by a human strategist who reads EN, FR, AR and DA - not machine translation. Other languages on request.</p>
         </details>
         <details>
           <summary>Do you auto-publish changes?</summary>

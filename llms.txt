@@ -9,6 +9,7 @@ Operated by Yossra Benzad, Copenhagen, Denmark. Live product: https://api.citeto
 - [Homepage](https://citetome.com/): product overview, features, FAQ
 - [Pricing](https://citetome.com/pricing/): audit and managed plan tiers in EUR
 - [Audit](https://citetome.com/audit/): request a one-off audit
+- Danish (/da/) and French (/fr/) versions of the homepage, pricing and audit pages are available at https://citetome.com/da/ and https://citetome.com/fr/
 - [Legal](https://citetome.com/legal/): imprint, privacy, terms, governance pact, DPA
 
 ## Live endpoints

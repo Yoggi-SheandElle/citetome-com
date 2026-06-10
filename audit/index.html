@@ -4,21 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Request an Audit - Citetome. AEO &amp; GEO legibility report in 5 working days.</title>
-  <meta name="description" content="Request a free initial Citetome audit. Send us your domain. We send back an HTML + PDF report on how your site reads to ChatGPT, Perplexity, Google AI Overviews and Claude, with an optional 15-minute walkthrough.">
+  <meta name="description" content="Request a free initial Citetome audit. Send us your domain. We send back a human-reviewed report on how your site reads to ChatGPT, Perplexity, Google AI Overviews and Claude, with an optional 15-minute walkthrough.">
   <meta property="og:title" content="Request a Citetome Audit">
-  <meta property="og:description" content="Free initial audit. Deterministic. Five working days. No commitment.">
+  <meta property="og:description" content="Free initial audit. Automated checks, human review. Five working days. No commitment.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://citetome.com/audit/">
   <meta property="og:site_name" content="Citetome">
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Request a Citetome Audit">
-  <meta name="twitter:description" content="Free initial audit. Deterministic. Five working days. No commitment.">
+  <meta name="twitter:description" content="Free initial audit. Automated checks, human review. Five working days. No commitment.">
   <meta name="theme-color" content="#FAF6EE">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="author" content="Yossra Benzad">
   <link rel="canonical" href="https://citetome.com/audit/">
   <link rel="alternate" hreflang="en" href="https://citetome.com/audit/">
+  <link rel="alternate" hreflang="da" href="https://citetome.com/da/audit/">
+  <link rel="alternate" hreflang="fr" href="https://citetome.com/fr/audit/">
   <link rel="alternate" hreflang="x-default" href="https://citetome.com/audit/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -203,6 +205,13 @@
     @media (max-width:480px){.float-cta{right:12px;bottom:12px;padding:11px 18px;font-size:13px}}
 
     @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+    /* language switcher */
+    .lang-switch{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;padding-left:14px;border-left:1px solid var(--rule)}
+    .lang-switch a{color:var(--ink-mid)}
+    .lang-switch a:hover{color:var(--ink)}
+    .lang-switch a.on{color:var(--ink);box-shadow:0 1.5px 0 var(--gold)}
+    .nav-links .lang-switch a::after{display:none}
+    @media (max-width:880px){.lang-switch{padding-left:10px}}
   </style>
 
   <script type="application/ld+json">
@@ -235,6 +244,7 @@
         <a href="/#network">Network</a>
         <a href="/pricing/">Pricing</a>
         <a href="https://api.citetome.com/customer" target="_blank" rel="noopener" title="Live customer dashboard">Console</a>
+        <span class="lang-switch"><a href="/audit/" class="on" aria-current="true">EN</a><a href="/da/audit/" lang="da" hreflang="da">DA</a><a href="/fr/audit/" lang="fr" hreflang="fr">FR</a></span>
         <a href="/audit/#form" class="btn">Request audit</a>
       </div>
     </div>
@@ -242,9 +252,9 @@
 
   <header class="ph">
     <div class="container">
-      <span class="eyebrow">Free initial audit · EU AI Act ready</span>
+      <span class="eyebrow">Free initial audit · Governed &amp; audit-logged</span>
       <h1>See how your site <em>reads to AI.</em></h1>
-      <p class="sub">Drop your URL. We run the deterministic AEO + GEO audit and send the signed, audit-logged report within five working days. Optional 15-minute walkthrough if you want one. No commitment. No agency call. No upsell.</p>
+      <p class="sub">Drop your URL. We run the automated AEO + GEO checks, review every finding by hand, and send the signed, audit-logged report within five working days. Optional 15-minute walkthrough if you want one. No commitment. No agency call. No upsell.</p>
     </div>
   </header>
 
@@ -309,12 +319,16 @@
           <button class="btn" type="submit">Request audit &rarr;</button>
           <div class="audit-feedback" id="audit-feedback" aria-live="polite"></div>
           <div class="audit-meta">By submitting you agree to a one-time audit communication. We do not subscribe you to anything and we do not share your data. Prefer email? <a href="mailto:hello@citetome.com">hello@citetome.com</a>.</div>
+
+          <!-- CAL_BOOKING: uncomment and set href when Cal.com is live
+          <a href="https://cal.com/CHANGE_ME/intro" target="_blank" rel="noopener" class="btn" style="margin-top:14px;background:transparent;border-color:rgba(232,221,200,.3);color:var(--bone);">Book a 15-minute intro call &rarr;</a>
+          -->
         </form>
 
         <div class="summary">
           <span class="eyebrow">02 · What you get</span>
           <h2>One report, five days.</h2>
-          <p>Branded, stakeholder-ready, and tied to a deterministic test suite. The audit reads your site the way an answer engine does, then names the gaps - in order of impact.</p>
+          <p>Stakeholder-ready, grounded in automated checks, and reviewed by a human strategist before it reaches you. The audit reads your site the way an answer engine does, then names the gaps - in order of impact.</p>
           <ul class="checklist">
             <li>
               <span class="ck">✓</span>
@@ -326,7 +340,7 @@
             </li>
             <li>
               <span class="ck">✓</span>
-              <span><strong>Branded PDF + HTML report</strong><small>Stakeholder-ready. Side-by-side with peer sites if you give us comparables.</small></span>
+              <span><strong>Human-reviewed audit report</strong><small>Reviewed and annotated by a human strategist. Stakeholder-ready. Side-by-side with peer sites if you give us comparables.</small></span>
             </li>
             <li>
               <span class="ck">✓</span>
@@ -347,8 +361,8 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">03 · Coverage</span>
-        <h2>Four pillars, deterministic.</h2>
-        <p>The audit is version-pinned and reproducible. The same site audited twice produces the same scoring. No vibes, no AI-summary handwave.</p>
+        <h2>Four pillars, audited and reviewed.</h2>
+        <p>The HTML and schema checks are version-pinned and reproducible - the same site audited twice produces the same scoring there. Performance and citation signals move with the live web, so a human strategist reviews every result before it reaches you. No vibes, no AI-summary handwave.</p>
       </div>
       <div class="pillars">
         <div class="pillar">
@@ -364,7 +378,7 @@
         <div class="pillar">
           <div class="ix">03</div>
           <h3>Multilingual</h3>
-          <p>Hreflang reciprocity, language-variant entity coherence (DK / EN / FR / AR), translated-canonical chain integrity.</p>
+          <p>Hreflang reciprocity, entity coherence and translated-canonical integrity - reviewed in EN, FR, AR and DA by a human strategist, not machine translation.</p>
         </div>
         <div class="pillar">
           <div class="ix">04</div>
@@ -375,8 +389,8 @@
 
       <div class="timeline">
         <div class="tstep"><div class="day">Day 0</div><h4>Request received</h4><p>Your form submission lands in our inbox. We reply from <a href="mailto:hello@citetome.com">hello@citetome.com</a> the same working day to confirm scope and schedule the audit.</p></div>
-        <div class="tstep"><div class="day">Day 1-2</div><h4>Deterministic sweep</h4><p>We run the eight-signal audit against your URL on the Citetome engine at <code>api.citetome.com</code>. Output is reproducible: same site, same score.</p></div>
-        <div class="tstep"><div class="day">Day 3-4</div><h4>Manual review + report</h4><p>Multilingual entity check, citation behaviour probe, peer comparison if you sent comparables. Report drafted in HTML + PDF, signed by the auditor, with a ranked 10-fix backlog.</p></div>
+        <div class="tstep"><div class="day">Day 1-2</div><h4>Automated sweep</h4><p>We run the automated checks - HTML, schema, PageSpeed, CrUX, AI citation - against your URL on the Citetome engine at <code>api.citetome.com</code>. The HTML and schema scoring is reproducible: same site, same score.</p></div>
+        <div class="tstep"><div class="day">Day 3-4</div><h4>Manual review + report</h4><p>Multilingual entity check, citation behaviour probe, peer comparison if you sent comparables. Report drafted, reviewed and annotated by a human strategist, signed by the auditor, with a ranked 10-fix backlog.</p></div>
         <div class="tstep"><div class="day">Day 5</div><h4>Walkthrough (optional)</h4><p>If you want one, a 15-minute call - recorded on request. No agency pitch, no upsell. Most clients skip and go straight to the report.</p></div>
       </div>
     </div>
@@ -411,7 +425,7 @@
         </details>
         <details>
           <summary>Can I share the report with my team?</summary>
-          <p>Yes. The PDF is fully shareable. The HTML version lives on a private URL with a 90-day expiry that you can extend.</p>
+          <p>Yes. The report is fully shareable. It lives on a private URL with a 90-day expiry that you can extend, and we can export a copy for circulation on request.</p>
         </details>
       </div>
     </div>

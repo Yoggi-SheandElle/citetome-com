@@ -781,19 +781,31 @@
             </header>
             <div class="pc-summary">
               <div class="cell">
-                <span class="k">Tenant</span>
-                <span class="v" style="font-size: 17px;">yossra</span>
+                <span class="k">Network</span>
+                <span class="v" style="font-size: 17px;">Citetome</span>
               </div>
               <div class="cell">
                 <span class="k">Sites</span>
-                <span class="v" id="pc-sites">6<small>+1</small></span>
+                <span class="v" id="pc-sites">17</span>
               </div>
               <div class="cell">
                 <span class="k">Entities</span>
-                <span class="v" id="pc-entities">-</span>
+                <span class="v" id="pc-entities">69</span>
               </div>
             </div>
             <div class="pc-rows">
+              <div class="pc-row">
+                <span class="site">sheandelle.com <span class="country">DK</span></span>
+                <span class="score">1.00</span>
+                <svg class="spark" viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,14 14,12 28,10 42,8 56,6 70,4 84,3 100,2" fill="none" stroke="#2F5D43" stroke-width="1.4"/></svg>
+                <span class="status ok">OK</span>
+              </div>
+              <div class="pc-row">
+                <span class="site">aylamaison.com <span class="country">MA</span></span>
+                <span class="score">1.00</span>
+                <svg class="spark" viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,16 14,15 28,14 42,13 56,10 70,6 84,3 100,2" fill="none" stroke="#2F5D43" stroke-width="1.4"/></svg>
+                <span class="status ok">OK</span>
+              </div>
               <div class="pc-row">
                 <span class="site">elektraos.dev <span class="country">DK</span></span>
                 <span class="score">0.92</span>
@@ -801,22 +813,10 @@
                 <span class="status ok">OK</span>
               </div>
               <div class="pc-row">
-                <span class="site">sheandelle.com <span class="country">DK</span></span>
-                <span class="score">0.89</span>
-                <svg class="spark" viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,14 14,12 28,10 42,8 56,7 70,6 84,5 100,5" fill="none" stroke="#2F5D43" stroke-width="1.4"/></svg>
-                <span class="status ok">OK</span>
-              </div>
-              <div class="pc-row">
-                <span class="site">aylamaison.com <span class="country">MA</span></span>
-                <span class="score">0.83</span>
-                <svg class="spark" viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,11 14,10 28,10 42,9 56,9 70,8 84,9 100,9" fill="none" stroke="#6F2D1D" stroke-width="1.4"/></svg>
-                <span class="status err">FIX</span>
-              </div>
-              <div class="pc-row">
                 <span class="site">mealshift.co.uk <span class="country">GB</span></span>
-                <span class="score">0.77</span>
-                <svg class="spark" viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,12 14,12 28,11 42,11 56,10 70,10 84,9 100,9" fill="none" stroke="#B8915E" stroke-width="1.4"/></svg>
-                <span class="status warn">WARN</span>
+                <span class="score">0.86</span>
+                <svg class="spark" viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,13 14,12 28,11 42,10 56,9 70,8 84,7 100,6" fill="none" stroke="#2F5D43" stroke-width="1.4"/></svg>
+                <span class="status ok">OK</span>
               </div>
               <div class="pc-row">
                 <span class="site">www.freshmarket.ma <span class="country">MA</span></span>
@@ -827,14 +827,14 @@
               <div class="pc-row">
                 <span class="site">bizus.co.uk <span class="country">GB</span></span>
                 <span class="score">0.57</span>
-                <svg class="spark" viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,8 14,9 28,10 42,11 56,12 70,12 84,12 100,12" fill="none" stroke="#B8915E" stroke-width="1.4"/></svg>
-                <span class="status warn">WARN</span>
+                <svg class="spark" viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,8 14,9 28,10 42,11 56,12 70,12 84,12 100,12" fill="none" stroke="#6F2D1D" stroke-width="1.4"/></svg>
+                <span class="status err">FIX</span>
               </div>
             </div>
             <div class="pc-caption">Sites in our network - live engine scores</div>
             <div class="pc-foot">
-              <span>Audit sweep · last 14d</span>
-              <span>12 alerts open · 15 proposals pending</span>
+              <span>Audit sweep · daily</span>
+              <span>12 alerts open</span>
             </div>
           </div>
          </div>
@@ -866,50 +866,210 @@
         <h2>The control plane for AI-search visibility.</h2>
         <p>Six capabilities, one product. Each is auditable, logged, and rolls back cleanly. No magic, no auto-publish, no surprises.</p>
       </div>
-      <div class="features">
-        <div class="feature reveal">
-          <div class="icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          </div>
+      <style>
+        /* features v2: audit bench + visual cards */
+        .ft2-bench { display:grid; grid-template-columns: minmax(280px, 5fr) 7fr; gap:0; border:1px solid var(--rule); border-radius:14px; overflow:hidden; background:var(--bone); margin-bottom:28px; }
+        @media (max-width: 880px){ .ft2-bench { grid-template-columns:1fr; } }
+        .ft2-bench-left { padding:32px 28px; border-right:1px solid var(--rule-soft); display:flex; flex-direction:column; gap:14px; }
+        @media (max-width: 880px){ .ft2-bench-left { border-right:none; border-bottom:1px solid var(--rule-soft); } }
+        .ft2-bench-left h3 { font-size:22px; margin:0; }
+        .ft2-bench-left .lead { color:var(--ink-mid); font-size:15px; margin:0; }
+        .ft2-strip { margin-top:auto; min-height:92px; padding:14px 16px; background:var(--paper); border:1px solid var(--rule-soft); border-radius:10px; }
+        .ft2-strip .idx { font-family:var(--mono); font-size:11px; color:var(--gold-dim); letter-spacing:.08em; display:block; margin-bottom:6px; }
+        .ft2-strip .txt { font-size:13.5px; color:var(--ink-soft); line-height:1.55; }
+        .ft2-foot { display:flex; flex-wrap:wrap; gap:8px; }
+        .ft2-chip { font-family:var(--mono); font-size:10.5px; letter-spacing:.04em; color:var(--ink-mid); background:var(--paper); border:1px solid var(--rule); border-radius:999px; padding:4px 10px; }
+        .ft2-chip.ok { color:var(--green); background:var(--green-bg); border-color:transparent; }
+        .ft2-tiles { display:grid; grid-template-columns:repeat(2,1fr); }
+        @media (max-width: 560px){ .ft2-tiles { grid-template-columns:1fr; } }
+        .ft2-tile { position:relative; padding:20px 22px; border-left:1px solid var(--rule-soft); border-top:1px solid var(--rule-soft); cursor:default; transition:background .25s var(--ease); outline:none; }
+        .ft2-tile:nth-child(-n+2){ border-top:none; } .ft2-tile:nth-child(odd){ border-left:none; }
+        @media (max-width:560px){ .ft2-tile { border-left:none; } .ft2-tile:nth-child(2){ border-top:1px solid var(--rule-soft); } }
+        .ft2-tile:hover, .ft2-tile:focus-visible, .ft2-tile.on { background:var(--paper); }
+        .ft2-tile .n { font-family:var(--mono); font-size:10px; color:var(--stone); letter-spacing:.1em; }
+        .ft2-tile h4 { font-family:var(--sans); font-size:14px; font-weight:600; margin:6px 0 4px; color:var(--ink); }
+        .ft2-tile .s { font-size:12.5px; color:var(--ink-mid); line-height:1.45; }
+        .ft2-tile .bar { position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--gold); transform:scaleY(0); transform-origin:top; transition:transform .3s var(--ease); }
+        .ft2-tile:hover .bar, .ft2-tile:focus-visible .bar, .ft2-tile.on .bar { transform:scaleY(1); }
+        .ft2-new { font-family:var(--mono); font-size:9px; letter-spacing:.12em; color:var(--bone); background:var(--oxblood); border-radius:3px; padding:2px 6px; margin-left:6px; vertical-align:2px; }
+        .ft2-engines { display:flex; gap:5px; margin-top:8px; }
+        .ft2-engines i { width:7px; height:7px; border-radius:50%; background:var(--gold); opacity:.45; transition:opacity .3s var(--ease) }
+        .ft2-tile:hover .ft2-engines i, .ft2-tile.on .ft2-engines i { opacity:1; }
+        .ft2-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:14px; overflow:hidden; }
+        @media (max-width: 880px){ .ft2-cards { grid-template-columns:1fr; } .ft2-card.wide{ grid-column:auto; } }
+        .ft2-card { background:var(--bone); padding:28px 26px; display:flex; flex-direction:column; gap:12px; transition:background .25s var(--ease); }
+        .ft2-card:hover { background:var(--paper); }
+        .ft2-card h3 { font-size:17px; margin:0; }
+        .ft2-card p { font-size:13.5px; color:var(--ink-mid); line-height:1.6; margin:0; }
+        .ft2-card .icon { width:38px; height:38px; border:1px solid var(--rule); border-radius:9px; display:flex; align-items:center; justify-content:center; color:var(--gold-dim); background:var(--paper); }
+        @media (min-width: 881px){ .ft2-card.wide { grid-column:span 2; } }
+        .ft2-viz { margin-top:auto; padding-top:10px; }
+        .ft2-pill { font-family:var(--mono); font-size:11px; color:var(--oxblood); background:var(--paper); border:1px solid var(--rule); border-radius:7px; padding:7px 10px; display:inline-block; }
+        .ft2-langs { display:flex; gap:8px; flex-wrap:wrap; }
+        .ft2-lang { font-family:var(--mono); font-size:12px; width:42px; height:34px; display:flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:7px; color:var(--ink-soft); background:var(--paper); transition:all .25s var(--ease); }
+        .ft2-card:hover .ft2-lang { border-color:var(--gold); color:var(--gold-dim); }
+        .ft2-spark path.line { stroke-dasharray:240; stroke-dashoffset:240; transition:stroke-dashoffset 1.4s var(--ease); }
+        .ft2-spark.go path.line { stroke-dashoffset:0; }
+        .ft2-kg circle.hub { transition:r .3s var(--ease); }
+        .ft2-card:hover .ft2-kg circle.hub { r:7; }
+        @media (prefers-reduced-motion: reduce){ .ft2-tile .bar, .ft2-spark path.line { transition:none; } .ft2-spark path.line { stroke-dashoffset:0; } }
+      </style>
+
+      <!-- flagship: the six checks as an interactive bench -->
+      <div class="ft2-bench reveal">
+        <div class="ft2-bench-left">
           <h3>Six automated audit checks</h3>
-          <p>HTML/AEO legibility, Schema.org JSON-LD against 969 canonical types, PageSpeed, CrUX, AI citation rate (ChatGPT, Perplexity, Claude, Gemini) and agent readiness run on every sweep. AI agents are starting to transact, not just answer - the sixth check scores whether an agent could find, understand and act on your site: robots.txt posture toward GPTBot, ClaudeBot and PerplexityBot, llms.txt, commerce-depth JSON-LD, machine-readable feeds. Search Console, hreflang depth and historical analysis are part of the human review on paid tiers. Fail-closed on missing credentials.</p>
+          <p class="lead">Run on every sweep. AI agents are starting to transact, not just answer - so the bench scores how machines read you and whether they could act on you.</p>
+          <div class="ft2-strip" id="ft2Strip" aria-live="polite">
+            <span class="idx" id="ft2Idx">01 / 06</span>
+            <span class="txt" id="ft2Txt">How legibly your pages read to answer engines: structure, headings, answer-first copy, source-worthy claims.</span>
+          </div>
+          <div class="ft2-foot">
+            <span class="ft2-chip ok">fail-closed on missing credentials</span>
+            <span class="ft2-chip">paid tiers add human review: Search Console &middot; hreflang depth &middot; history</span>
+          </div>
         </div>
-        <div class="feature reveal d1">
+        <div class="ft2-tiles" id="ft2Tiles">
+          <div class="ft2-tile on" tabindex="0" data-i="01" data-d="How legibly your pages read to answer engines: structure, headings, answer-first copy, source-worthy claims.">
+            <span class="bar"></span><span class="n">01</span>
+            <h4>HTML / AEO legibility</h4>
+            <div class="s">Can an answer engine parse what you actually offer?</div>
+          </div>
+          <div class="ft2-tile" tabindex="0" data-i="02" data-d="Your structured data validated against 969 canonical Schema.org types - not just present, but correct and complete.">
+            <span class="bar"></span><span class="n">02</span>
+            <h4>Schema.org JSON-LD</h4>
+            <div class="s">Validated against 969 canonical types.</div>
+          </div>
+          <div class="ft2-tile" tabindex="0" data-i="03" data-d="Lab performance on every sweep. Slow pages get skipped by crawlers and trimmed from answers.">
+            <span class="bar"></span><span class="n">03</span>
+            <h4>PageSpeed</h4>
+            <div class="s">Lab performance, every sweep.</div>
+          </div>
+          <div class="ft2-tile" tabindex="0" data-i="04" data-d="Chrome UX Report: how your site performs for real users in the field, not just in the lab.">
+            <span class="bar"></span><span class="n">04</span>
+            <h4>CrUX field data</h4>
+            <div class="s">Real-user experience data.</div>
+          </div>
+          <div class="ft2-tile" tabindex="0" data-i="05" data-d="Do the engines actually cite you? Measured across ChatGPT, Perplexity, Claude and Gemini.">
+            <span class="bar"></span><span class="n">05</span>
+            <h4>AI citation rate</h4>
+            <div class="s">ChatGPT &middot; Perplexity &middot; Claude &middot; Gemini</div>
+            <div class="ft2-engines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="ft2-tile" tabindex="0" data-i="06" data-d="Could an agent find, understand and act on your site? robots.txt posture toward GPTBot, ClaudeBot and PerplexityBot, llms.txt, commerce-depth JSON-LD, machine-readable feeds.">
+            <span class="bar"></span><span class="n">06</span>
+            <h4>Agent readiness<span class="ft2-new">NEW</span></h4>
+            <div class="s">Find, understand, act: robots posture, llms.txt, commerce data, feeds.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- supporting capabilities -->
+      <div class="ft2-cards reveal d1">
+        <div class="ft2-card">
           <div class="icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           </div>
           <h3>Signed governance pact</h3>
           <p>Per-site, version-pinned, sha256-gated. Every mutation lands in an append-only audit log with hashed actor IDs. Revocation is one endpoint away.</p>
+          <div class="ft2-viz ft2-foot">
+            <span class="ft2-chip">version-pinned</span>
+            <span class="ft2-chip">sha256-gated</span>
+            <span class="ft2-chip">append-only log</span>
+          </div>
         </div>
-        <div class="feature reveal d2">
+        <div class="ft2-card">
           <div class="icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg>
           </div>
           <h3>Knowledge graph</h3>
           <p>A growing knowledge graph of canonical entities. Schema.org JSON-LD per entity URL. Wikidata sameAs anchors. Cross-link engine proposes entity-justified edges between member sites.</p>
+          <div class="ft2-viz">
+            <svg class="ft2-kg" viewBox="0 0 220 64" style="width:100%;max-width:220px;height:auto;" aria-hidden="true">
+              <line x1="110" y1="32" x2="30" y2="14" stroke="var(--rule)" stroke-width="1"/>
+              <line x1="110" y1="32" x2="38" y2="52" stroke="var(--rule)" stroke-width="1"/>
+              <line x1="110" y1="32" x2="182" y2="12" stroke="var(--gold)" stroke-width="1.2"/>
+              <line x1="110" y1="32" x2="190" y2="50" stroke="var(--rule)" stroke-width="1"/>
+              <circle class="hub" cx="110" cy="32" r="5" fill="var(--gold-dim)"/>
+              <circle cx="30" cy="14" r="3.5" fill="var(--stone)"/>
+              <circle cx="38" cy="52" r="3.5" fill="var(--stone)"/>
+              <circle cx="182" cy="12" r="3.5" fill="var(--gold)"/>
+              <circle cx="190" cy="50" r="3.5" fill="var(--stone)"/>
+            </svg>
+          </div>
         </div>
-        <div class="feature reveal">
+        <div class="ft2-card">
           <div class="icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9-9-4-9-9z"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>
           </div>
           <h3>Multilingual entity consistency</h3>
           <p>Hreflang reciprocity and entity coherence reviewed in EN, FR, AR and DA - by a human strategist who reads all four, not machine translation. Most auditors don't touch this. We treat it as foundational.</p>
+          <div class="ft2-viz ft2-langs" aria-label="Reviewed languages">
+            <span class="ft2-lang">EN</span>
+            <span class="ft2-lang">FR</span>
+            <span class="ft2-lang" lang="ar">ع</span>
+            <span class="ft2-lang">DA</span>
+          </div>
         </div>
-        <div class="feature reveal d1">
+        <div class="ft2-card">
           <div class="icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>GDPR Article 17 erasure</h3>
           <p>A single endpoint tombstones a site's subject data while preserving the hashed event trail. Built with EU AI Act transparency obligations in mind - versioned governance, sha256-gated policies, append-only decision log.</p>
+          <div class="ft2-viz">
+            <span class="ft2-pill">DELETE /governance/forget/{site_id}</span>
+          </div>
         </div>
-        <div class="feature reveal d2">
+        <div class="ft2-card wide">
           <div class="icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>
           </div>
           <h3>Regression alerts</h3>
           <p>Per-source budgets with 10pt tolerance. Daily delta. budget_breach / regression / streak_recovery events. Idempotent dedup per period. Webhook delivery on the way.</p>
+          <div class="ft2-viz" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+            <svg class="ft2-spark" id="ft2Spark" viewBox="0 0 260 56" style="width:200px;height:auto;" aria-hidden="true">
+              <line x1="0" y1="40" x2="260" y2="40" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3 4"/>
+              <path class="line" d="M4 24 L40 22 L76 26 L112 20 L148 46 L184 30 L220 18 L256 14" fill="none" stroke="var(--gold-dim)" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="148" cy="46" r="4" fill="var(--oxblood)"/>
+            </svg>
+            <div class="ft2-foot">
+              <span class="ft2-chip" style="color:var(--oxblood);">budget_breach</span>
+              <span class="ft2-chip">regression</span>
+              <span class="ft2-chip ok">streak_recovery</span>
+            </div>
+          </div>
         </div>
       </div>
+
+      <script>
+        (function(){
+          var tiles = document.querySelectorAll('#ft2Tiles .ft2-tile');
+          var idx = document.getElementById('ft2Idx');
+          var txt = document.getElementById('ft2Txt');
+          if (tiles.length && idx && txt) {
+            tiles.forEach(function(t){
+              function show(){
+                tiles.forEach(function(o){ o.classList.remove('on'); });
+                t.classList.add('on');
+                idx.textContent = t.getAttribute('data-i') + ' / 06';
+                txt.textContent = t.getAttribute('data-d');
+              }
+              t.addEventListener('mouseenter', show);
+              t.addEventListener('focus', show);
+              t.addEventListener('click', show);
+            });
+          }
+          var spark = document.getElementById('ft2Spark');
+          if (spark && 'IntersectionObserver' in window) {
+            new IntersectionObserver(function(es, ob){
+              es.forEach(function(e){ if (e.isIntersecting) { spark.classList.add('go'); ob.disconnect(); } });
+            }, { threshold: 0.4 }).observe(spark);
+          } else if (spark) {
+            spark.classList.add('go');
+          }
+        })();
+      </script>
     </div>
   </section>
 
@@ -1060,15 +1220,15 @@
           <div class="label">Automated checks</div>
         </div>
         <div class="stat reveal d1">
-          <div class="big" id="stat-entities">-</div>
+          <div class="big" id="stat-entities">69</div>
           <div class="label">Canonical entities</div>
         </div>
         <div class="stat reveal d2">
-          <div class="big" data-target="6" id="stat-sites">0</div>
+          <div class="big" data-target="7" id="stat-sites">0</div>
           <div class="label">Sites under pact</div>
         </div>
         <div class="stat reveal d3">
-          <div class="big" data-target="197" id="stat-tests">0</div>
+          <div class="big" data-target="235" id="stat-tests">0</div>
           <div class="label">Automated tests</div>
         </div>
       </div>

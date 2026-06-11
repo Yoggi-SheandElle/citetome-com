@@ -52,6 +52,7 @@ function geoFor(domain) {
 
 async function loadGeoForSite(site) {
   if (GEO_CACHE[site.domain]) return;
+  if (site.id == null) { GEO_CACHE[site.domain] = fallbackGeo(site.domain); return; }
   try {
     const g = await api(`/sites/${site.id}/geo`);
     if (g && g.lat != null && g.lng != null) {
@@ -78,6 +79,8 @@ function updateAuthHint() {
   const k = authKey();
   $("btn-auth").textContent = k ? "lock" : "authenticate";
   $("auth-hint").textContent = k ? "authenticated - approve/reject enabled" : "read-only - click authenticate to approve";
+  const ro = $("ro-badge");
+  if (ro) ro.classList.toggle("hidden", !!k);
 }
 
 async function api(path, opts = {}) {
@@ -87,6 +90,20 @@ async function api(path, opts = {}) {
   const r = await fetch(API + path, { ...opts, headers });
   if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);
   return r.status === 204 ? null : r.json();
+}
+
+// anonymous public stats - 5s timeout, never throws
+async function fetchPublicStats() {
+  try {
+    const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+    const timer = ctrl ? setTimeout(() => { try { ctrl.abort(); } catch {} }, 5000) : null;
+    const r = await fetch(API + "/public/stats", { signal: ctrl ? ctrl.signal : undefined });
+    if (timer) clearTimeout(timer);
+    if (!r.ok) return null;
+    return await r.json();
+  } catch {
+    return null;
+  }
 }
 
 async function loadSites() {
@@ -361,14 +378,50 @@ async function submitJoin() {
   }
 }
 
+// keyless mode: approvals queue is operator-only, show a locked placeholder instead
+function renderLockedApprovals() {
+  const ul = $("approvals-list");
+  clear(ul);
+  ul.appendChild(el("li", {
+    style: "padding:20px;text-align:center;color:var(--text-faint);font-size:11px;",
+  }, ["operator key required - globe is read-only"]));
+  $("approvals-count").textContent = "-";
+  $("stat-pending").textContent = "-";
+  $("stat-edges").textContent = "-";
+}
+
 async function refreshAll() {
+  const authed = !!authKey();
+  if (!authed) renderLockedApprovals();
   try {
-    await loadSites();
+    try {
+      await loadSites();
+    } catch (e) {
+      if (authed) throw e;
+      // /sites unreachable while keyless: fall back to anonymous /public/stats network list
+      const stats = await fetchPublicStats();
+      if (!stats || !Array.isArray(stats.network_sites) || !stats.network_sites.length) throw e;
+      state.sites = stats.network_sites.map((s) => ({
+        id: null,
+        domain: s.domain,
+        status: s.status === "ok" ? "active" : (s.status || "active"),
+        last_score: typeof s.score === "number" ? s.score : null,
+        tenant_id: null,
+      }));
+      $("stat-sites").textContent = state.sites.length;
+      $("sites-count").textContent = state.sites.length;
+      renderSitesList();
+    }
     await Promise.all(state.sites.map(loadGeoForSite));
-    await loadApprovals();
-    await loadEdges();
+    if (authed) {
+      // operator mode: key-gated endpoints, unchanged
+      await loadApprovals();
+      await loadEdges();
+    }
     renderGlobe();
-    log("info", `refreshed: ${state.sites.length} sites, ${state.approvals.length} pending`);
+    log("info", authed
+      ? `refreshed: ${state.sites.length} sites, ${state.approvals.length} pending`
+      : `refreshed (read-only): ${state.sites.length} sites`);
   } catch (e) {
     log("err", `refresh failed: ${e.message}`);
   }
@@ -387,13 +440,13 @@ async function init() {
 
   $("btn-refresh").onclick = refreshAll;
   $("btn-auth").onclick = () => {
-    if (authKey()) { setAuthKey(null); log("info", "locked"); }
+    if (authKey()) { setAuthKey(null); log("info", "locked"); refreshAll(); }
     else openAuthModal();
   };
   $("auth-cancel").onclick = closeAuthModal;
   $("auth-submit").onclick = () => {
     const k = $("auth-key").value.trim();
-    if (k) { setAuthKey(k); log("ok", "authenticated"); closeAuthModal(); }
+    if (k) { setAuthKey(k); log("ok", "authenticated"); closeAuthModal(); refreshAll(); }
   };
   $("auth-key").addEventListener("keydown", (e) => { if (e.key === "Enter") $("auth-submit").click(); });
 

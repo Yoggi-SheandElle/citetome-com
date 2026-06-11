@@ -210,3 +210,12 @@ code, .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
 .sites-list::-webkit-scrollbar, .approvals-list::-webkit-scrollbar, .activity-log::-webkit-scrollbar { width: 6px; }
 .sites-list::-webkit-scrollbar-thumb, .approvals-list::-webkit-scrollbar-thumb, .activity-log::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
 .sites-list::-webkit-scrollbar-thumb:hover, .approvals-list::-webkit-scrollbar-thumb:hover, .activity-log::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* read-only badge (keyless public mode) */
+.ro-badge {
+  font-family: "JetBrains Mono", monospace; font-size: 9px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); border: 1px solid rgba(0, 229, 255, 0.35);
+  padding: 2px 8px; border-radius: 2px; margin-left: 10px;
+}
+.ro-badge.hidden { display: none; }

@@ -6,6 +6,7 @@ const GEO_CACHE = {};
 const HUB = { lat: 51.47, lng: -0.45, city: "Fly.io LHR" };
 
 function fallbackGeo(domain) {
+  if (domain === "citetome.com") return { lat: 55.68, lng: 12.57, city: "Copenhagen" };
   if (domain.endsWith(".ma")) return { lat: 33.57, lng: -7.59, city: "Morocco" };
   if (domain.endsWith(".co.uk") || domain.endsWith(".uk")) return { lat: 51.51, lng: -0.128, city: "UK" };
   if (domain.endsWith(".fr")) return { lat: 48.86, lng: 2.35, city: "France" };

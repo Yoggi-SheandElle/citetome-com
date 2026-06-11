@@ -211,6 +211,69 @@ code, .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
 .sites-list::-webkit-scrollbar-thumb, .approvals-list::-webkit-scrollbar-thumb, .activity-log::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
 .sites-list::-webkit-scrollbar-thumb:hover, .approvals-list::-webkit-scrollbar-thumb:hover, .activity-log::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
+/* ===== mobile: stack globe-first, scrollable page ===== */
+@media (max-width: 820px) {
+  body { overflow: hidden auto; height: auto; min-height: 100%; }
+
+  .top-bar {
+    grid-template-columns: 1fr auto;
+    gap: 10px 12px;
+    padding: 10px 14px;
+    position: sticky; top: 0;
+  }
+  .brand { min-width: 0; }
+  .brand-tag { display: none; }
+  .stats {
+    grid-column: 1 / -1;
+    justify-content: space-between;
+    gap: 8px;
+    order: 3;
+  }
+  .stat { min-width: 0; flex: 1; }
+  .stat-val { font-size: 15px; }
+  .actions { gap: 6px; }
+  .btn { padding: 7px 10px; font-size: 10px; letter-spacing: 0.08em; }
+
+  .layout {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .globe-wrap {
+    order: 1;
+    height: min(56vh, 460px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .panel, .panel-right {
+    order: 2;
+    border-right: none; border-left: none;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .panel-right { order: 3; }
+  .sites-list, .approvals-list {
+    max-height: 38vh;
+    overscroll-behavior: contain;
+  }
+  .site-item, .approval-item { padding: 12px; }
+
+  .globe-overlay { top: 10px; left: 10px; right: 10px; }
+  .legend { gap: 10px; padding: 6px 10px; flex-wrap: wrap; }
+
+  .activity { height: 110px; }
+  .activity-label { padding: 8px 14px 4px; }
+  .activity-log { padding: 0 14px 10px; }
+
+  .tooltip { min-width: 0; max-width: min(78vw, 260px); }
+  .modal-card { min-width: 0; width: calc(100vw - 32px); max-width: 400px; }
+}
+
+/* very narrow phones */
+@media (max-width: 400px) {
+  .globe-wrap { height: 48vh; }
+  .stat-label { letter-spacing: 0.1em; }
+  .actions .btn-ghost[title="Refresh all"] { display: none; }
+}
+
 /* read-only badge (keyless public mode) */
 .ro-badge {
   font-family: "JetBrains Mono", monospace; font-size: 9px;

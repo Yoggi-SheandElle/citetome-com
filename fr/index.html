@@ -505,6 +505,34 @@
     }
     .stat .big small { font-size: 0.45em; color: var(--gold); margin-left: 3px; font-weight: 500; }
     .stat .label { margin-top: 14px; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mid); }
+    /* benchmark visuals */
+    .bench-viz {
+      margin-top: 1px;
+      display: grid; grid-template-columns: 1.55fr 1fr;
+      gap: 1px; background: var(--rule);
+      border: 1px solid var(--rule); border-top: none;
+      border-radius: 0 0 14px 14px; overflow: hidden;
+    }
+    .bench-viz + .bench-note { margin-top: 14px; }
+    #numbers .numbers.has-viz { border-radius: 14px 14px 0 0; border-bottom: none; }
+    .bench-card { background: var(--bone); padding: 28px 26px; margin: 0; }
+    .bench-card figcaption { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .bench-card .cap { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mid); }
+    .bench-legend { display: flex; gap: 18px; font-family: var(--sans); font-size: 12px; color: var(--ink-mid); }
+    .bench-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 7px; vertical-align: baseline; }
+    .sw-vis { background: #8E6F44; }
+    .sw-agent { background: #2F5D43; }
+    .bench-chart svg, .bench-dots svg { display: block; width: 100%; height: auto; }
+    .bench-chart .vlabel { font-family: var(--mono); font-size: 10px; letter-spacing: 0.07em; fill: var(--ink-mid); }
+    .bench-chart .val { font-family: var(--sans); font-size: 12px; font-weight: 600; fill: var(--ink-soft); font-variant-numeric: tabular-nums; }
+    .bench-chart .grid { stroke: var(--rule-soft); stroke-width: 1; }
+    .bench-chart .axis { stroke: var(--rule); stroke-width: 1; }
+    .bench-chart .tick { font-family: var(--mono); font-size: 9.5px; fill: var(--stone); }
+    .bench-dots .dots-note { margin: 16px 0 0; font-family: var(--sans); font-size: 13.5px; line-height: 1.55; color: var(--ink-mid); }
+    .bench-dots .dots-zero { font-family: var(--serif); font-size: 40px; line-height: 1; color: var(--oxblood); letter-spacing: -0.02em; }
+    .bench-dots .dots-zero small { font-size: 0.42em; color: var(--stone); font-family: var(--sans); font-weight: 500; margin-left: 4px; }
+    @media (max-width: 860px) { .bench-viz { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .bench-chart { overflow-x: auto; } .bench-chart svg { min-width: 480px; } }
 
     /* pricing */
     .price-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; background: var(--rule); }
@@ -758,7 +786,7 @@
             ChatGPT, Perplexity, Google AI Overviews et Claude répondent aux questions sur votre marque avant qu'un seul utilisateur n'atteigne votre site. La plupart des outils se contentent de le constater. Nous auditons la façon dont les moteurs vous lisent, corrigeons les signaux de données structurées et d'entités qui gagnent les citations, et prouvons chaque modification dans un journal d'audit signé.
           </p>
           <p class="hero-sub">
-            Conçu pour les PME multilingues en Europe, au Royaume-Uni et au Maroc - revu par un stratège humain en anglais, français, arabe et danois. Six contrôles d'audit automatisés par site. Chaque modification proposée est journalisée, réversible pendant 30 jours et alignée sur les obligations de transparence du règlement IA de l'UE. Les marques que les moteurs citent sont celles qui l'ont mérité - et peuvent le prouver.
+            Conçu pour les PME multilingues d'Europe, du Royaume-Uni et du Maroc - relu par un stratège humain en anglais, français, arabe et danois. Chaque modification est journalisée et réversible pendant 30 jours.
           </p>
           <div class="hero-actions">
             <a href="/fr/audit/" class="btn btn-lg">Demander un audit <span class="arrow">→</span></a>
@@ -1092,9 +1120,9 @@
       <div class="section-head reveal" id="benchmark" style="margin-top:72px;">
         <span class="eyebrow">Benchmark · Indice danois de visibilité IA</span>
         <h2>Juin 2026 : nous avons audité 38 sites de PME danoises.</h2>
-        <p>Cinq secteurs, scorés par le moteur, revus par un humain. Visibilité IA moyenne : 83 sur 100. Préparation aux agents moyenne : 48 sur 100. Pas un seul site ne publie les prix, disponibilités ou horaires structurés dont un agent IA a besoin pour agir. Chiffres anonymisés uniquement - nous ne nommons jamais les entreprises auditées.</p>
+        <p>Cinq secteurs, scorés par le moteur, revus par un humain. Chiffres anonymisés uniquement - nous ne nommons jamais les entreprises auditées.</p>
       </div>
-      <div class="numbers">
+      <div class="numbers has-viz">
         <div class="stat reveal">
           <div class="big" data-target="38">38</div>
           <div class="label">Sites de PME danoises audités</div>
@@ -1111,6 +1139,66 @@
           <div class="big" data-target="0">0<small>/38</small></div>
           <div class="label">Publient des prix structurés</div>
         </div>
+      </div>
+
+      <div class="bench-viz reveal">
+        <figure class="bench-card bench-chart">
+          <figcaption>
+            <span class="cap">Score moyen par secteur · 0-100</span>
+            <span class="bench-legend"><span><i class="sw-vis"></i>Visibilité IA</span><span><i class="sw-agent"></i>Préparation agents</span></span>
+          </figcaption>
+          <svg viewBox="0 0 560 330" role="img" aria-label="Diagramme à barres groupées de 38 sites de PME danoises. Visibilité IA moyenne contre préparation aux agents par secteur. Artisanat : 86 de visibilité, 42 de préparation. Commerce : 85 et 53. Santé : 83 et 52. Services B2B : 82 et 44. Restaurants : 81 et 49. Tous les secteurs scorent bien plus bas en préparation aux agents qu'en visibilité.">
+            <line class="grid" x1="315" y1="8" x2="315" y2="296"/>
+            <line class="grid" x1="520" y1="8" x2="520" y2="296"/>
+            <line class="axis" x1="110" y1="8" x2="110" y2="296"/>
+            <text class="tick" x="110" y="312" text-anchor="middle">0</text>
+            <text class="tick" x="315" y="312" text-anchor="middle">50</text>
+            <text class="tick" x="520" y="312" text-anchor="middle">100</text>
+
+            <text class="vlabel" x="100" y="36" text-anchor="end">ARTISANAT</text>
+            <rect x="110" y="16" width="353" height="14" rx="4" fill="#8E6F44"/>
+            <text class="val" x="471" y="28">86</text>
+            <rect x="110" y="32" width="172" height="14" rx="4" fill="#2F5D43"/>
+            <text class="val" x="290" y="44">42</text>
+
+            <text class="vlabel" x="100" y="96" text-anchor="end">COMMERCE</text>
+            <rect x="110" y="76" width="349" height="14" rx="4" fill="#8E6F44"/>
+            <text class="val" x="467" y="88">85</text>
+            <rect x="110" y="92" width="217" height="14" rx="4" fill="#2F5D43"/>
+            <text class="val" x="335" y="104">53</text>
+
+            <text class="vlabel" x="100" y="156" text-anchor="end">SANTÉ</text>
+            <rect x="110" y="136" width="340" height="14" rx="4" fill="#8E6F44"/>
+            <text class="val" x="458" y="148">83</text>
+            <rect x="110" y="152" width="213" height="14" rx="4" fill="#2F5D43"/>
+            <text class="val" x="331" y="164">52</text>
+
+            <text class="vlabel" x="100" y="216" text-anchor="end">SERVICES B2B</text>
+            <rect x="110" y="196" width="336" height="14" rx="4" fill="#8E6F44"/>
+            <text class="val" x="454" y="208">82</text>
+            <rect x="110" y="212" width="180" height="14" rx="4" fill="#2F5D43"/>
+            <text class="val" x="298" y="224">44</text>
+
+            <text class="vlabel" x="100" y="276" text-anchor="end">RESTAURANTS</text>
+            <rect x="110" y="256" width="332" height="14" rx="4" fill="#8E6F44"/>
+            <text class="val" x="450" y="268">81</text>
+            <rect x="110" y="272" width="201" height="14" rx="4" fill="#2F5D43"/>
+            <text class="val" x="319" y="284">49</text>
+          </svg>
+        </figure>
+        <figure class="bench-card bench-dots">
+          <figcaption><span class="cap">Prix, disponibilités ou horaires lisibles par machine</span></figcaption>
+          <div class="dots-zero">0<small>sur 38 sites</small></div>
+          <svg viewBox="0 0 240 100" role="img" aria-label="38 cercles vides : pas un seul des 38 sites audités ne publie de prix, disponibilités ou horaires structurés exploitables par un agent IA." style="margin-top:16px; max-width:260px;">
+            <g fill="none" stroke="#8A8377" stroke-width="1.5">
+              <circle cx="12" cy="12" r="8"/><circle cx="36" cy="12" r="8"/><circle cx="60" cy="12" r="8"/><circle cx="84" cy="12" r="8"/><circle cx="108" cy="12" r="8"/><circle cx="132" cy="12" r="8"/><circle cx="156" cy="12" r="8"/><circle cx="180" cy="12" r="8"/><circle cx="204" cy="12" r="8"/><circle cx="228" cy="12" r="8"/>
+              <circle cx="12" cy="36" r="8"/><circle cx="36" cy="36" r="8"/><circle cx="60" cy="36" r="8"/><circle cx="84" cy="36" r="8"/><circle cx="108" cy="36" r="8"/><circle cx="132" cy="36" r="8"/><circle cx="156" cy="36" r="8"/><circle cx="180" cy="36" r="8"/><circle cx="204" cy="36" r="8"/><circle cx="228" cy="36" r="8"/>
+              <circle cx="12" cy="60" r="8"/><circle cx="36" cy="60" r="8"/><circle cx="60" cy="60" r="8"/><circle cx="84" cy="60" r="8"/><circle cx="108" cy="60" r="8"/><circle cx="132" cy="60" r="8"/><circle cx="156" cy="60" r="8"/><circle cx="180" cy="60" r="8"/><circle cx="204" cy="60" r="8"/><circle cx="228" cy="60" r="8"/>
+              <circle cx="12" cy="84" r="8"/><circle cx="36" cy="84" r="8"/><circle cx="60" cy="84" r="8"/><circle cx="84" cy="84" r="8"/><circle cx="108" cy="84" r="8"/><circle cx="132" cy="84" r="8"/><circle cx="156" cy="84" r="8"/><circle cx="180" cy="84" r="8"/>
+            </g>
+          </svg>
+          <p class="dots-note">Pas un seul des 38 sites audités ne publie les prix, disponibilités ou horaires structurés dont un agent IA a besoin pour agir. Le premier qui les publie gagne les citations.</p>
+        </figure>
       </div>
     </div>
   </section>

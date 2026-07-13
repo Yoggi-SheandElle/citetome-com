@@ -505,6 +505,34 @@
     }
     .stat .big small { font-size: 0.45em; color: var(--gold); margin-left: 3px; font-weight: 500; }
     .stat .label { margin-top: 14px; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mid); }
+    /* benchmark visuals */
+    .bench-viz {
+      margin-top: 1px;
+      display: grid; grid-template-columns: 1.55fr 1fr;
+      gap: 1px; background: var(--rule);
+      border: 1px solid var(--rule); border-top: none;
+      border-radius: 0 0 14px 14px; overflow: hidden;
+    }
+    .bench-viz + .bench-note { margin-top: 14px; }
+    #numbers .numbers.has-viz { border-radius: 14px 14px 0 0; border-bottom: none; }
+    .bench-card { background: var(--bone); padding: 28px 26px; margin: 0; }
+    .bench-card figcaption { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .bench-card .cap { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mid); }
+    .bench-legend { display: flex; gap: 18px; font-family: var(--sans); font-size: 12px; color: var(--ink-mid); }
+    .bench-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 7px; vertical-align: baseline; }
+    .sw-vis { background: #8E6F44; }
+    .sw-agent { background: #2F5D43; }
+    .bench-chart svg, .bench-dots svg { display: block; width: 100%; height: auto; }
+    .bench-chart .vlabel { font-family: var(--mono); font-size: 10px; letter-spacing: 0.07em; fill: var(--ink-mid); }
+    .bench-chart .val { font-family: var(--sans); font-size: 12px; font-weight: 600; fill: var(--ink-soft); font-variant-numeric: tabular-nums; }
+    .bench-chart .grid { stroke: var(--rule-soft); stroke-width: 1; }
+    .bench-chart .axis { stroke: var(--rule); stroke-width: 1; }
+    .bench-chart .tick { font-family: var(--mono); font-size: 9.5px; fill: var(--stone); }
+    .bench-dots .dots-note { margin: 16px 0 0; font-family: var(--sans); font-size: 13.5px; line-height: 1.55; color: var(--ink-mid); }
+    .bench-dots .dots-zero { font-family: var(--serif); font-size: 40px; line-height: 1; color: var(--oxblood); letter-spacing: -0.02em; }
+    .bench-dots .dots-zero small { font-size: 0.42em; color: var(--stone); font-family: var(--sans); font-weight: 500; margin-left: 4px; }
+    @media (max-width: 860px) { .bench-viz { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .bench-chart { overflow-x: auto; } .bench-chart svg { min-width: 480px; } }
 
     /* pricing */
     .price-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; background: var(--rule); }
@@ -758,7 +786,7 @@
             ChatGPT, Perplexity, Google AI Overviews og Claude besvarer spørgsmål om dit brand, før en eneste bruger når dit website. De fleste værktøjer ser bare på, at det sker. Vi auditerer, hvordan motorerne læser dig, retter de strukturerede data- og entitetssignaler, der vinder citeringer, og dokumenterer hver ændring i en underskrevet revisionslog.
           </p>
           <p class="hero-sub">
-            Bygget til flersprogede SMV'er i Europa, Storbritannien og Marokko - gennemgået af en menneskelig strateg på engelsk, fransk, arabisk og dansk. Seks automatiserede auditcheck per site. Hver foreslået ændring logges, kan rulles tilbage i 30 dage og følger EU's AI-forordnings transparenskrav. De brands, motorerne citerer, er dem, der har gjort sig fortjent til det - og kan bevise det.
+            Bygget til flersprogede SMV'er i Europa, Storbritannien og Marokko - gennemgået af en menneskelig strateg på engelsk, fransk, arabisk og dansk. Hver ændring logges og kan rulles tilbage i 30 dage.
           </p>
           <div class="hero-actions">
             <a href="/da/audit/" class="btn btn-lg">Bestil et audit <span class="arrow">→</span></a>
@@ -1092,9 +1120,9 @@
       <div class="section-head reveal" id="benchmark" style="margin-top:72px;">
         <span class="eyebrow">Benchmark · Dansk AI-synlighedsindeks</span>
         <h2>Juni 2026: vi auditerede 38 danske SMV-websites.</h2>
-        <p>Fem brancher, scoret af motoren, gennemgået af et menneske. Gennemsnitlig AI-synlighed 83 ud af 100. Gennemsnitlig agent-parathed 48 ud af 100. Ikke ét site publicerer de strukturerede priser, lagerstatus eller åbningstider, en AI-agent skal bruge for at handle. Kun anonymiserede tal - vi nævner aldrig de auditerede virksomheder.</p>
+        <p>Fem brancher, scoret af motoren, gennemgået af et menneske. Kun anonymiserede tal - vi nævner aldrig de auditerede virksomheder.</p>
       </div>
-      <div class="numbers">
+      <div class="numbers has-viz">
         <div class="stat reveal">
           <div class="big" data-target="38">38</div>
           <div class="label">Danske SMV-sites auditeret</div>
@@ -1111,6 +1139,66 @@
           <div class="big" data-target="0">0<small>/38</small></div>
           <div class="label">Publicerer strukturerede priser</div>
         </div>
+      </div>
+
+      <div class="bench-viz reveal">
+        <figure class="bench-card bench-chart">
+          <figcaption>
+            <span class="cap">Gennemsnitsscore pr. branche · 0-100</span>
+            <span class="bench-legend"><span><i class="sw-vis"></i>AI-synlighed</span><span><i class="sw-agent"></i>Agent-parathed</span></span>
+          </figcaption>
+          <svg viewBox="0 0 560 330" role="img" aria-label="Grupperet søjlediagram over 38 danske SMV-websites. Gennemsnitlig AI-synlighed mod agent-parathed pr. branche. Håndværk: 86 synlighed, 42 agent-parathed. Detail: 85 og 53. Sundhed: 83 og 52. B2B-service: 82 og 44. Restauranter: 81 og 49. Alle brancher scorer langt lavere på agent-parathed end på synlighed.">
+            <line class="grid" x1="315" y1="8" x2="315" y2="296"/>
+            <line class="grid" x1="520" y1="8" x2="520" y2="296"/>
+            <line class="axis" x1="110" y1="8" x2="110" y2="296"/>
+            <text class="tick" x="110" y="312" text-anchor="middle">0</text>
+            <text class="tick" x="315" y="312" text-anchor="middle">50</text>
+            <text class="tick" x="520" y="312" text-anchor="middle">100</text>
+
+            <text class="vlabel" x="100" y="36" text-anchor="end">HÅNDVÆRK</text>
+            <rect x="110" y="16" width="353" height="14" rx="4" fill="#8E6F44"/>
+            <text class="val" x="471" y="28">86</text>
+            <rect x="110" y="32" width="172" height="14" rx="4" fill="#2F5D43"/>
+            <text class="val" x="290" y="44">42</text>
+
+            <text class="vlabel" x="100" y="96" text-anchor="end">DETAIL</text>
+            <rect x="110" y="76" width="349" height="14" rx="4" fill="#8E6F44"/>
+            <text class="val" x="467" y="88">85</text>
+            <rect x="110" y="92" width="217" height="14" rx="4" fill="#2F5D43"/>
+            <text class="val" x="335" y="104">53</text>
+
+            <text class="vlabel" x="100" y="156" text-anchor="end">SUNDHED</text>
+            <rect x="110" y="136" width="340" height="14" rx="4" fill="#8E6F44"/>
+            <text class="val" x="458" y="148">83</text>
+            <rect x="110" y="152" width="213" height="14" rx="4" fill="#2F5D43"/>
+            <text class="val" x="331" y="164">52</text>
+
+            <text class="vlabel" x="100" y="216" text-anchor="end">B2B-SERVICE</text>
+            <rect x="110" y="196" width="336" height="14" rx="4" fill="#8E6F44"/>
+            <text class="val" x="454" y="208">82</text>
+            <rect x="110" y="212" width="180" height="14" rx="4" fill="#2F5D43"/>
+            <text class="val" x="298" y="224">44</text>
+
+            <text class="vlabel" x="100" y="276" text-anchor="end">RESTAURANTER</text>
+            <rect x="110" y="256" width="332" height="14" rx="4" fill="#8E6F44"/>
+            <text class="val" x="450" y="268">81</text>
+            <rect x="110" y="272" width="201" height="14" rx="4" fill="#2F5D43"/>
+            <text class="val" x="319" y="284">49</text>
+          </svg>
+        </figure>
+        <figure class="bench-card bench-dots">
+          <figcaption><span class="cap">Maskinlæsbare priser, lagerstatus eller åbningstider</span></figcaption>
+          <div class="dots-zero">0<small>af 38 sites</small></div>
+          <svg viewBox="0 0 240 100" role="img" aria-label="38 tomme cirkler: ikke ét af de 38 auditerede sites publicerer strukturerede priser, lagerstatus eller åbningstider, en AI-agent kan handle på." style="margin-top:16px; max-width:260px;">
+            <g fill="none" stroke="#8A8377" stroke-width="1.5">
+              <circle cx="12" cy="12" r="8"/><circle cx="36" cy="12" r="8"/><circle cx="60" cy="12" r="8"/><circle cx="84" cy="12" r="8"/><circle cx="108" cy="12" r="8"/><circle cx="132" cy="12" r="8"/><circle cx="156" cy="12" r="8"/><circle cx="180" cy="12" r="8"/><circle cx="204" cy="12" r="8"/><circle cx="228" cy="12" r="8"/>
+              <circle cx="12" cy="36" r="8"/><circle cx="36" cy="36" r="8"/><circle cx="60" cy="36" r="8"/><circle cx="84" cy="36" r="8"/><circle cx="108" cy="36" r="8"/><circle cx="132" cy="36" r="8"/><circle cx="156" cy="36" r="8"/><circle cx="180" cy="36" r="8"/><circle cx="204" cy="36" r="8"/><circle cx="228" cy="36" r="8"/>
+              <circle cx="12" cy="60" r="8"/><circle cx="36" cy="60" r="8"/><circle cx="60" cy="60" r="8"/><circle cx="84" cy="60" r="8"/><circle cx="108" cy="60" r="8"/><circle cx="132" cy="60" r="8"/><circle cx="156" cy="60" r="8"/><circle cx="180" cy="60" r="8"/><circle cx="204" cy="60" r="8"/><circle cx="228" cy="60" r="8"/>
+              <circle cx="12" cy="84" r="8"/><circle cx="36" cy="84" r="8"/><circle cx="60" cy="84" r="8"/><circle cx="84" cy="84" r="8"/><circle cx="108" cy="84" r="8"/><circle cx="132" cy="84" r="8"/><circle cx="156" cy="84" r="8"/><circle cx="180" cy="84" r="8"/>
+            </g>
+          </svg>
+          <p class="dots-note">Ikke ét af de 38 auditerede sites publicerer de strukturerede priser, lagerstatus eller åbningstider, en AI-agent skal bruge for at handle. Den, der publicerer dem først, vinder citeringerne.</p>
+        </figure>
       </div>
     </div>
   </section>

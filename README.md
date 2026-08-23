@@ -8,7 +8,7 @@ Hosted on GitHub Pages. Custom domain via Namecheap DNS.
 
 - `index.html` - homepage
 - `pricing/` - pricing page
-- `audit/` - audit request page (Formspree-wired)
+- `audit/` - audit request page wired to Citetome's public request and preview endpoints
 - `dashboard/` - private customer workspace sign-in
 - `favicon.svg` - brand mark
 - `CNAME` - GitHub Pages custom domain pin

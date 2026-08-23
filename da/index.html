@@ -915,7 +915,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           </div>
           <h3>Seks automatiserede auditcheck</h3>
-          <p>HTML/AEO-læsbarhed, Schema.org JSON-LD mod 969 kanoniske typer, PageSpeed, CrUX, AI-citeringsrate (ChatGPT, Perplexity, Claude, Gemini) og agent-parathed køres ved hvert sweep. AI-agenter er begyndt at handle, ikke kun svare - det sjette check scorer, om en agent kan finde, forstå og handle på dit site: robots.txt-holdning til GPTBot, ClaudeBot og PerplexityBot, llms.txt, JSON-LD med commerce-dybde, maskinlæsbare feeds. Search Console, hreflang-dybde og historisk analyse indgår i den menneskelige gennemgang på betalte planer. Fail-closed ved manglende credentials.</p>
+          <p>Den aktuelle beregnede score måler crawl-forståelse gennem reproducerbare HTML-, schema-, PageSpeed- og CrUX-check. Synlighed, citering og agenthandling gennemgås separat af et menneske og præsenteres ikke som beregnede scorer.</p>
         </div>
         <div class="feature reveal d1">
           <div class="icon">
@@ -1133,7 +1133,7 @@
         </div>
         <div class="stat reveal d2">
           <div class="big" data-target="48">48<small>/100</small></div>
-          <div class="label">Gns. agent-parathed</div>
+          <div class="label">Historisk forskningsproxy for agent-parathed</div>
         </div>
         <div class="stat reveal d3">
           <div class="big" data-target="0">0<small>/38</small></div>
@@ -1287,7 +1287,7 @@
         <a href="/dashboard/" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">ARBEJDSRUM</div>
           <h3 style="font-size:18px;margin-bottom:6px;">Kundeportal</h3>
-          <p style="font-size:13px;color:var(--ink-mid);margin:0;">Dine audits, advarsler og AI-parathed ét sted. Log ind med det tenant-id og den læsenøgle, vi har sendt dig.</p>
+          <p style="font-size:13px;color:var(--ink-mid);margin:0;">Dine audits, advarsler og evidens for crawl-forståelse ét sted. Log ind med det tenant-id og den læsenøgle, vi har sendt dig.</p>
         </a>
         <a href="https://api.citetome.com/llms.txt" target="_blank" rel="noopener" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">AI . TXT</div>
@@ -1712,7 +1712,6 @@
           setText('pc-entities', d.entities);
           setText('stat-entities', d.entities);
         }
-        if (Array.isArray(d.network_sites)) renderRows(d.network_sites);
         if (typeof d.alerts_open === 'number') {
           var foot = document.querySelector('.pc-foot');
           var right = foot && foot.children[1];

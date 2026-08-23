@@ -915,7 +915,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           </div>
           <h3>Six contrôles d'audit automatisés</h3>
-          <p>Lisibilité HTML/AEO, JSON-LD Schema.org confronté à 969 types canoniques, PageSpeed, CrUX, taux de citation IA (ChatGPT, Perplexity, Claude, Gemini) et préparation aux agents, exécutés à chaque passage. Les agents IA commencent à transiger, pas seulement à répondre - le sixième contrôle évalue si un agent peut trouver, comprendre votre site et y agir : posture robots.txt envers GPTBot, ClaudeBot et PerplexityBot, llms.txt, JSON-LD à profondeur commerce, flux lisibles par machine. Search Console, profondeur hreflang et analyse historique font partie de la revue humaine sur les offres payantes. Fail-closed en cas d'identifiants manquants.</p>
+          <p>Le score calculé actuel mesure la compréhension d'exploration au moyen de contrôles reproductibles sur le HTML, le schéma, PageSpeed et CrUX. La visibilité, la citation et l'action des agents sont examinées séparément par un humain et ne sont pas présentées comme des scores calculés.</p>
         </div>
         <div class="feature reveal d1">
           <div class="icon">
@@ -1133,7 +1133,7 @@
         </div>
         <div class="stat reveal d2">
           <div class="big" data-target="48">48<small>/100</small></div>
-          <div class="label">Préparation aux agents moy.</div>
+          <div class="label">Proxy de recherche historique pour les agents</div>
         </div>
         <div class="stat reveal d3">
           <div class="big" data-target="0">0<small>/38</small></div>
@@ -1287,7 +1287,7 @@
         <a href="/dashboard/" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">ESPACE</div>
           <h3 style="font-size:18px;margin-bottom:6px;">Espace client</h3>
-          <p style="font-size:13px;color:var(--ink-mid);margin:0;">Vos audits, alertes et préparation à l'IA au même endroit. Connectez-vous avec l'identifiant de locataire et la clé de lecture que nous vous avons transmis.</p>
+          <p style="font-size:13px;color:var(--ink-mid);margin:0;">Vos audits, alertes et preuves de compréhension d'exploration au même endroit. Connectez-vous avec l'identifiant de locataire et la clé de lecture que nous vous avons transmis.</p>
         </a>
         <a href="https://api.citetome.com/llms.txt" target="_blank" rel="noopener" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">AI . TXT</div>
@@ -1712,7 +1712,6 @@
           setText('pc-entities', d.entities);
           setText('stat-entities', d.entities);
         }
-        if (Array.isArray(d.network_sites)) renderRows(d.network_sites);
         if (typeof d.alerts_open === 'number') {
           var foot = document.querySelector('.pc-foot');
           var right = foot && foot.children[1];

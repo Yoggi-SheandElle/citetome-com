@@ -1,6 +1,6 @@
 # Citetome
 
-> Citetome is an AI-readiness service for multilingual businesses. It audits what AI systems can find, understand, cite and act on about a business, then provides evidence-backed, human-approved remediation. It does not guarantee citations or rankings.
+> Citetome provides evidence-backed crawl-comprehension audits and human-reviewed fixes for multilingual businesses. Its current computed score measures crawl comprehension. Visibility, citation and agent action are not presented as measured scores. It does not guarantee citations or rankings.
 
 Operated by Yossra Benzad, Copenhagen, Denmark. Live product: https://api.citetome.com (Fly.io London region).
 

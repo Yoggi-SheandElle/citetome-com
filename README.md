@@ -1,6 +1,6 @@
 # citetome.com
 
-Marketing site for [Citetome](https://citetome.com) - the AEO & GEO control plane for multilingual SMBs.
+Marketing site for [Citetome](https://citetome.com) - evidence-backed crawl comprehension audits and human-reviewed fixes for multilingual businesses.
 
 Hosted on GitHub Pages. Custom domain via Namecheap DNS.
 
@@ -9,7 +9,7 @@ Hosted on GitHub Pages. Custom domain via Namecheap DNS.
 - `index.html` - homepage
 - `pricing/` - pricing page
 - `audit/` - audit request page (Formspree-wired)
-- `dashboard/` - live 3D portfolio globe, reads from `api.citetome.com`
+- `dashboard/` - private customer workspace sign-in
 - `favicon.svg` - brand mark
 - `CNAME` - GitHub Pages custom domain pin
 

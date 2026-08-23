@@ -908,8 +908,8 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">01 · Features</span>
-        <h2>The AI-readiness system for your business.</h2>
-        <p>Six checks answer four practical questions: can AI find you, understand you, cite you and act on your information? Every recommendation is evidence-backed, reviewable and reversible.</p>
+        <h2>Evidence-backed crawl comprehension for your business.</h2>
+        <p>Six checks assess whether automated systems can crawl and understand your first-party information. Citation, visibility and action remain separate, manually reviewed questions until supported by measured evidence.</p>
       </div>
       <style>
         /* features v2: audit bench + visual cards */
@@ -1294,8 +1294,8 @@
           <div class="label">Avg AI-visibility score</div>
         </div>
         <div class="stat reveal d2">
-          <div class="big" data-target="48">48<small>/100</small></div>
-          <div class="label">Avg agent-readiness score</div>
+          <div class="big">Not measured</div>
+          <div class="label">Current product agent score</div>
         </div>
         <div class="stat reveal d3">
           <div class="big" data-target="0">0<small>/38</small></div>
@@ -1449,7 +1449,7 @@
         <a href="/dashboard/" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">WORKSPACE</div>
           <h3 style="font-size:18px;margin-bottom:6px;">Customer workspace</h3>
-          <p style="font-size:13px;color:var(--ink-mid);margin:0;">Your audits, alerts and AI readiness in one place. Sign in with the tenant id and read key we issued you.</p>
+          <p style="font-size:13px;color:var(--ink-mid);margin:0;">Your audits, alerts and crawl-comprehension evidence in one place. Sign in with the tenant id and read key we issued you.</p>
         </a>
         <a href="https://api.citetome.com/llms.txt" target="_blank" rel="noopener" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">AI . TXT</div>
@@ -1874,7 +1874,6 @@
           setText('pc-entities', d.entities);
           setText('stat-entities', d.entities);
         }
-        if (Array.isArray(d.network_sites)) renderRows(d.network_sites);
         if (typeof d.alerts_open === 'number') {
           var foot = document.querySelector('.pc-foot');
           var right = foot && foot.children[1];

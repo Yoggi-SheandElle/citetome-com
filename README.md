@@ -1,6 +1,6 @@
 # citetome.com
 
-Marketing site for [Citetome](https://citetome.com) - evidence-backed crawl comprehension audits and human-reviewed fixes for multilingual businesses.
+Marketing site for [Citetome](https://citetome.com) - evidence-led organic growth audits and human-reviewed improvements for multilingual businesses across Google and AI search.
 
 Hosted on GitHub Pages. Custom domain via Namecheap DNS.
 

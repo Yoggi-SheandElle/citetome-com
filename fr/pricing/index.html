@@ -120,6 +120,14 @@
     .section-head p{margin-top:16px;font-size:17px;color:var(--ink-mid);max-width:56ch}
 
     /* pricing grid */
+    .free-scan{display:grid;grid-template-columns:1.6fr 1fr;gap:28px;align-items:center;padding:26px 28px;margin-bottom:22px;border:1px solid var(--rule);border-radius:14px;background:var(--bone)}
+    .free-scan-tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mid);display:block;margin-bottom:8px}
+    .free-scan h2{font-size:24px;font-weight:600;letter-spacing:-.02em;margin:0 0 8px;color:var(--ink)}
+    .free-scan p{font-size:14px;line-height:1.6;color:var(--ink-mid);margin:0;max-width:56ch}
+    .free-scan-cta a{display:inline-block;width:100%;padding:12px 16px;border-radius:6px;border:1px solid var(--ink);background:var(--ink);color:var(--bone);font-size:13px;font-weight:500;text-align:center;transition:all .2s var(--ease)}
+    .free-scan-cta a:hover{background:transparent;color:var(--ink)}
+    .free-scan-note{display:block;margin-top:10px;font-size:12px;line-height:1.5;color:var(--ink-soft);text-align:center}
+    @media (max-width:760px){.free-scan{grid-template-columns:1fr;gap:20px;padding:24px 22px}.free-scan-note{text-align:left}}
     .price-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:var(--rule)}
     .price-card{background:var(--bone);padding:26px 22px;display:flex;flex-direction:column;gap:12px;transition:background .25s var(--ease);position:relative}
     .price-card:hover{background:#FFF}
@@ -258,6 +266,17 @@
 
   <section>
     <div class="container">
+      <div class="free-scan">
+        <div>
+          <span class="free-scan-tag">Commencez ici &middot; Gratuit</span>
+          <h2>Le scan gratuit</h2>
+          <p>Six signaux de surface sur votre page d'accueil, vérifiés en direct en quelques secondes. Sans e-mail, sans appel, sans engagement. Il vous dit si un audit payant vaut votre argent avant que vous ne dépensiez quoi que ce soit.</p>
+        </div>
+        <div class="free-scan-cta">
+          <a href="/fr/audit/#form">Lancer le scan gratuit</a>
+          <span class="free-scan-note">Les audits payants ci-dessous commencent là où le scan gratuit s'arrête.</span>
+        </div>
+      </div>
       <div class="price-grid">
         <div class="price-card">
           <div class="name">Audit</div>

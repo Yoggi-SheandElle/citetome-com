@@ -38,8 +38,8 @@
     </div>
     <div class="actions">
       <a href="/" class="btn btn-ghost" title="Back to Citetome">← home</a>
-      <a href="/audit/" class="btn btn-ghost">free scan</a>
-      <a id="open-workspace" href="https://api.citetome.com/customer" class="btn btn-primary">open workspace</a>
+      <a href="/audit/" class="btn btn-ghost">request audit</a>
+      <a id="open-workspace" href="mailto:hello@citetome.com" class="btn btn-primary">email us</a>
     </div>
   </header>
 
@@ -50,8 +50,8 @@
       </div>
       <div style="padding: 20px 4px 8px;">
         <p class="modal-sub" style="margin-top:0;">
-          Your audits, open alerts and crawl-comprehension evidence live in the Citetome
-          workspace. You will need the tenant id and read key we sent you.
+          The customer workspace is offline while Citetome moves to new hosting.
+          Email hello@citetome.com and we will send your audit report directly.
         </p>
         <p class="modal-sub">
           The workspace shows counts, scores and dates. The pages and sources
@@ -59,8 +59,8 @@
           before anything is acted on.
         </p>
         <div class="modal-actions" style="justify-content:flex-start; margin-top:18px;">
-          <a id="open-workspace-2" href="https://api.citetome.com/customer" class="btn btn-primary">open workspace</a>
-          <a href="/audit/" class="btn btn-ghost">run a free scan instead</a>
+          <a id="open-workspace-2" href="mailto:hello@citetome.com" class="btn btn-primary">email us</a>
+          <a href="/audit/" class="btn btn-ghost">request an audit instead</a>
         </div>
         <small class="hint" style="display:block; margin-top:18px;">
           Lost your read key? Email hello@citetome.com and we will reissue it.
@@ -77,7 +77,7 @@
       : "https://api.citetome.com";
     ["open-workspace", "open-workspace-2"].forEach(function (id) {
       var link = document.getElementById(id);
-      if (link) link.href = window.CITETOME_API + "/customer";
+      if (link) link.href = "mailto:hello@citetome.com";
     });
   </script>
 </body>

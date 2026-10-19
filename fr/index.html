@@ -78,7 +78,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://api.citetome.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -704,7 +703,6 @@
         <a href="#network" data-section="network">Preuves</a>
         <a href="#pricing" data-section="pricing">Tarifs</a>
         <a href="#faq" data-section="faq">FAQ</a>
-        <a href="https://api.citetome.com/customer" target="_blank" rel="noopener" title="Tableau de bord client en direct">Console</a>
         <span class="lang-switch"><a href="/" lang="en" hreflang="en">EN</a><a href="/da/" lang="da" hreflang="da">DA</a><a href="/fr/" class="on" aria-current="true">FR</a></span>
         <a href="/fr/audit/" class="btn">Demander un audit</a>
       </div>
@@ -1263,32 +1261,33 @@
 
       <!-- accessible public endpoints grid -->
       <div class="net-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:24px;">
-        <a href="https://api.citetome.com/kg/sitemap.xml" target="_blank" rel="noopener" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;transition:border-color 0.2s var(--ease),transform 0.2s var(--ease);">
+        <div style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;transition:border-color 0.2s var(--ease),transform 0.2s var(--ease);">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">GRAPHE DE CONNAISSANCES</div>
           <h3 style="font-size:18px;margin-bottom:6px;">Catalogue d'entités</h3>
           <p style="font-size:13px;color:var(--ink-mid);margin:0;">Chaque entité canonique, adressable par un @id stable. La surface que les moteurs IA crawlent.</p>
-        </a>
-        <a href="https://api.citetome.com/governance" target="_blank" rel="noopener" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
+        </div>
+        <div style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">GOVERNANCE</div>
           <h3 style="font-size:18px;margin-bottom:6px;">Posture &amp; journal d'audit</h3>
           <p style="font-size:13px;color:var(--ink-mid);margin:0;">Politiques en direct, journal d'événements en append-only, endpoint d'effacement RGPD article 17. Public.</p>
-        </a>
-        <a href="https://api.citetome.com/customer" target="_blank" rel="noopener" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
+        </div>
+        <div style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">OPÉRATEUR</div>
           <h3 style="font-size:18px;margin-bottom:6px;">Console client</h3>
           <p style="font-size:13px;color:var(--ink-mid);margin:0;">Tableau de bord opérateur par tenant. Historique d'audit, file d'approbation, tendance des scores.</p>
-        </a>
-        <a href="/dashboard/" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
+        </div>
+        <div style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">ESPACE</div>
           <h3 style="font-size:18px;margin-bottom:6px;">Espace client</h3>
           <p style="font-size:13px;color:var(--ink-mid);margin:0;">Vos audits, alertes et preuves de compréhension d'exploration au même endroit. Connectez-vous avec l'identifiant de locataire et la clé de lecture que nous vous avons transmis.</p>
-        </a>
-        <a href="https://api.citetome.com/llms.txt" target="_blank" rel="noopener" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
+        </div>
+        <div style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">AI . TXT</div>
           <h3 style="font-size:18px;margin-bottom:6px;">Registre LLMs</h3>
           <p style="font-size:13px;color:var(--ink-mid);margin:0;">Un point de documentation optionnel. Il complète, sans remplacer, des pages explorables et des données structurées visibles.</p>
-        </a>
+        </div>
       </div>
+      <p style="font-size:13px;color:var(--ink-mid);margin-top:14px;">Ces pages en direct sont hors ligne pendant que Citetome change d'hébergement. Écrivez à hello@citetome.com pour une démonstration.</p>
     </div>
   </section>
 
@@ -1456,16 +1455,6 @@
             <li><a href="/fr/pricing/">Tarifs</a></li>
             <li><a href="/fr/audit/">Demander un audit</a></li>
             <li><a href="/fr/#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="foot-col">
-          <h5>En direct</h5>
-          <ul>
-            <li><a href="/dashboard/">Espace client</a></li>
-            <li><a href="https://api.citetome.com/governance" target="_blank" rel="noopener">Posture de gouvernance</a></li>
-            <li><a href="https://api.citetome.com/kg/sitemap.xml" target="_blank" rel="noopener">Graphe de connaissances</a></li>
-            <li><a href="https://api.citetome.com/llms.txt" target="_blank" rel="noopener">Registre LLMs</a></li>
-            <li><a href="https://api.citetome.com/customer" target="_blank" rel="noopener" title="Pour les clients existants">Console client</a></li>
           </ul>
         </div>
         <div class="foot-col">

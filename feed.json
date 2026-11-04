@@ -45,8 +45,8 @@
     {
       "id": "https://citetome.com/pricing/#managed-starter",
       "url": "https://citetome.com/pricing/",
-      "title": "Managed Starter: 200 EUR",
-      "content_text": "Citetome Managed Starter plan, 200 EUR. Details and scope on the pricing page.",
+      "title": "Managed Starter: 200 EUR per month",
+      "content_text": "Citetome Managed Starter plan, 200 EUR per month. Details and scope on the pricing page.",
       "tags": [
         "offer",
         "pricing"
@@ -54,14 +54,15 @@
       "_offer": {
         "price": "200",
         "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "billingPeriod": "P1M"
       }
     },
     {
       "id": "https://citetome.com/pricing/#managed-standard",
       "url": "https://citetome.com/pricing/",
-      "title": "Managed Standard: 500 EUR",
-      "content_text": "Citetome Managed Standard plan, 500 EUR. Details and scope on the pricing page.",
+      "title": "Managed Standard: 500 EUR per month",
+      "content_text": "Citetome Managed Standard plan, 500 EUR per month. Details and scope on the pricing page.",
       "tags": [
         "offer",
         "pricing"
@@ -69,14 +70,15 @@
       "_offer": {
         "price": "500",
         "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "billingPeriod": "P1M"
       }
     },
     {
       "id": "https://citetome.com/pricing/#managed-premium",
       "url": "https://citetome.com/pricing/",
-      "title": "Managed Premium: 800 EUR",
-      "content_text": "Citetome Managed Premium plan, 800 EUR. Details and scope on the pricing page.",
+      "title": "Managed Premium: 800 EUR per month",
+      "content_text": "Citetome Managed Premium plan, 800 EUR per month. Details and scope on the pricing page.",
       "tags": [
         "offer",
         "pricing"
@@ -84,7 +86,8 @@
       "_offer": {
         "price": "800",
         "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "billingPeriod": "P1M"
       }
     },
     {

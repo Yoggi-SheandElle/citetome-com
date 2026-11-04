@@ -2,7 +2,7 @@
 
 > Citetome provides evidence-led organic growth audits and human-reviewed improvements for multilingual businesses across Google and AI search. Its current computed score measures crawl comprehension. Visibility, citation and agent action are not presented as measured scores. It does not guarantee traffic, citations or rankings.
 
-Operated by Yossra Benzad, Copenhagen, Denmark. Live product: https://api.citetome.com (Fly.io London region).
+Operated by Yossra Benzad, Copenhagen, Denmark. Live product: https://api.citetome.com
 
 ## Docs
 

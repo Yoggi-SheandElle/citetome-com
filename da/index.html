@@ -78,6 +78,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.citetome.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -703,6 +704,7 @@
         <a href="#network" data-section="network">Evidens</a>
         <a href="#pricing" data-section="pricing">Priser</a>
         <a href="#faq" data-section="faq">FAQ</a>
+        <a href="https://api.citetome.com/customer" target="_blank" rel="noopener" title="Live kundedashboard">Konsol</a>
         <span class="lang-switch"><a href="/" lang="en" hreflang="en">EN</a><a href="/da/" class="on" aria-current="true">DA</a><a href="/fr/" lang="fr" hreflang="fr">FR</a></span>
         <a href="/da/audit/" class="btn">Bestil audit</a>
       </div>
@@ -1261,33 +1263,32 @@
 
       <!-- accessible public endpoints grid -->
       <div class="net-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:24px;">
-        <div style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;transition:border-color 0.2s var(--ease),transform 0.2s var(--ease);">
+        <a href="https://api.citetome.com/kg/sitemap.xml" target="_blank" rel="noopener" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;transition:border-color 0.2s var(--ease),transform 0.2s var(--ease);">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">VIDENSGRAF</div>
           <h3 style="font-size:18px;margin-bottom:6px;">Entitetskatalog</h3>
           <p style="font-size:13px;color:var(--ink-mid);margin:0;">Hver kanonisk entitet, adresserbar via et stabilt @id. Den flade, AI-motorerne crawler.</p>
-        </div>
-        <div style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
+        </a>
+        <a href="https://api.citetome.com/governance" target="_blank" rel="noopener" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">GOVERNANCE</div>
           <h3 style="font-size:18px;margin-bottom:6px;">Status &amp; revisionslog</h3>
           <p style="font-size:13px;color:var(--ink-mid);margin:0;">Live-politikker, append-only hændelseslog, GDPR artikel 17-slette-endpoint. Offentligt.</p>
-        </div>
-        <div style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
+        </a>
+        <a href="https://api.citetome.com/customer" target="_blank" rel="noopener" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">OPERATØR</div>
           <h3 style="font-size:18px;margin-bottom:6px;">Kundekonsol</h3>
           <p style="font-size:13px;color:var(--ink-mid);margin:0;">Operatørdashboard pr. tenant. Audithistorik, godkendelseskø, scoretrend.</p>
-        </div>
-        <div style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
+        </a>
+        <a href="/dashboard/" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">ARBEJDSRUM</div>
           <h3 style="font-size:18px;margin-bottom:6px;">Kundeportal</h3>
           <p style="font-size:13px;color:var(--ink-mid);margin:0;">Dine audits, advarsler og evidens for crawl-forståelse ét sted. Log ind med det tenant-id og den læsenøgle, vi har sendt dig.</p>
-        </div>
-        <div style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
+        </a>
+        <a href="https://api.citetome.com/llms.txt" target="_blank" rel="noopener" style="display:block;padding:22px;background:var(--bone);border:1px solid var(--rule);border-radius:12px;text-decoration:none;">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--ink-mid);margin-bottom:8px;">AI . TXT</div>
           <h3 style="font-size:18px;margin-bottom:6px;">LLMs-register</h3>
           <p style="font-size:13px;color:var(--ink-mid);margin:0;">Et valgfrit dokumentationsendepunkt. Det supplerer, men erstatter ikke, crawlbare sider og synlige strukturerede data.</p>
-        </div>
+        </a>
       </div>
-      <p style="font-size:13px;color:var(--ink-mid);margin-top:14px;">Disse live-sider er offline, mens Citetome flytter til ny hosting. Skriv til hello@citetome.com for en gennemgang.</p>
     </div>
   </section>
 
@@ -1455,6 +1456,16 @@
             <li><a href="/da/pricing/">Priser</a></li>
             <li><a href="/da/audit/">Bestil audit</a></li>
             <li><a href="/da/#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Live</h5>
+          <ul>
+            <li><a href="/dashboard/">Kundeportal</a></li>
+            <li><a href="https://api.citetome.com/governance" target="_blank" rel="noopener">Governance-status</a></li>
+            <li><a href="https://api.citetome.com/kg/sitemap.xml" target="_blank" rel="noopener">Vidensgraf</a></li>
+            <li><a href="https://api.citetome.com/llms.txt" target="_blank" rel="noopener">LLMs-register</a></li>
+            <li><a href="https://api.citetome.com/customer" target="_blank" rel="noopener" title="For eksisterende kunder">Kundekonsol</a></li>
           </ul>
         </div>
         <div class="foot-col">

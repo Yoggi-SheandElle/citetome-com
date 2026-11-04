@@ -83,7 +83,7 @@
   <div class="container">
     <div class="eyebrow">Legal</div>
     <h1>Imprint, privacy &amp; terms.</h1>
-    <p class="updated">Last updated: 21 May 2026 . Version 1.0</p>
+    <p class="updated">Last updated: 4 November 2026 . Version 1.1</p>
 
     <div class="toc">
       <h3>Contents</h3>
@@ -107,7 +107,7 @@
       <tr><th>Place of business</th><td>Copenhagen, Denmark</td></tr>
       <tr><th>Contact email</th><td><a href="mailto:hello@citetome.com">hello@citetome.com</a></td></tr>
       <tr><th>VAT</th><td>Below DKK 50,000 threshold; VAT exemption under Danish momsloven &sect; 48 applies until registration becomes mandatory.</td></tr>
-      <tr><th>Hosting</th><td>Marketing site: GitHub Pages (San Francisco, US, served via global CDN). API service: Fly.io (London region, lhr), with EU data residency for all customer-identifiable records.</td></tr>
+      <tr><th>Hosting</th><td>Marketing site: GitHub Pages (San Francisco, US, served via global CDN). API service: Render (Frankfurt, Germany, EU). Database: Neon Postgres on AWS (London, UK).</td></tr>
       <tr><th>Status</th><td>Live in production at <a href="https://api.citetome.com" target="_blank" rel="noopener">api.citetome.com</a></td></tr>
     </table>
 
@@ -140,7 +140,7 @@
     <p>You have the right to access, rectify, erase, restrict, port, and object to processing of your personal data. To exercise these rights, email <a href="mailto:hello@citetome.com">hello@citetome.com</a>. We respond within 30 days as required by Art. 12(3).</p>
 
     <h3>2.6 International transfers</h3>
-    <p>Customer-facing data is held within the EU/EEA (Fly.io London region; data residency confirmed by provider). The marketing site is delivered via GitHub Pages, which may route traffic through US edge nodes; only publicly accessible HTML is served from these nodes, no personal data is processed there. Where any onward transfer to a non-EEA country occurs, it is covered by the European Commission's Standard Contractual Clauses (2021/914).</p>
+    <p>Customer-facing data is held in the EU and the UK: the API runs on Render in Frankfurt (EU) and the database on Neon in the AWS London region (UK, covered by the European Commission's UK adequacy decision). The marketing site is delivered via GitHub Pages, which may route traffic through US edge nodes; only publicly accessible HTML is served from these nodes, no personal data is processed there. Where any onward transfer to a non-EEA country occurs, it is covered by the European Commission's Standard Contractual Clauses (2021/914).</p>
 
     <h2 id="cookies">03 . Cookies &amp; tracking</h2>
     <p>This site uses no cookies, no analytics, no advertising and no third-party tracking. The only client-side storage we use is:</p>
@@ -191,7 +191,10 @@
     <p>We use the following providers to run the service. Providers outside the EU/EEA are engaged under the European Commission's Standard Contractual Clauses (2021/914) and, where certified, the EU-US Data Privacy Framework. Transfers to the United Kingdom are covered by the European Commission's UK adequacy decision (renewed 19 December 2025).</p>
     <table class="table">
       <tr><th>Sub-processor</th><th>Purpose</th><th>Location / transfer basis</th></tr>
-      <tr><td>Fly.io Inc.</td><td>Application and database hosting (api.citetome.com)</td><td>London, UK (lhr region); UK adequacy decision</td></tr>
+      <tr><td>Render Services, Inc.</td><td>Application hosting (api.citetome.com)</td><td>Frankfurt, Germany (EU); US entity under SCCs</td></tr>
+      <tr><td>Neon, Inc.</td><td>Database hosting (PostgreSQL)</td><td>AWS eu-west-2, London, UK; UK adequacy decision; US entity under SCCs</td></tr>
+      <tr><td>Groq, Inc.</td><td>AI answer checks: buyer questions and public brand and site names are sent to a language model; no personal data</td><td>United States; SCCs</td></tr>
+      <tr><td>Google LLC (PageSpeed Insights API)</td><td>Performance measurement of public URLs; no personal data</td><td>US/global; Data Privacy Framework</td></tr>
       <tr><td>Resend Inc.</td><td>Transactional email: sending from @citetome.com and receiving all inbound email to @citetome.com</td><td>EU region (Ireland); US entity under SCCs</td></tr>
       <tr><td>Amazon Web Services EMEA SARL (via Resend)</td><td>Underlying email infrastructure (Amazon SES)</td><td>eu-west-1, Ireland (EU)</td></tr>
       <tr><td>Google LLC (Gmail)</td><td>Operator mailbox: inbound business correspondence is forwarded to and processed in the operator's Google mailbox</td><td>EU/US; EU-US Data Privacy Framework</td></tr>
